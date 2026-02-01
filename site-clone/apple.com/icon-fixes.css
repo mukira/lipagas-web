@@ -1,0 +1,49 @@
+/* Icon Fixes for Apple Clone */
+/* Replace SF Symbols Unicode icons with CSS-based alternatives */
+
+/* Arrow right icon (used for "more" links like "Shop", "Buy", "Compare all models") */
+.icon.icon-after.more::after,
+.icon-after::after,
+a.more::after {
+    content: "→" !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-size: 0.8em;
+    display: inline-block;
+    padding-left: 0.2em;
+}
+
+/* Plus icon for modals */
+.icon-control-plus::before,
+.tile-icon::before {
+    content: "+" !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 300;
+    font-size: 1.2em;
+}
+
+/* Close icon */
+.icon-control-close::before {
+    content: "×" !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 300;
+    font-size: 1.5em;
+}
+
+/* Chevron right */
+.icon-chevronright::after,
+.chevron-right::after {
+    content: "›" !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* External link icon */
+.icon-external::after {
+    content: "↗" !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Ensure all icon elements use proper fallback */
+[class*="icon"]::before,
+[class*="icon"]::after {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Icons", sans-serif !important;
+}

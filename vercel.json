@@ -1,0 +1,60 @@
+{
+    "version": 2,
+    "name": "apple-iphone-clone",
+    "buildCommand": null,
+    "outputDirectory": "site-clone/apple.com",
+    "routes": [
+        {
+            "src": "/iphone/?$",
+            "dest": "/iphone/index.html"
+        },
+        {
+            "src": "/iphone-17-pro/?$",
+            "dest": "/iphone-17-pro/index.html"
+        },
+        {
+            "src": "/iphone-air/?$",
+            "dest": "/iphone-air/index.html"
+        },
+        {
+            "src": "/iphone-17/?$",
+            "dest": "/iphone-17/index.html"
+        },
+        {
+            "src": "/iphone-16e/?$",
+            "dest": "/iphone-16e/index.html"
+        },
+        {
+            "src": "/iphone/compare/?$",
+            "dest": "/iphone/compare/index.html"
+        },
+        {
+            "src": "/iphone/switch/?$",
+            "dest": "/iphone/switch/index.html"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/$1"
+        }
+    ],
+    "headers": [
+        {
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=31536000, immutable"
+                }
+            ]
+        },
+        {
+            "source": "/(.*).html",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=0, must-revalidate"
+                }
+            ]
+        }
+    ]
+}

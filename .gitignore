@@ -1,41 +1,34 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Next.js
+.next/
+node_modules/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+# Production
+build/
 
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
-.DS_Store
-*.pem
-
-# debug
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# Environment
 .env*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# vercel
-.vercel
+# Git
+.git/
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# OS
+.DS_Store
+
+# Scripts and HAR files (Optional but recommended for size)
+# *.har
+# site-clone-backup-*/
+
+# We want to keep site-clone and apple-nextjs assets
+# but ignore their node_modules
+**/node_modules/
+**/ .next/
+**/out/

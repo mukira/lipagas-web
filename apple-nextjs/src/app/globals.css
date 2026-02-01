@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* Minimal reset - let Apple's CSS take over */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure no Tailwind overrides */
+* {
+  box-sizing: border-box;
+}
