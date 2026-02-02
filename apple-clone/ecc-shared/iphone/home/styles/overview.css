@@ -1,0 +1,59 @@
+/*------------------------------------*\
+   HERO CSS
+\*------------------------------------*/
+
+@media only screen and (min-width: 1069px) {
+	.ai-disclaimer {
+		color: rgba(255, 255, 255, 0.92) !important;
+		font-weight: 400 !important;
+		font-size: 17px !important;
+	}
+	#apple-intelligence .ai-disclaimer {
+		color: #6e6e73 !important;
+		font-weight: 400 !important;
+		font-size: 16px !important;
+		margin-top: 15px;
+	}
+}
+
+@media only screen and (min-width: 735px) and (max-width: 1068px) {
+	.ai-disclaimer {
+		color: rgba(255, 255, 255, 0.92) !important;
+		font-weight: 400 !important;
+		font-size: 17px !important;
+		line-height: 1;
+	}
+	#apple-intelligence .ai-disclaimer {
+		color: #6e6e73 !important;
+		font-weight: 400 !important;
+		font-size: 16px !important;
+		margin-top: 15px;
+	}
+}
+
+@media only screen and (max-width: 734px) {
+	.ai-disclaimer {
+		color: rgba(255, 255, 255, 0.92) !important;
+		font-weight: 400 !important;
+		font-size: 14px !important;
+		line-height: 1;
+	}
+	#apple-intelligence .ai-disclaimer {
+		color: #6e6e73 !important;
+		font-weight: 400 !important;
+		font-size: 12px !important;
+		margin-top: 15px;
+	}
+}
+
+.ric-modal .ric-modal-content-wrapper {
+	padding-inline-start: 0;
+	padding-inline-end: 0;
+}
+
+.ric-modal .ric-modal-overlay {
+	padding: 0;
+}
+/*------------------------------------*\
+   END LOCAL FIXES
+\*------------------------------------*/

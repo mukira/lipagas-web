@@ -1,16 +1,5 @@
 {
-  "name": "apple-lipagas",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "playwright": "^1.58.1",
-    "playwright-har": "^0.2.0"
+  "devDependencies": {
+    "cheerio": "^1.2.0"
   }
 }

@@ -1,0 +1,824 @@
+
+/*** Arabic Fonts ****/
+
+/********************/
+
+#globalnav .globalnav-submenu-list-item-elevated, 
+#globalnav .globalnav-submenu-list-item-elevated:lang(ar), 
+.typography-banner-card-headline, 
+.typography-banner-card-headline:lang(ar), 
+.typography-feature-card-headline, 
+.typography-feature-card-headline:lang(ar), 
+.typography-inner-container-modal-copy, 
+.typography-inner-container-modal-copy:lang(ar), 
+.typography-modal-header-topic-label, 
+.typography-modal-header-topic-label:lang(ar), 
+.typography-modal-header-headline, 
+.typography-modal-header-headline:lang(ar), 
+.typography-index-headline, 
+.typography-index-headline:lang(ar), 
+.typography-index-item-elevated, 
+.typography-index-item-elevated:lang(ar), 
+.typography-image-accordion-title-text, 
+.typography-image-accordion-title-text:lang(ar), 
+.typography-page-header-title, 
+.typography-page-header-title:lang(ar), 
+.typography-product-tile-headline, 
+.typography-product-tile-headline:lang(ar), 
+.typography-section-header-headline, 
+.typography-section-header-headline:lang(ar), 
+.accordion-item, 
+.accordion-item:lang(ar) {
+    letter-spacing: 0;
+    font-family: "SF Pro AR Display", "SF Pro Gulf", "SF Pro Display",
+    "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+  
+#globalnav .globalnav-link, 
+#globalnav .globalnav-link:lang(ar), 
+#globalnav .globalnav-link-apple, 
+#globalnav .globalnav-link-apple:lang(ar), 
+#globalnav .globalnav-submenu-header, 
+#globalnav .globalnav-submenu-header:lang(ar), 
+#globalnav .globalnav-submenu-list-item, 
+#globalnav .globalnav-submenu-list-item:lang(ar), 
+#globalmessage-segment, 
+#globalmessage-segment:lang(ar), 
+#ac-globalfooter, #ac-globalfooter select, #ac-globalfooter button, 
+#ac-globalfooter:lang(ar), #ac-globalfooter select:lang(ar), #ac-globalfooter button:lang(ar), 
+#ac-globalfooter, 
+#ac-globalfooter:lang(ar), 
+#ac-globalfooter .ac-gf-sosumi p, #ac-globalfooter .ac-gf-sosumi li, 
+#ac-globalfooter .ac-gf-sosumi p:lang(ar), #ac-globalfooter .ac-gf-sosumi li:lang(ar), 
+#ac-globalfooter .ac-gf-breadcrumbs-path, 
+#ac-globalfooter .ac-gf-breadcrumbs-path:lang(ar), 
+#ac-globalfooter .ac-gf-directory, 
+#ac-globalfooter .ac-gf-directory:lang(ar), 
+#ac-globalfooter .ac-gf-directory-column-section-title-button, #ac-globalfooter .ac-gf-directory-column-section-title > .ac-gf-directory-column-section-title-text, 
+#ac-globalfooter .ac-gf-directory-column-section-title-button:lang(ar), #ac-globalfooter .ac-gf-directory-column-section-title > .ac-gf-directory-column-section-title-text:lang(ar), 
+html, 
+[lang]:lang(ar), 
+body, 
+body:lang(ar), 
+.badge, 
+.badge:lang(ar), 
+.badge-reduced, 
+.badge-reduced:lang(ar), 
+.button, 
+.button:lang(ar), 
+.typography-banner-card-copy, 
+.typography-banner-card-copy:lang(ar), 
+.typography-chapternav-label, 
+.typography-chapternav-label:lang(ar), 
+.typography-feature-card-label, 
+.typography-feature-card-label:lang(ar), 
+.typography-feature-card-body, 
+.typography-feature-card-body:lang(ar), 
+.typography-index-list-title, 
+.typography-index-list-title:lang(ar), 
+.typography-index-item-base, 
+.typography-index-item-base:lang(ar), 
+.typography-image-accordion-paragraph-text, 
+.typography-image-accordion-paragraph-text:lang(ar), 
+.typography-product-tile-subheading, 
+.typography-product-tile-subheading:lang(ar), 
+.typography-product-tile-positioning, 
+.typography-product-tile-positioning:lang(ar), 
+.typography-product-tile-ctas, 
+.typography-product-tile-ctas:lang(ar), 
+.typography-section-header-link, 
+.typography-section-header-link:lang(ar), 
+#ac-localeswitcher, #ac-localeswitcher select, #ac-localeswitcher button, 
+#ac-localeswitcher .ac-ls-copy, 
+#ac-localeswitcher .ac-ls-continue {
+    letter-spacing: 0;
+    font-family: "SF Pro AR Text", "SF Pro Gulf", "SF Pro Display", "SF Pro Icons",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+  
+@media only screen and (max-width: 833px) {
+#globalnav .globalnav-link, 
+#globalnav .globalnav-link:lang(ar), 
+#globalnav .globalnav-link-apple, 
+#globalnav .globalnav-link-apple:lang(ar), 
+#globalnav .globalnav-submenu-list-item-elevated, 
+#globalnav .globalnav-submenu-list-item-elevated:lang(ar) { 
+    font-family: "SF Pro AR Display", "SF Pro Gulf", "SF Pro Display",
+    "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  }
+
+#globalnav .globalnav-submenu-header, 
+#globalnav .globalnav-submenu-header:lang(ar), 
+#globalnav .globalnav-submenu-list-item, 
+#globalnav .globalnav-submenu-list-item:lang(ar) { 
+    font-family: "SF Pro AR Text", "SF Pro Gulf", "SF Pro Display", "SF Pro Icons",
+    "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  }
+}
+
+@media (max-width: 1068px) {
+.typography-banner-card-headline, 
+.typography-banner-card-headline:lang(ar), 
+.typography-feature-card-headline, 
+.typography-feature-card-headline:lang(ar), 
+.typography-inner-container-modal-copy, 
+.typography-inner-container-modal-copy:lang(ar), 
+.typography-modal-header-headline, 
+.typography-modal-header-headline:lang(ar), 
+.typography-index-headline, 
+.typography-index-headline:lang(ar), 
+.typography-index-item-elevated, 
+.typography-index-item-elevated:lang(ar), 
+.typography-image-accordion-title-text, 
+.typography-image-accordion-title-text:lang(ar), 
+.typography-page-header-title, 
+.typography-page-header-title:lang(ar), 
+.typography-product-tile-headline, 
+.typography-product-tile-headline:lang(ar), 
+.typography-section-header-headline, 
+.typography-section-header-headline:lang(ar), 
+.accordion-item, 
+.accordion-item:lang(ar) { 
+    font-family: "SF Pro AR Display", "SF Pro Gulf", "SF Pro Display",
+    "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  }
+
+.typography-feature-card-label, 
+.typography-feature-card-label:lang(ar), 
+.typography-feature-card-body, 
+.typography-feature-card-body:lang(ar) { 
+    font-family: "SF Pro AR Text", "SF Pro Gulf", "SF Pro Display", "SF Pro Icons",
+    "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  }
+}
+
+@media (max-width: 734px) {
+.typography-banner-card-headline, 
+.typography-banner-card-headline:lang(ar), 
+.typography-feature-card-headline, 
+.typography-feature-card-headline:lang(ar), 
+.typography-inner-container-modal-copy, 
+.typography-inner-container-modal-copy:lang(ar), 
+.typography-modal-header-headline, 
+.typography-modal-header-headline:lang(ar), 
+.typography-index-headline, 
+.typography-index-headline:lang(ar), 
+.typography-index-item-elevated, 
+.typography-index-item-elevated:lang(ar), 
+.typography-image-accordion-title-text, 
+.typography-image-accordion-title-text:lang(ar), 
+.typography-page-header-title, 
+.typography-page-header-title:lang(ar), 
+.typography-product-tile-headline, 
+.typography-product-tile-headline:lang(ar), 
+.typography-section-header-headline, 
+.typography-section-header-headline:lang(ar), 
+.accordion-item, 
+.accordion-item:lang(ar) { 
+    font-family: "SF Pro AR Display", "SF Pro Gulf", "SF Pro Display",
+    "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  }
+
+.typography-banner-card-copy, 
+.typography-banner-card-copy:lang(ar), 
+.typography-modal-header-topic-label, 
+.typography-modal-header-topic-label:lang(ar), 
+.typography-index-list-title, 
+.typography-index-list-title:lang(ar), 
+.typography-index-item-base, 
+.typography-index-item-base:lang(ar), 
+.typography-image-accordion-paragraph-text, 
+.typography-image-accordion-paragraph-text:lang(ar), 
+.typography-product-tile-subheading, 
+.typography-product-tile-subheading:lang(ar), 
+.typography-product-tile-positioning, 
+.typography-product-tile-positioning:lang(ar), 
+.typography-product-tile-ctas, 
+.typography-product-tile-ctas:lang(ar), 
+.typography-section-header-link, 
+.typography-section-header-link:lang(ar) { 
+    font-family: "SF Pro AR Text", "SF Pro Gulf", "SF Pro Display", "SF Pro Icons",
+    "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  }
+}
+
+@media (max-width: 480px) {
+.typography-modal-header-headline, 
+.typography-modal-header-headline:lang(ar) { 
+    font-family: "SF Pro AR Display", "SF Pro Gulf", "SF Pro Display",
+    "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  }
+
+}
+
+@media (min-width: 735px) {
+.product-tile-ctas .button, .product-tile-ctas .product-tile-current, .product-tile-ctas button, 
+.product-tile-ctas .button:lang(ar), .product-tile-ctas .product-tile-current:lang(ar), .product-tile-ctas button:lang(ar) { 
+    font-family: "SF Pro AR Text", "SF Pro Gulf", "SF Pro Display", "SF Pro Icons",
+    "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  }
+}
+
+
+/********************/
+
+/*** Arabic Fonts ****/
+
+
+.card-cta-modal-button .card-cta-modal-button-icon {
+  left: 20px;
+  right: unset;
+}
+
+/*#modal-content-innovation .card-viewport-content {
+  direction: ltr;
+}*/
+
+#modal-content-innovation .card-viewport-content .feature-card-modal-copy {
+  direction: rtl;
+  text-align: right;
+}
+
+.feature-card-modal-tile.tile-horizontal-layout.image-first
+  .card-viewport-content
+  .feature-card-modal-content,
+.feature-card-modal-tile.tile-horizontal-layout
+  .card-viewport-content
+  .feature-card-modal-content,
+.feature-card-modal-tile .feature-card-modal-content {
+  text-align: right;
+}
+
+.section-banner .banner-card.banner-card-banner {
+  direction: ltr;
+}
+
+.section-banner .banner-card.banner-card-banner h2.banner-card-headline {
+  direction: rtl;
+}
+
+.section-banner h2.section-header-headline {
+  line-height: 1.26;
+}
+
+#main > section.section.section-incentive.background-alt > div:nth-child(3) {
+  display: none;
+}
+
+#modal-content-environment
+  > div:nth-child(4)
+  > div
+  > div
+  > div
+  > div.feature-card-modal-copyblock.feature-card-modal-content
+  > p {
+  direction: rtl;
+}
+
+.feature-card-modal-tile {
+  direction: rtl;
+}
+
+@media only screen and (min-width: 1200px) {
+  #modal-content-default-designed-to-last-variant .modal-headline {
+      max-width: 90%;
+  }
+}
+
+#modal-content-default-designed-to-last-variant .modal-headline {
+    line-height: 1.4;
+}
+
+@media only screen and (min-width: 1068px) {
+  #modal-content-innovation
+    > div.feature-card-modal-tile.bleed-bottom.tile-horizontal-layout.image-first
+    > div
+    > div
+    > div {
+    flex-direction: row;
+  }
+
+  #modal-content-innovation
+    > div.feature-card-modal-tile.bleed-bottom.tile-horizontal-layout.image-first
+    > div
+    > div
+    > div
+    > div.feature-card-modal-copyblock.feature-card-modal-content {
+    padding-inline-end: 0;
+    padding-inline-start: 56px;
+  }
+
+  #modal-content-innovation > div:nth-child(4) > div > div > div {
+    flex-direction: row-reverse;
+  }
+
+  #modal-content-innovation
+    > div:nth-child(4)
+    > div
+    > div
+    > div
+    > div.feature-card-modal-copyblock.feature-card-modal-content {
+    padding-inline-end: 56px;
+    padding-inline-start: 0;
+  }
+
+  #modal-content-innovation
+    > div:nth-child(4)
+    > div
+    > div
+    > div
+    > div.image-container {
+    margin-top: 0;
+    margin-inline-end: auto;
+    margin-inline-start: 0;
+  }
+}
+
+/* static hero */
+
+@media only screen and (min-width: 1069px) {
+  #modal-content-safety
+    > div:nth-child(3)
+    > div
+    > div
+    > div
+    > div.image-container {
+    width: 476px;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  #modal-content-safety
+    > div:nth-child(3)
+    > div
+    > div
+    > div
+    > div.image-container {
+    width: auto;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+  }
+}
+
+#modal-content-personalize
+  > div:nth-child(3)
+  > div
+  > div
+  > div
+  > div.feature-card-modal-copyblock.feature-card-modal-content
+  > p {
+  line-height: 1.3;
+}
+
+#modal-content-environment
+  > div.feature-card-modal-tile.bleed-bottom.tile-horizontal-layout.image-first
+  > div
+  > div
+  > div
+  > div.feature-card-modal-copyblock.feature-card-modal-content
+  > p {
+  line-height: 1.4;
+}
+
+#modal-content-innovation
+  > div:nth-child(4)
+  > div
+  > div
+  > div
+  > div.feature-card-modal-copyblock.feature-card-modal-content
+  > p {
+  line-height: 1.3;
+}
+
+#modal-content-chip-battery
+  > div:nth-child(3)
+  > div
+  > div
+  > div
+  > div.feature-card-modal-copyblock.feature-card-modal-content
+  > p {
+  line-height: 1.3;
+}
+
+@media only screen and (max-width: 735px) {
+  #feature-card-modal-privacy
+    > div
+    > div
+    > div
+    > div
+    > div.feature-card-modal-tile.bleed-bottom.tile-horizontal-layout {
+    margin-top: 20px;
+  }
+}
+
+#feature-card-modal-privacy
+  > div
+  > div
+  > div
+  > div
+  > div.feature-card-modal-tile.bleed-bottom.tile-horizontal-layout {
+  margin-top: 20px;
+}
+
+@media only screen and (min-width: 1069px) {
+  #modal-content-safety
+    > div:nth-child(3)
+    > div
+    > div
+    > div
+    > div.feature-card-modal-copyblock.feature-card-modal-content {
+    padding-inline-end: 76px;
+    margin: 0;
+    z-index: 2;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 1069px) {
+  #modal-content-default-safety
+    > div:nth-child(3)
+    > div
+    > div
+    > div
+    > div.image-container,
+    #modal-content-default-safety-variant
+    > div:nth-child(3)
+    > div
+    > div
+    > div
+    > div.image-container {
+    width: 476px;
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+  }
+}
+
+@media (min-width: 1069px) {
+    .banner-card-1-up .banner-card-row {
+        flex-direction: row-reverse;
+    }
+}
+
+@media (min-width: 1069px) {
+    .banner-card-1-up .banner-card-row {
+        padding-inline-start: unset;
+        padding-inline-end: var(--h-padding);
+    }
+}
+
+.section-select .product-tile-plus {
+  margin-top: unset;
+}
+
+/* Eid Toolkit */
+.ksa-toolkit .banner-card .banner-card-copy-column {
+  direction: rtl;
+}
+
+@media (min-width: 1069px) {
+  .ksa-toolkit .banner-card .banner-card-copy-column {
+    width: 500px;
+    direction: rtl;
+    /* padding-top: calc(var(--copy-column-v-padding) - 28px); */
+  }
+}
+
+@media (min-width: 1069px) {
+  .ksa-toolkit .banner-card-1-up .banner-card-row {
+    flex-direction: row-reverse;
+    padding-inline-end: 225px;
+  }
+}
+
+@media (min-width: 1601px) {
+  .ksa-toolkit .banner-card-1-up .banner-card-row {
+    padding-inline-end: 225px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .ksa-toolkit .banner-card-1-up .banner-card-row {
+    padding-inline-end: 90px;
+  }
+}
+
+@media only screen and (min-width: 1069px) and (max-width: 1336px) {
+  .ksa-toolkit .banner-card-1-up .banner-card-row {
+    padding-inline-end: 100px;
+  }
+}
+
+@media (max-width: 1068px) {
+  .ksa-toolkit .banner-card-1-up .banner-card-row {
+    padding-inline-end: unset;
+  }
+}
+
+.ksa-toolkit .typography-family-paragraph {
+  margin-top: 0;
+  font-size: 21px;
+  max-width: 300px;
+  margin: 0 auto;
+  position: relative;
+  top: -10px;
+}
+
+@media only screen and (max-width: 1068px) {
+  .ksa-toolkit .typography-family-paragraph {
+    font-size: 19px;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .ksa-toolkit .typography-family-paragraph {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  .ksa-toolkit .typography-family-paragraph {
+    top: -2px;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .ksa-toolkit .typography-family-paragraph {
+    top: -3px;
+  }
+}
+
+.ksa-toolkit .banner-card-ctas {
+  margin-top: 18px;
+}
+
+@media only screen and (max-width: 1068px) {
+  .ksa-toolkit .banner-card-ctas {
+    margin-top: 23px;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .ksa-toolkit .banner-card-ctas {
+    margin-top: 14px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .ksa-toolkit .banner-card-ctas {
+    margin-top: 16px;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .section-banner.ksa-toolkit .banner-card-banner {
+    height: 480px;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .ksa-toolkit .banner-card .banner-card-copy-column {
+    padding-top: 40px;
+  }
+}
+/* 
+.logo-image-logo-eid-relax {
+  width: 426px;
+  height: 100px;
+  background-size: 426px 128px;
+  background-repeat: no-repeat;
+  background-image: url("/mideast/iphone/home/cc/images/overview/banner/eid-toolkit/eid25_logo__dna6wcz8ieielogo_large.png");
+  background-position: center;
+  margin: 0 auto;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (min-resolution: 1.5dppx),
+  (-webkit-min-device-pixel-ratio: 1.5),
+  (min-resolution: 144dpi) {
+  .logo-image-logo-eid-relax {
+    background-image: url("/mideast/iphone/home/cc/images/overview/banner/eid-toolkit/eid25_logo__dna6wcz8ieielogo_large_2x.png");
+  }
+}
+
+@media only screen and (max-width: 1068px) {
+  .logo-image-logo-eid-relax {
+    width: 367px;
+    height: 81px;
+    background-size: 367px 111px;
+    background-repeat: no-repeat;
+    background-image: url("/mideast/iphone/home/cc/images/overview/banner/eid-toolkit/eid25_logo__dna6wcz8ieielogo_medium.png");
+  }
+}
+
+@media only screen and (max-width: 1068px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 1068px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 1068px) and (min-resolution: 144dpi) {
+  .logo-image-logo-eid-relax {
+    background-image: url("/mideast/iphone/home/cc/images/overview/banner/eid-toolkit/eid25_logo__dna6wcz8ieielogo_medium_2x.png");
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .logo-image-logo-eid-relax {
+    width: 248px;
+    height: 60px;
+    background-size: 248px 75px;
+    background-repeat: no-repeat;
+    background-image: url("/mideast/iphone/home/cc/images/overview/banner/eid-toolkit/eid25_logo__dna6wcz8ieielogo_small.png");
+  }
+}
+
+@media only screen and (max-width: 734px) and (-webkit-min-device-pixel-ratio: 1.5),
+  only screen and (max-width: 734px) and (min-resolution: 1.5dppx),
+  only screen and (max-width: 734px) and (min-resolution: 144dpi) {
+  .logo-image-logo-eid-relax {
+    background-image: url("/mideast/iphone/home/cc/images/overview/banner/eid-toolkit/eid25_logo__dna6wcz8ieielogo_small_2x.png");
+  }
+}
+ */
+/* Eid Toolkit ends */
+
+@media (min-width: 735px) and (max-width:1068px){
+  .banner-card.banner-card-image-type-background .banner-card-image img{
+    object-position: center;
+  }
+
+}
+
+@media (max-width:734px){
+  .section-banner.privacy .banner-card-banner {
+    max-height:560px;
+  }
+  }
+
+.section-privacy {
+  padding-top: unset;
+}
+
+@media (max-width:480px){
+.section-banner.privacy .banner-card-banner {
+--max-height: 504px;
+}
+.banner-card.banner-card-image-type-background .banner-card-image img{
+  object-position:center bottom;
+}
+}
+
+  #icon-card-delivery .card-cta-modal-button .card-cta-modal-button-icon {
+  left: 21px;
+  right: unset;
+}
+
+#icon-card-delivery .card-cta-modal-button .card-cta-modal-button-icon .card-cta-modal-button-small-icon {
+transform: rotate(180deg);
+}
+
+.feature-card .feature-card-copy .feature-card-headline.ai-disclaimer{
+      font-size: 14px;
+      color: #6e6e73;
+}
+
+
+@media only screen and (min-width: 1069px) {
+  .ai-disclaimer {
+    color: #6E6E73 !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (min-width: 735px) and (max-width: 1068px) { .ai-disclaimer {
+    color: #6E6E73 !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (max-width: 734px) { .ai-disclaimer {
+    color: #6E6E73 !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (min-width: 1069px) {
+  .section-hero {
+    padding-top: 80px;
+  }
+  .inner-container-modal.innovation .inner-container-modal-tile .inner-container-modal-copy {
+      line-height: 1.5;
+  }
+  #gallery-item-ios-ai-4 .feature-card-image-container {
+        top: -50px;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  #gallery-item-ios-ai-4 .feature-card-image-container {
+        top: -45px;
+  }
+}
+
+@media only screen and (min-width: 1069px) {
+  #overview-consider-modals-ios-ai-modal-smart-1, #overview-consider-modals-ios-ai-modal-clean-up-1, #overview-consider-modals-privacy-modal-sign-in-1, #overview-consider-modals-privacy-modal-share-1 {
+    margin-inline-end: 85px;
+  }
+  #overview-consider-modals-ios-ai-modal-visual-intelligence-1, #overview-consider-modals-privacy-modal-pay-1, #overview-consider-modals-safety-modal-reassurance-1 {
+    margin-inline-start: 85px;
+  }
+  html .section-header {
+    padding-bottom: 48px !important;
+  }
+}
+
+
+:root.ac-gn-segmentbar-visible.ac-ls-visible {
+  --global-nav-collective-height: calc(var(--r-globalnav-height, 0px) + var(--r-globalnav-segmentbar-height, 0px) + var(--r-localeswitcher-height, 0px))
+}
+
+:root.ac-ls-visible {
+  --global-nav-collective-height: calc(var(--r-globalnav-height, 0px) + var(--r-localeswitcher-height, 0px))
+}
+
+.ac-ls-visible #chapternav {
+  position: relative !important;
+  top: unset !important;
+  margin-top: unset !important
+}
+
+@media only screen and (min-width: 735px) {
+  .section-select .section-header .section-header-headline {
+    max-width: 60%;
+  }
+  .section-incentive .section-header .section-header-headline {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 1069px) {
+  .banner-card:only-of-type .banner-card-row {
+    padding-inline-end: var(--h-padding);
+    padding-inline-start: 0;
+  }
+  .banner-card:only-of-type:not(.banner-card-text-column-placement-center) .banner-card-row {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (min-width:1069px) {
+    .banner-card:only-of-type:not(.banner-card-text-column-placement-center) .banner-card-row {
+        flex-direction: row-reverse;
+    }
+}
+
+@media (min-width:1069px) {
+    .banner-card:only-of-type .banner-card-row {
+        padding-inline-end: var(--h-padding);
+    }
+}
+
+@media only screen and (min-width: 1069px) {
+  .section-upgrade .banner-card-copy-column {
+    margin-right: 90px!important;
+  }
+}
+
+@media only screen and (min-width: 735px) and (max-width: 1068px) {
+  .section-upgrade .banner-card-copy-column {
+    margin-bottom: 420px!important;
+  }
+}
+
+@media only screen and (max-width: 734px) {
+  .section-upgrade .banner-card-copy-column {
+    margin-bottom: 340px!important;
+  }
+}
+
+#gallery-item-designed-to-last-2 .typography-feature-card-headline {
+  line-height: 1.2428571429;
+}
+
+#innovation-modal .ric-modal-content-wrapper .inner-container-modal-tile .card .typography-inner-container-modal-copy,
+#chip-battery-modal .ric-modal-content-wrapper .inner-container-modal-tile .card .typography-inner-container-modal-copy {
+  line-height: 1.259;
+}
+
+#scroll-gallery-cards .banner-card.gallery-item.banner-1-banner.banner-card-asset-type-inline .banner-card-row .banner-card-header {
+  padding-top: 23px;
+}
+@media only screen and (max-width: 1068px) {
+  #scroll-gallery-cards .banner-card.gallery-item.banner-1-banner.banner-card-asset-type-inline .banner-card-row .banner-card-header {
+    padding-top: 26px;
+  }
+}
+
+#chapternav .product-list li.product-wrap--shop.chapternav-item-shop a.product-link.chapternav-link {
+  padding-bottom: 0;
+  margin-bottom: -7px;
+}
