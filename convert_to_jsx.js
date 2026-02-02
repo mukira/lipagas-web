@@ -94,10 +94,10 @@ import { useEffect } from 'react';
 export default function Home() {
   useEffect(() => {
     if (typeof document !== 'undefined' && typeof window !== 'undefined') {
-      // Set JS class immediately like Apple does
+      // Set JS class
       document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
       
-      // Force visibility of all elements initially
+      // Force visibility of all elements
       const style = document.createElement('style');
       style.textContent = \`
         body, html { opacity: 1 !important; visibility: visible !important; }
@@ -111,49 +111,13 @@ export default function Home() {
       \`;
       document.head.appendChild(style);
       
-      // Script loader with error handling
-      const loadScript = (src: string): Promise<void> => {
-        return new Promise((resolve) => {
-          try {
-            const s = document.createElement('script');
-            s.src = src;
-            s.async = true;
-            s.onload = () => resolve();
-            s.onerror = () => resolve();
-            document.body.appendChild(s);
-          } catch (e) {
-            console.warn('Script load error:', src, e);
-            resolve();
-          }
-        });
-      };
-
-      // Load scripts after delay
-      setTimeout(async () => {
-        try {
-          // Load Apple scripts for modals and animations
-          await loadScript('/v/iphone/home/ci/built/scripts/overview/head.built.js');
-          await loadScript('/v/iphone/home/ci/built/scripts/overview/main.built.js');
-          await loadScript('/ac/ac-films/7.3.0/scripts/autofilms.built.js');
-          await loadScript('/mock-pricing.js');
-        } catch (e) {
-          console.warn('Script initialization error:', e);
-        }
-      }, 200);
-      
-      // Simple modal handler as fallback
-      document.addEventListener('click', (e) => {
-        const target = e.target as HTMLElement;
-        const link = target.closest('a[href^="#footnote"]');
-        if (link) {
-          e.preventDefault();
-          const id = link.getAttribute('href')?.substring(1);
-          const modal = document.getElementById(id || '');
-          if (modal) {
-            modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
-          }
-        }
-      });
+      // Load only mock pricing (Apple scripts have too many external dependencies)
+      setTimeout(() => {
+        const s = document.createElement('script');
+        s.src = '/mock-pricing.js';
+        s.async = true;
+        document.body.appendChild(s);
+      }, 300);
     }
   }, []);
 
