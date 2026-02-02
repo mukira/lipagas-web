@@ -9,7 +9,7 @@ const $ = cheerio.load(html);
 // Extract segments with their original IDs
 const header = $('#globalheader').prop('outerHTML') || '';
 const localnav = $('#localnav').prop('outerHTML') || '';
-const footer = $('#globalfooter').prop('outerHTML') || '';
+const footer = $('#ac-globalfooter').prop('outerHTML') || '';
 // Global nav data is critical
 const jsonScripts = $('script[type="application/json"]').map((i, el) => $(el).prop('outerHTML')).get().join('\n');
 
@@ -17,7 +17,7 @@ const jsonScripts = $('script[type="application/json"]').map((i, el) => $(el).pr
 $('script').remove();
 $('#globalheader').remove();
 $('#localnav').remove();
-$('#globalfooter').remove();
+$('#ac-globalfooter').remove();
 let mainContent = $('body').html();
 
 function robustLinkFix(val) {
@@ -83,9 +83,9 @@ const finalHeader = normalize(jsonScripts + '\n' + header + '\n' + localnav);
 const finalFooter = normalize(footer);
 const finalMain = normalize(mainContent);
 
-const safeHeader = JSON.stringify(finalHeader);
-const safeFooter = JSON.stringify(finalFooter);
-const safeMain = JSON.stringify(finalMain);
+const safeHeader = JSON.stringify(finalHeader.replace(/no-js/g, 'js'));
+const safeFooter = JSON.stringify(finalFooter.replace(/no-js/g, 'js'));
+const safeMain = JSON.stringify(finalMain.replace(/no-js/g, 'js'));
 
 // Create the React component with proper Apple script initialization
 const pageOutput = `'use client';
@@ -108,6 +108,27 @@ export default function Home() {
           opacity: 1 !important;
           visibility: visible !important;
         }
+        
+        /* Accordion handling */
+        .accordion-tray { display: none; }
+        .accordion-item.expanded .accordion-tray { 
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          height: auto !important;
+        }
+        
+        /* Ensure arrows are visible and rotate */
+        .accordion-icon { 
+          display: inline-block;
+          width: 20px; 
+          height: 20px; 
+          background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%231d1d1f' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E") no-repeat center;
+          transition: transform 0.3s ease;
+          margin-left: 8px;
+        }
+        .accordion-item.expanded .accordion-icon { transform: rotate(180deg); }
+        .accordion-button { cursor: pointer; display: flex; align-items: center; justify-content: space-between; width: 100%; text-align: left; }
       \`;
       document.head.appendChild(style);
       
@@ -117,6 +138,39 @@ export default function Home() {
         s.src = '/mock-pricing.js';
         s.async = true;
         document.body.appendChild(s);
+        
+        // Initialize Accordions
+        document.querySelectorAll('.accordion-button').forEach(btn => {
+           btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              const item = btn.closest('.accordion-item');
+              if (item) {
+                 const wasExpanded = item.classList.contains('expanded');
+                 
+                 // Close others (optional, but Apple usually does this)
+                 document.querySelectorAll('.accordion-item').forEach(i => {
+                    i.classList.remove('expanded');
+                    const t = i.querySelector('.accordion-tray');
+                    if (t) t.style.display = 'none';
+                 });
+                 
+                 if (!wasExpanded) {
+                    item.classList.add('expanded');
+                    const tray = item.querySelector('.accordion-tray');
+                    if (tray) tray.style.display = 'block';
+                 }
+              }
+           });
+        });
+        
+        // Open the first accordion by default
+        const firstInfo = document.querySelector('.accordion-item');
+        if (firstInfo) {
+           firstInfo.classList.add('expanded');
+           const tray = firstInfo.querySelector('.accordion-tray');
+           if (tray) tray.style.display = 'block';
+        }
+        
       }, 300);
     }
   }, []);
