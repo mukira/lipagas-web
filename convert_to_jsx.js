@@ -79,6 +79,53 @@ function normalize(html) {
   return html;
 }
 
+
+// Inject missing iPhone Index content
+mainContent = mainContent.replace(
+  /<nav class="index-groups" aria-labelledby="iphone-index">\s*<\/nav>/,
+  `<nav class="index-groups" aria-labelledby="iphone-index">
+      <div class="index-group-column">
+        <h3 class="index-group-title">Explore iPhone</h3>
+        <ul class="index-group-list">
+          <li><a href="#">Explore All iPhone</a></li>
+          <li><a href="#">iPhone 17 Pro</a></li>
+          <li><a href="#">iPhone Air</a></li>
+          <li><a href="#">iPhone 17</a></li>
+          <li><a href="#">iPhone 16</a></li>
+          <li><a href="#">iPhone 16e</a></li>
+          <li><a href="#">Compare iPhone</a></li>
+          <li><a href="#">Switch from Android</a></li>
+        </ul>
+      </div>
+      <div class="index-group-column">
+        <h3 class="index-group-title">Shop iPhone</h3>
+        <ul class="index-group-list">
+          <li><a href="#">Shop iPhone</a></li>
+          <li><a href="#">iPhone Accessories</a></li>
+          <li><a href="#">Apple Trade In</a></li>
+          <li><a href="#">Carrier Deals at Apple</a></li>
+          <li><a href="#">Financing</a></li>
+          <li><a href="#">Personal Setup</a></li>
+        </ul>
+      </div>
+      <div class="index-group-column">
+        <h3 class="index-group-title">More from iPhone</h3>
+        <ul class="index-group-list">
+          <li><a href="#">iPhone Support</a></li>
+          <li><a href="#">AppleCare</a></li>
+          <li><a href="#">iOS 26</a></li>
+          <li><a href="#">Apple Intelligence</a></li>
+          <li><a href="#">Apps by Apple</a></li>
+          <li><a href="#">iPhone Privacy</a></li>
+          <li><a href="#">Better with Mac</a></li>
+          <li><a href="#">iCloud+</a></li>
+          <li><a href="#">Wallet, Pay, Card</a></li>
+          <li><a href="#">Siri</a></li>
+        </ul>
+      </div>
+    </nav>`
+);
+
 const finalHeader = normalize(jsonScripts + '\n' + header + '\n' + localnav);
 const finalFooter = normalize(footer);
 const finalMain = normalize(mainContent);
@@ -100,23 +147,32 @@ export default function Home() {
       // Force visibility of all elements
       const style = document.createElement('style');
       style.textContent = \`
+        /* Force visibility of all elements */
         body, html { opacity: 1 !important; visibility: visible !important; }
         .section, .section-hero, .ribbon, .chapternav, .feature-card, .tile,
         .page-header, .page-header-headline, .page-header-title,
         .product-list, .product-wrap, .card-container, .gallery, nav,
-        picture, img, figure, video, [data-staggered-item] {
+        picture, img, figure, video, [data-staggered-item],
+        .ac-gf-directory, .ac-gf-directory-column, .ac-gf-directory-column-section,
+        .ac-gf-directory-column-section-list, .ac-gf-directory-column-section-item,
+        .index-groups, .index-group-column, .index-group-list, .index-group-list li {
           opacity: 1 !important;
           visibility: visible !important;
         }
+
+        /* Flexbox for index columns */
+        .index-groups, .ac-gf-directory { display: flex !important; flex-wrap: wrap !important; justify-content: space-between; }
+        .index-group-column, .ac-gf-directory-column { flex: 1 !important; display: block !important; padding: 0 20px; }
+        .index-group-list, .ac-gf-directory-column-section-list { display: block !important; list-style: none; padding: 0; }
+        .index-group-title { margin-bottom: 10px; font-weight: 600; font-size: 12px; color: #1d1d1f; }
+        .index-group-list li a { text-decoration: none; color: #424245; font-size: 12px; line-height: 2; }
+        .index-group-list li a:hover { text-decoration: underline; color: #1d1d1f; }
+
+        .ac-gf-directory-column-section-title-button { display: none !important; }
         
         /* Accordion handling */
         .accordion-tray { display: none; }
-        .accordion-item.expanded .accordion-tray { 
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          height: auto !important;
-        }
+        .accordion-item.expanded .accordion-tray { display: block !important; visibility: visible !important; opacity: 1 !important; height: auto !important; }
         
         /* Ensure arrows are visible and rotate */
         .accordion-icon { 
@@ -177,9 +233,9 @@ export default function Home() {
 
   return (
     <div suppressHydrationWarning>
-      <div id="header-root" dangerouslySetInnerHTML={{ __html: ${safeHeader} }} />
-      <main id="main-root" dangerouslySetInnerHTML={{ __html: ${safeMain} }} />
-      <div id="footer-root" dangerouslySetInnerHTML={{ __html: ${safeFooter} }} />
+      <div id="header-root" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: ${safeHeader} }} />
+      <div id="main-root" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: ${safeMain} }} />
+      <div id="footer-root" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: ${safeFooter} }} />
     </div>
   );
 }
