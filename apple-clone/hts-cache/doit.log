@@ -1,8 +1,0 @@
-https://www.apple.com/iphone/ -O /Users/Mukira/apple-lipagas/apple-clone -v -s0 -p7 -r3 +*.apple.com/* -www.apple.com/ae/* -www.apple.com/at/* -www.apple.com/au/* -www.apple.com/befr/* -www.apple.com/benl/* -www.apple.com/bg/* -www.apple.com/br/* -www.apple.com/ca/* -www.apple.com/chde/* -www.apple.com/chfr/* -www.apple.com/cl/* -www.apple.com/cn/* -www.apple.com/cz/* -www.apple.com/de/* -www.apple.com/dk/* -www.apple.com/es/* -www.apple.com/fi/* -www.apple.com/fr/* -www.apple.com/gr/* -www.apple.com/hk/* -www.apple.com/hu/* -www.apple.com/id/* -www.apple.com/ie/* -www.apple.com/il/* -www.apple.com/in/* -www.apple.com/it/* -www.apple.com/jp/* -www.apple.com/kr/* -www.apple.com/mx/* -www.apple.com/my/* -www.apple.com/nl/* -www.apple.com/no/* -www.apple.com/nz/* -www.apple.com/ph/* -www.apple.com/pl/* -www.apple.com/pt/* -www.apple.com/ro/* -www.apple.com/ru/* -www.apple.com/se/* -www.apple.com/sg/* -www.apple.com/th/* -www.apple.com/tr/* -www.apple.com/tw/* -www.apple.com/ua/* -www.apple.com/uk/* -www.apple.com/vn/* -www.apple.com/za/*
-File generated automatically on Mon, 02 Feb 2026 21:56:59, do NOT edit
-
-To update a mirror, just launch httrack without any parameters
-The existing cache will be used (and modified)
-To have other options, retype all parameters and launch HTTrack
-To continue an interrupted mirror, just launch httrack without any parameters
-
