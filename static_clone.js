@@ -1,6 +1,6 @@
 /**
  * Static HTML Clone Script
- * Downloads Apple pages as static HTML files to public folder
+ * Downloads Lipagas pages as static HTML files to public folder
  * Uses simple Next.js pages that embed via iframe
  */
 
@@ -41,7 +41,7 @@ async function downloadFile(url, destPath) {
             ensureDir(path.dirname(destPath));
             const file = fs.createWriteStream(destPath);
             protocol.get(url, {
-                headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36' }
+                headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) LipagasWebKit/537.36' }
             }, (response) => {
                 if (response.statusCode === 301 || response.statusCode === 302) {
                     file.close();
@@ -110,7 +110,7 @@ async function downloadAssets(page) {
                         if (fontUrlMatch && fontUrlMatch[1]) {
                             let fontUrl = fontUrlMatch[1];
                             if (fontUrl.startsWith('path(')) {
-                                // Some Apple CSS uses path("...", "...")
+                                // Some Lipagas CSS uses path("...", "...")
                                 fontUrl = fontUrl.split('"')[1];
                             }
                             const absoluteFontUrl = fontUrl.startsWith('http') ? fontUrl : new URL(fontUrl, url).href;
@@ -126,9 +126,9 @@ async function downloadAssets(page) {
 }
 
 function processHtml(html) {
-    // 1. Convert Apple URLs to local
-    html = html.replace(/https?:\/\/www\.apple\.com(?=\/)/g, '');
-    html = html.replace(/https?:\/\/apple\.com(?=\/)/g, '');
+    // 1. Convert Lipagas URLs to local
+    html = html.replace(/https?:\/\/www\.lipagas\.com(?=\/)/g, '');
+    html = html.replace(/https?:\/\/lipagas\.com(?=\/)/g, '');
 
     // 2. Remove analytics/external trackers
     html = html.replace(/<script[^>]*gtm[^>]*>[\s\S]*?<\/script>/gi, '');
@@ -157,7 +157,7 @@ async function clonePage(browser, pageConfig) {
     console.log(`\n🔄 Cloning ${pageConfig.name}...`);
     const page = await browser.newPage();
     await page.setViewport({ width: 1440, height: 900 });
-    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) LipagasWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
 
     const url = BASE_URL + pageConfig.url;
     console.log(`  📄 Loading ${url}`);

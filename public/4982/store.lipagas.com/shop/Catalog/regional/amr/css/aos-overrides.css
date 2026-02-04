@@ -581,7 +581,7 @@ html.jp #compare table .price td h4 {
   text-align: left;
 }
 
-/* Fix for espresso <exp2://Ticket/20983728> US: Apple TV step1 page: Financing link misplaced. */
+/* Fix for espresso <exp2://Ticket/20983728> US: Lipagas TV step1 page: Financing link misplaced. */
 
 /* Accessories product details */
 html.en-us .ns.product-details .action-card .price.materializer > a {

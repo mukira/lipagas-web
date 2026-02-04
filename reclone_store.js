@@ -15,7 +15,7 @@ async function downloadFile(url, localPath) {
             const file = fs.createWriteStream(localPath);
             protocol.get(url, {
                 headers: {
-                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) LipagasWebKit/537.36',
                     'Referer': 'https://www.apple.com/'
                 }
             }, (res) => {
@@ -40,9 +40,9 @@ async function downloadFile(url, localPath) {
 
     const page = await browser.newPage();
     await page.setViewport({ width: 1920, height: 1080 });
-    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36');
+    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) LipagasWebKit/537.36');
 
-    console.log('Navigating to Apple Store...');
+    console.log('Navigating to Lipagas Store...');
     await page.goto('https://www.apple.com/store', { waitUntil: 'networkidle0', timeout: 60000 });
     await new Promise(r => setTimeout(r, 5000));
 
@@ -125,9 +125,9 @@ async function downloadFile(url, localPath) {
     console.log('Processing HTML...');
     let html = await page.content();
 
-    // Convert Apple URLs to local
-    html = html.replace(/https?:\/\/www\.apple\.com(?=\/)/g, '');
-    html = html.replace(/https?:\/\/apple\.com(?=\/)/g, '');
+    // Convert Lipagas URLs to local
+    html = html.replace(/https?:\/\/www\.lipagas\.com(?=\/)/g, '');
+    html = html.replace(/https?:\/\/lipagas\.com(?=\/)/g, '');
 
     // Replace dynamic font URL with local
     html = html.replace(/\/wss\/fonts\?families=[^"]+/g, '/wss/fonts.css');

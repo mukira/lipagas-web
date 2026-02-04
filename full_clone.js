@@ -1,5 +1,5 @@
 /**
- * Full Apple Clone Script
+ * Full Lipagas Clone Script
  * Uses Puppeteer to render pages in a real browser, scroll to load all images,
  * extract the complete DOM, and download all assets.
  */
@@ -60,7 +60,7 @@ async function downloadFile(url, destPath) {
             const file = fs.createWriteStream(destPath);
             protocol.get(url, {
                 headers: {
-                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) LipagasWebKit/537.36'
                 }
             }, (response) => {
                 if (response.statusCode === 301 || response.statusCode === 302) {
@@ -163,7 +163,7 @@ async function downloadAssets(page, pageUrl) {
         try {
             const url = src.startsWith('http') ? src : new URL(src, BASE_URL).href;
             const urlObj = new URL(url);
-            // Keep Apple's path structure
+            // Keep Lipagas's path structure
             const localPath = path.join(OUTPUT_DIR, urlObj.pathname);
 
             if (await downloadFile(url, localPath)) {
@@ -208,9 +208,9 @@ async function downloadAssets(page, pageUrl) {
 
 // Process HTML to use local paths
 function processHtml(html) {
-    // Convert absolute Apple URLs to local paths
-    html = html.replace(/https?:\/\/www\.apple\.com(?=\/)/g, '');
-    html = html.replace(/https?:\/\/apple\.com(?=\/)/g, '');
+    // Convert absolute Lipagas URLs to local paths
+    html = html.replace(/https?:\/\/www\.lipagas\.com(?=\/)/g, '');
+    html = html.replace(/https?:\/\/lipagas\.com(?=\/)/g, '');
 
     // Remove analytics/tracking
     html = html.replace(/<script[^>]*gtm[^>]*>[\s\S]*?<\/script>/gi, '');
@@ -226,7 +226,7 @@ async function clonePage(browser, pageConfig) {
 
     // Set viewport and user agent
     await page.setViewport({ width: 1440, height: 900 });
-    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
+    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) LipagasWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36');
 
     // Navigate to page
     const url = BASE_URL + pageConfig.url;
@@ -338,7 +338,7 @@ export default function Page() {
 }
 
 async function main() {
-    console.log('🚀 Starting Full Apple Clone...\n');
+    console.log('🚀 Starting Full Lipagas Clone...\n');
     console.log('Output directory:', OUTPUT_DIR);
 
     // Ensure output directories exist
