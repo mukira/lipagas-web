@@ -1,3 +1,12 @@
 node_modules/
 .next/
 *.log
+
+# Helper Scripts
+*.py
+fix_images.js
+update_html.py
+mirror_assets.py
+download_high_res.py
+extract_css_urls.py
+deep_mirror_css.py
