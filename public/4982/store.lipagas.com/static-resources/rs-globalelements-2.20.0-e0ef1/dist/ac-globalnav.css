@@ -11,3 +11,16 @@
         margin-inline-end: auto !important;
     }
 }
+
+/* LipaGas Navigation Spacing Refinements */
+@media only screen and (min-width: 1069px) {
+    .globalnav-list {
+        justify-content: flex-start !important;
+    }
+    .globalnav-item-lipagas {
+        margin-right: 50px !important;
+    }
+    .globalnav-link {
+        padding: 0 4px !important;
+    }
+}
