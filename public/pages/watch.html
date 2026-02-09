@@ -464,6 +464,7 @@ a[class*="cta"]::after, a[class*="cta"]:after,
 <link rel="icon" href="/pages/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/pages/favicon.png">
     
+    
     <style> 
         @media only screen and (min-width: 1069px) { 
             .globalnav-content { 
@@ -475,15 +476,24 @@ a[class*="cta"]::after, a[class*="cta"]:after,
                 left: 0 !important; 
                 right: 0 !important; 
             } 
-            .globalnav-list { 
+            #globalnav-list.globalnav-list { 
                 justify-content: flex-start !important; 
+                width: auto !important;
+                flex: none !important;
             } 
             .globalnav-item-lipagas { 
-                margin-right: 50px !important; 
+                margin-right: 60px !important; 
             } 
+            .globalnav-item-lipagas + .globalnav-item {
+                margin-left: 0 !important;
+            }
             .globalnav-link { 
-                padding: 0 6px !important; 
+                padding: 0 14px !important; 
             } 
+
+            .globalnav-search, .globalnav-bag { 
+                margin-left: 18px !important; 
+            }
         } 
     </style></head>
 <body class="page-overview page-watch ac-gn-current-watch" data-anim-scroll-group="body">
