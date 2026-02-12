@@ -222,15 +222,15 @@
 			display: block;
 			width: var(--p-width);
 			height: var(--p-height);
-			--p-width: 96px;
-			/* Matched to Scheduled height */
-			--p-height: 96px;
+			--p-width: 115px;
+			/* Matched to Scheduled height (+20%) */
+			--p-height: 115px;
 		}
 
 		/* Scheduled matched to base Express height */
 		.overview-chapternav-nav-iphone-air {
-			--p-width: 96px !important;
-			--p-height: 96px !important;
+			--p-width: 115px !important;
+			--p-height: 115px !important;
 		}
 
 		/* PAYG, Commercial, FlexiPlan, and LipaOS matched to others */
@@ -238,8 +238,8 @@
 		.overview-chapternav-nav-iphone-16,
 		.overview-chapternav-nav-compare,
 		.overview-chapternav-nav-ios {
-			--p-width: 96px !important;
-			--p-height: 96px !important;
+			--p-width: 115px !important;
+			--p-height: 115px !important;
 		}
 
 		.overview-chapternav-nav-express img {
@@ -250,8 +250,8 @@
 
 		@media (max-width: 734px) {
 			.overview-chapternav-nav-express {
-				--p-width: 73px;
-				--p-height: 73px;
+				--p-width: 88px !important;
+				--p-height: 88px !important;
 			}
 
 			.overview-chapternav-nav-iphone-air,
@@ -259,20 +259,31 @@
 			.overview-chapternav-nav-iphone-16,
 			.overview-chapternav-nav-compare,
 			.overview-chapternav-nav-ios {
-				--p-width: 60px !important;
-				--p-height: 60px !important;
+				--p-width: 72px !important;
+				--p-height: 72px !important;
 			}
 		}
 
-		/* Metallic Shimmer Effect */
+		/* Upscale spacing between items (+20%) */
+		.product-wrap {
+			--product-gap: 12px !important;
+		}
+
+		/* Metallic Titanium Shimmer Effect */
 		.metallic-shimmer {
-			background: linear-gradient(110deg, #1d1d1f 35%, #999 50%, #1d1d1f 65%);
-			background-size: 200% auto;
-			-webkit-background-clip: text;
-			background-clip: text;
-			-webkit-text-fill-color: transparent;
-			animation: shimmer 5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-			display: block;
+			background: linear-gradient(to right,
+					#86868b 0%,
+					#86868b 35%,
+					#f2f2f2 50%,
+					#86868b 65%,
+					#86868b 100%) !important;
+			background-size: 200% auto !important;
+			-webkit-background-clip: text !important;
+			background-clip: text !important;
+			-webkit-text-fill-color: transparent !important;
+			animation: shimmer 3s linear infinite !important;
+			display: inline-block;
+			/* Changed from block for better containment if needed */
 		}
 
 		@keyframes shimmer {
@@ -1564,7 +1575,8 @@
 															<path
 																d="m32.7129 22.3203h3.48c-.023-1.119-.691-1.857-1.693-1.857-1.008 0-1.711.738-1.787 1.857zm4.459 2.045c-.293 1.078-1.277 1.746-2.66 1.746-1.752 0-2.848-1.266-2.848-3.264 0-1.986 1.113-3.275 2.848-3.275 1.705 0 2.742 1.213 2.742 3.176v.386h-4.541v.047c.053 1.248.75 2.039 1.822 2.039.815 0 1.366-.298 1.629-.855zm-12.282-4.682h.961v.996h.094c.316-.697.932-1.107 1.898-1.107 1.418 0 2.209.838 2.209 2.338v4.09h-1.007v-3.844c0-1.137-.481-1.676-1.489-1.676s-1.658.674-1.658 1.781v3.739h-1.008zm-2.499 3.158c0-1.5-.674-2.361-1.869-2.361-1.196 0-1.87.861-1.87 2.361 0 1.495.674 2.362 1.87 2.362 1.195 0 1.869-.867 1.869-2.362zm-4.782 0c0-2.033 1.114-3.269 2.913-3.269 1.798 0 2.912 1.236 2.912 3.269 0 2.028-1.114 3.27-2.912 3.27-1.799 0-2.913-1.242-2.913-3.27zm-6.636-5.666h1.008v3.504h.093c.317-.697.979-1.107 1.946-1.107 1.336 0 2.179.855 2.179 2.338v4.09h-1.007v-3.844c0-1.119-.504-1.676-1.459-1.676-1.131 0-1.752.715-1.752 1.781v3.739h-1.008zm-6.015 4.87h1.863c1.202 0 1.899-.645 1.899-1.764 0-1.16-.674-1.799-1.899-1.799h-1.863zm2.139-4.5c1.599 0 2.707 1.125 2.707 2.736 0 1.582-1.131 2.701-2.719 2.701h-2.127v3.018h-1.055v-8.455zm-6.114 8.454h1.008v-6.316h-1.008zm-.2-8.238c0-.386.317-.703.703-.703.387 0 .704.317.704.703 0 .387-.317.704-.704.704-.386 0-.703-.317-.703-.704z">
 															</path>
-														</svg></span><span class="globalnav-link-text">Powering Kenya's
+														</svg></span><span
+														class="globalnav-link-text metallic-shimmer">Powering Kenya's
 														clean energy transition</span></span><span
 													class="globalnav-link-chevron"><svg height="48" viewBox="0 0 9 48"
 														width="9" xmlns="http://www.w3.org/2000/svg">
@@ -3324,7 +3336,7 @@
 			<header class="page-header row">
 				<div class="viewport-content">
 					<div class="page-header-headline" data-staggered-item="" style="">
-						<h1 class="page-header-title typography-page-header-title metallic-shimmer">Powering Kenya's
+						<h1 class="page-header-title typography-page-header-title">Powering Kenya's
 							clean energy
 							transition</h1>
 					</div>
@@ -7781,7 +7793,8 @@
 				<div class="ac-gf-breadcrumbs-path">
 					<ol class="ac-gf-breadcrumbs-list" vocab="http://schema.org/" typeof="BreadcrumbList">
 						<li class="ac-gf-breadcrumbs-item" property="itemListElement" typeof="ListItem">
-							<span property="name">Powering Kenya's clean energy transition</span>
+							<span property="name" class="metallic-shimmer">Powering Kenya's clean energy
+								transition</span>
 							<meta property="position" content="1">
 						</li>
 					</ol>
