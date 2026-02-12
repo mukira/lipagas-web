@@ -259,8 +259,29 @@
 			.overview-chapternav-nav-iphone-16,
 			.overview-chapternav-nav-compare,
 			.overview-chapternav-nav-ios {
-				--p-width: 73px !important;
-				--p-height: 73px !important;
+				--p-width: 60px !important;
+				--p-height: 60px !important;
+			}
+		}
+
+		/* Metallic Shimmer Effect */
+		.metallic-shimmer {
+			background: linear-gradient(110deg, #1d1d1f 35%, #999 50%, #1d1d1f 65%);
+			background-size: 200% auto;
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			animation: shimmer 5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+			display: block;
+		}
+
+		@keyframes shimmer {
+			0% {
+				background-position: 200% 0;
+			}
+
+			100% {
+				background-position: -200% 0;
 			}
 		}
 	</style>
@@ -3303,7 +3324,8 @@
 			<header class="page-header row">
 				<div class="viewport-content">
 					<div class="page-header-headline" data-staggered-item="" style="">
-						<h1 class="page-header-title typography-page-header-title">Powering Kenya's clean energy
+						<h1 class="page-header-title typography-page-header-title metallic-shimmer">Powering Kenya's
+							clean energy
 							transition</h1>
 					</div>
 				</div>
