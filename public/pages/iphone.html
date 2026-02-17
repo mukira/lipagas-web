@@ -6409,89 +6409,141 @@
 
 
 		<section class="section section-index"
-			style="opacity: 1 !important; visibility: visible !important; display: block !important; position: relative !important; z-index: 9999 !important; min-height: 50vh !important; background-color: #f5f5f7 !important;">
+			style="opacity: 1 !important; visibility: visible !important; display: block !important; position: relative !important; z-index: 10 !important; min-height: 50vh !important;">
 			<div class="viewport-content" style="opacity: 1 !important; visibility: visible !important;">
 				<div id="bulk-supply-index" class="index"
-					style="opacity: 1 !important; visibility: visible !important; color: #000 !important; display: block !important;">
+					style="opacity: 1 !important; visibility: visible !important; color: #1d1d1f !important; display: block !important;">
 					<style>
-						#bulk-supply-index * {
-							opacity: 1 !important;
-							visibility: visible !important;
-							color: #1d1d1f !important;
+						#bulk-supply-index {
+							font-family: "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+							padding: 80px 0;
 						}
 
-						#bulk-supply-index a {
-							color: #0066cc !important;
+						#bulk-supply-index h2.index-title {
+							font-size: 56px;
+							line-height: 1.07143;
+							font-weight: 600;
+							letter-spacing: -0.005em;
+							margin-bottom: 50px;
 						}
 
 						#bulk-supply-index .index-groups {
 							display: flex !important;
-							padding: 40px 0 !important;
+							flex-wrap: wrap;
+							margin-top: 0 !important;
 						}
 
 						#bulk-supply-index .index-group {
 							flex: 1 !important;
-							padding: 0 20px !important;
+							min-width: 250px;
+							margin-bottom: 40px;
+						}
+
+						#bulk-supply-index h3.index-list-title {
+							font-size: 12px;
+							line-height: 1.33337;
+							font-weight: 600;
+							letter-spacing: -0.01em;
+							color: #86868b !important;
+							text-transform: uppercase;
+							margin-bottom: 15px;
 						}
 
 						#bulk-supply-index .index-list {
 							list-style: none !important;
-							margin-top: 15px !important;
+							padding: 0 !important;
+							margin: 0 !important;
 						}
 
 						#bulk-supply-index .index-item {
-							margin-bottom: 8px !important;
+							margin-bottom: 12px !important;
+						}
+
+						#bulk-supply-index .index-item a {
+							text-decoration: none !important;
+							color: #1d1d1f !important;
+							font-weight: 600;
+							display: block;
+						}
+
+						#bulk-supply-index .index-item-elevated a {
+							font-size: 24px;
+							line-height: 1.16667;
+							letter-spacing: 0.009em;
+						}
+
+						#bulk-supply-index .index-item-base a {
+							font-size: 17px;
+							line-height: 1.23536;
+							letter-spacing: -0.022em;
+						}
+
+						#bulk-supply-index a:hover {
+							text-decoration: underline !important;
 						}
 					</style>
 
 					<h2 class="typography-index-headline index-title">Bulk Supply</h2>
 					<nav class="index-groups">
 						<div class="index-group">
-							<h3 class="typography-index-list-title index-list-title">Explore Bulk Supply</h3>
+							<h3 class="index-list-title">Explore Bulk Supply</h3>
 							<ul class="index-list">
-								<li class="index-item"><a href="/mac/">Explore All Bulk Supply</a></li>
-								<li class="index-item"><a href="/macbook-air/">Institutional Supply</a></li>
-								<li class="index-item"><a href="/macbook-pro/">Commercial Supply</a></li>
-								<li class="index-item"><a href="/imac/">Industrial Supply</a></li>
-								<li class="index-item"><a href="/mac-mini/">Retail Refill</a></li>
-								<li class="index-item"><a href="/mac-studio/">Factory Supply</a></li>
-								<li class="index-item"><a href="/mac-pro/">Mega Volume</a></li>
-								<li class="index-item"><a href="/displays/">Displays</a></li>
-								<li class="index-item"><a href="/mac/compare/">Compare Bulk Supply</a></li>
-								<li class="index-item"><a href="/mac/mac-does-that/">Switch to Bulk Supply</a></li>
+								<li class="index-item index-item-elevated"><a href="/mac/">Explore All Bulk Supply</a>
+								</li>
+								<li class="index-item index-item-elevated"><a href="/macbook-air/">Institutional
+										Supply</a></li>
+								<li class="index-item index-item-elevated"><a href="/macbook-pro/">Commercial Supply</a>
+								</li>
+								<li class="index-item index-item-elevated"><a href="/imac/">Industrial Supply</a></li>
+								<li class="index-item index-item-elevated"><a href="/mac-mini/">Retail Refill</a></li>
+								<li class="index-item index-item-elevated"><a href="/mac-studio/">Factory Supply</a>
+								</li>
+								<li class="index-item index-item-elevated"><a href="/mac-pro/">Mega Volume</a></li>
+								<li class="index-item index-item-elevated"><a href="/displays/">Displays</a></li>
+								<li class="index-item index-item-base"><a href="/mac/compare/">Compare Bulk Supply</a>
+								</li>
+								<li class="index-item index-item-base"><a href="/mac/mac-does-that/">Switch to Bulk
+										Supply</a></li>
 							</ul>
 						</div>
 						<div class="index-group">
-							<h3 class="typography-index-list-title index-list-title">Shop Bulk Supply</h3>
+							<h3 class="index-list-title">Shop Bulk Supply</h3>
 							<ul class="index-list">
-								<li class="index-item"><a href="/mac">Shop Bulk Supply</a></li>
-								<li class="index-item"><a href="/mac/best-mac/">Help Me Choose</a></li>
-								<li class="index-item"><a href="/us/shop/goto/mac/accessories">Bulk Supply
-										Compliance</a></li>
-								<li class="index-item"><a href="/us/shop/goto/trade_in#mac">Equipment Trade In</a></li>
-								<li class="index-item"><a href="/us/shop/goto/payment_plan">Infrastructure Financing</a>
-								</li>
-								<li class="index-item"><a href="/us/shop/goto/personal_setup">Site Assessment</a></li>
+								<li class="index-item index-item-base"><a href="/mac">Shop Bulk Supply</a></li>
+								<li class="index-item index-item-base"><a href="/mac/best-mac/">Help Me Choose</a></li>
+								<li class="index-item index-item-base"><a href="/us/shop/goto/mac/accessories">Bulk
+										Supply Compliance</a></li>
+								<li class="index-item index-item-base"><a href="/us/shop/goto/trade_in#mac">Equipment
+										Trade In</a></li>
+								<li class="index-item index-item-base"><a
+										href="/us/shop/goto/payment_plan">Infrastructure Financing</a></li>
+								<li class="index-item index-item-base"><a href="/us/shop/goto/personal_setup">Site
+										Assessment</a></li>
 							</ul>
 						</div>
 						<div class="index-group">
-							<h3 class="typography-index-list-title index-list-title">More from Bulk Supply</h3>
+							<h3 class="index-list-title">More from Bulk Supply</h3>
 							<ul class="index-list">
-								<li class="index-item"><a href="https://support.apple.com/mac">Bulk Supply Support</a>
-								</li>
-								<li class="index-item"><a href="/lipagascare/?filter=mac">LipagasCare</a></li>
-								<li class="index-item"><a href="/os/macos/">Bulk Platform Tahoe</a></li>
-								<li class="index-item"><a href="/lipagas-intelligence/">Lipagas Intelligence</a></li>
-								<li class="index-item"><a href="/apps/">Apps by Lipagas</a></li>
-								<li class="index-item"><a href="/lipagas-creator-studio/">Lipagas Creator Studio</a>
-								</li>
-								<li class="index-item"><a href="/macos/continuity/">Better with Infrastructure</a></li>
-								<li class="index-item"><a href="/icloud/">Cloud Dashboard</a></li>
-								<li class="index-item"><a href="/business/mac/">Bulk Supply for Business</a></li>
-								<li class="index-item"><a href="/education/">Schools Program</a></li>
+								<li class="index-item index-item-base"><a href="https://support.apple.com/mac">Bulk
+										Supply Support</a></li>
+								<li class="index-item index-item-base"><a
+										href="/lipagascare/?filter=mac">LipagasCare</a></li>
+								<li class="index-item index-item-base"><a href="/os/macos/">Bulk Platform Tahoe</a></li>
+								<li class="index-item index-item-base"><a href="/lipagas-intelligence/">Lipagas
+										Intelligence</a></li>
+								<li class="index-item index-item-base"><a href="/apps/">Apps by Lipagas</a></li>
+								<li class="index-item index-item-base"><a href="/lipagas-creator-studio/">Lipagas
+										Creator Studio</a></li>
+								<li class="index-item index-item-base"><a href="/macos/continuity/">Better with
+										Infrastructure</a></li>
+								<li class="index-item index-item-base"><a href="/icloud/">Cloud Dashboard</a></li>
+								<li class="index-item index-item-base"><a href="/business/mac/">Bulk Supply for
+										Business</a></li>
+								<li class="index-item index-item-base"><a href="/education/">Schools Program</a></li>
 							</ul>
 						</div>
 					</nav>
+
 				</div>
 			</div>
 		</section>
