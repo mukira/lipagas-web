@@ -948,7 +948,7 @@
             border-radius: 12px;
         }
 
-        .rf-productnav-card[data-filter="6kg"] {
+        body:not(.interacted-filters) .rf-productnav-card[data-filter="6kg"] {
             border-color: #d2d2d7;
         }
 
@@ -3382,6 +3382,7 @@
                                     document.querySelectorAll('.rf-productnav-card').forEach(card => {
                                         card.addEventListener('click', function (e) {
                                             e.preventDefault();
+                                            document.body.classList.add('interacted-filters');
                                             const filter = this.getAttribute('data-filter');
 
                                             if (window.currentFilter === filter) {
