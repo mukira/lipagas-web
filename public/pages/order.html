@@ -976,6 +976,12 @@
         .rf-productnav-card:hover .rf-productnav-card-title {
             color: #0066cc;
         }
+
+        .rf-productnav-card-image img {
+            /* Converts black (#000000) to Apple Blue (#0071e3) */
+            filter: invert(35%) sepia(87%) saturate(3025%) hue-rotate(193deg) brightness(96%) contrast(105%);
+            transition: filter 0.3s ease;
+        }
     </style>
 </head>
 
