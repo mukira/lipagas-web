@@ -5688,6 +5688,6 @@ html[dir=rtl] #globalheader {
 /* LipaGas - Increase spacing between navigation and icons */
 @media only screen and (min-width: 1069px) {
     html body nav#globalnav ul.globalnav-list li.globalnav-search {
-        margin-inline-start: 100px !important;
+        margin-inline-start: 250px !important;
     }
 }
