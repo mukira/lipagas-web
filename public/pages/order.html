@@ -3246,7 +3246,7 @@
                                 <div class="rf-cards-scroller-content"
                                     style="overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 20px; margin-bottom: -20px;">
                                     <div class="rf-cards-scroller-platter" id="lipagas-dynamic-products"
-                                        style="display: flex; gap: 16px; width: max-content; padding: 20px 20px; box-sizing: border-box;">
+                                        style="display: flex; gap: 12px; width: max-content; padding: 20px 20px; box-sizing: border-box;">
                                         <div style="padding: 24px; text-align: center; color: #6e6e73; width: 100%;">
                                             Loading LipaGas Products...
                                         </div>
@@ -3288,21 +3288,21 @@
                                                 if (!container) return;
 
                                                 container.innerHTML = products.map(p => `
-                                        <div class="rf-cards-scroller-item" style="flex: 0 0 240px;">
-                                            <div class="rf-ccard" style="height: 100%; border-radius: 18px; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.06);">
+                                        <div class="rf-cards-scroller-item" style="flex: 0 0 auto !important; width: 200px !important; min-width: 200px !important; max-width: 200px !important;">
+                                            <div class="rf-ccard" style="height: 100%; border-radius: 14px; background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.06); overflow: hidden;">
                                                 <a href="${p.productUrl || '#'}" target="_blank" class="rf-ccard-content-link-container" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-                                                    <div class="rf-ccard-content" style="padding: 24px; display: flex; flex-direction: column; height: 100%;">
-                                                        <div class="rf-ccard-content-img-wrapper" style="text-align: center; margin-bottom: 20px;">
+                                                    <div class="rf-ccard-content" style="padding: 16px; display: flex; flex-direction: column; height: 100%;">
+                                                        <div class="rf-ccard-content-img-wrapper" style="text-align: center; margin-bottom: 16px;">
                                                             ${p.imageUrl ?
-                                                        `<img src="${p.imageUrl}" alt="${p.title}" style="height: 160px; max-width: 100%; object-fit: contain;">` :
-                                                        `<div style="width: 100%; height: 160px; background: #f5f5f7; border-radius: 12px;"></div>`
+                                                        `<img src="${p.imageUrl}" alt="${p.title}" style="height: 130px; max-width: 100%; object-fit: contain;">` :
+                                                        `<div style="width: 100%; height: 130px; background: #f5f5f7; border-radius: 10px;"></div>`
                                                     }
                                                         </div>
                                                         <div class="rf-ccard-content-info" style="display: flex; flex-direction: column; flex-grow: 1;">
-                                                            ${p.brand ? `<div class="rf-ccard-content-eyebrow" style="color: #1a6b3c; font-size: 10px; margin-bottom: 6px;">${p.brand}</div>` : ''}
-                                                            <div class="rf-ccard-content-header" style="font-size: 17px; font-weight: 600; line-height: 1.2; margin-bottom: 8px;">${p.title}</div>
-                                                            ${p.description ? `<div style="font-size: 13px; color: #6e6e73; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 16px;">${p.description}</div>` : ''}
-                                                            <div class="rf-ccard-content-price" style="margin-top: auto; font-size: 14px; font-weight: 600;">${p.price}</div>
+                                                            ${p.brand ? `<div class="rf-ccard-content-eyebrow" style="color: #1a6b3c; font-size: 9px; margin-bottom: 4px; text-transform: uppercase;">${p.brand}</div>` : ''}
+                                                            <div class="rf-ccard-content-header" style="font-size: 15px; font-weight: 600; line-height: 1.2; margin-bottom: 6px;">${p.title}</div>
+                                                            ${p.description ? `<div style="font-size: 11px; color: #6e6e73; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 12px;">${p.description}</div>` : ''}
+                                                            <div class="rf-ccard-content-price" style="margin-top: auto; font-size: 13px; font-weight: 600;">${p.price}</div>
                                                         </div>
                                                     </div>
                                                 </a>
