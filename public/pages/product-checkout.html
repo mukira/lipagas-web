@@ -12296,8 +12296,7 @@
                 <div
                   class="rf-bfe-step rf-bfe-first-step rf-bfe-focused-step rf-bfe-right-rail-step rf-bfe-dimension rf-bfe-dimension-dimensionscreensize"
                   data-analytics-section=dimensionScreensize data-step-enabled=true data-step-complete=true
-                  data-observer-key=dimensionScreensize
-                  >
+                  data-observer-key=dimensionScreensize>
                   <fieldset class="rc-dimension rf-bfe-product-dimension-group">
                     <legend>
                       <h2 id=dimensionScreensize class="rf-bfe-dimension-header typography-eyebrow" tabindex=-1>
@@ -12310,7 +12309,7 @@
                           data-autom=dimensionScreensize6_3inch value=6_3inch checked><label for=:r9:
                           class=form-selector-label id=:r9:_label><span class=row><span
                               class="column form-selector-left-col rf-bfe-selector-left-col"><span
-                                class=form-selector-title>iPhone&nbsp;17&nbsp;Pro
+                                class=form-selector-title id="model-title-1">iPhone&nbsp;17&nbsp;Pro
                                 <span class=form-label-small>6.3-inch display<as-footnote
                                     data-id=8054edc379d142293eb3940b1a8ea8d1 data-assigned=true><sup
                                       data-autom=footnote-sub class="as-footnote footnote footnote-number"><span
@@ -12331,7 +12330,7 @@
                           data-autom=dimensionScreensize6_9inch value=6_9inch><label for=:ra: class=form-selector-label
                           id=:ra:_label><span class=row><span
                               class="column form-selector-left-col rf-bfe-selector-left-col"><span
-                                class=form-selector-title>iPhone&nbsp;17&nbsp;Pro&nbsp;Max
+                                class=form-selector-title id="model-title-2">iPhone&nbsp;17&nbsp;Pro&nbsp;Max
                                 <span class=form-label-small>6.9-inch display<as-footnote
                                     data-id=8054edc379d142293eb3940b1a8ea8d1 data-assigned=true><sup
                                       data-autom=footnote-sub class="as-footnote footnote footnote-number"><span
@@ -12354,7 +12353,7 @@
                 <div
                   class="rf-bfe-step rf-bfe-last-step rf-bfe-right-rail-step rf-bfe-dimension rf-bfe-dimension-dimensioncapacity"
                   data-analytics-section=dimensionCapacity data-step-enabled=true data-step-complete=true
-                  data-observer-key=dimensionCapacity >
+                  data-observer-key=dimensionCapacity>
                   <fieldset class="rc-dimension rf-bfe-product-dimension-group">
                     <legend>
                       <h2 id=dimensionCapacity class="rf-bfe-dimension-header typography-eyebrow" tabindex=-1>
@@ -14128,12 +14127,31 @@
         if (stickyTitle) stickyTitle.innerText = name;
 
 
-        // Update Screen Size radio labels (if they contain the product name)
+        // Update Screen Size radio labels (skip the custom ones we just renamed)
         document.querySelectorAll('.form-selector-title').forEach(el => {
+          if (el.id === 'model-title-1' || el.id === 'model-title-2') return;
           if (el.childNodes[0] && el.childNodes[0].nodeType === 3) {
             el.childNodes[0].textContent = name + " ";
           }
         });
+
+        // Set specific delivery titles
+        const mt1 = document.getElementById('model-title-1');
+        const mt2 = document.getElementById('model-title-2');
+        if (mt1) {
+          if (mt1.childNodes[0] && mt1.childNodes[0].nodeType === 3) {
+            mt1.childNodes[0].textContent = "30- Minutes delivery ";
+          } else {
+            mt1.innerText = "30- Minutes delivery ";
+          }
+        }
+        if (mt2) {
+          if (mt2.childNodes[0] && mt2.childNodes[0].nodeType === 3) {
+            mt2.childNodes[0].textContent = "Free Delivery ";
+          } else {
+            mt2.innerText = "Free Delivery ";
+          }
+        }
       }
 
       if (price) {
