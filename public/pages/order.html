@@ -2526,21 +2526,21 @@
                                                         <ul class="globalnav-submenu-list" aria-labelledby="5b6ea146">
                                                             <li class="globalnav-submenu-list-item"
                                                                 style="--r-globalnav-flyout-item-number: 2;"><a
-                                                                    href="/us/shop/goto/buy_tv/lipagas_tv_4k"
+                                                                    href="/product-checkout"
                                                                     class="globalnav-submenu-link"
                                                                     data-analytics-title="shop lipagas tv">Shop Lipagas
                                                                     TV
                                                                     4K</a></li>
                                                             <li class="globalnav-submenu-list-item"
                                                                 style="--r-globalnav-flyout-item-number: 3;"><a
-                                                                    href="/us/shop/goto/buy_homepod/homepod"
+                                                                    href="/product-checkout"
                                                                     class="globalnav-submenu-link"
                                                                     data-analytics-title="shop homepod">Shop Community
                                                                     Hub</a>
                                                             </li>
                                                             <li class="globalnav-submenu-list-item"
                                                                 style="--r-globalnav-flyout-item-number: 4;"><a
-                                                                    href="/us/shop/goto/buy_homepod/homepod_mini"
+                                                                    href="/product-checkout"
                                                                     class="globalnav-submenu-link"
                                                                     data-analytics-title="shop homepod mini">Shop
                                                                     Community Hub
@@ -3294,7 +3294,7 @@
                                                 </div>
                                                 <div class="lp-img-wrapper">
                                                     ${p.imageUrl ?
-                                        `<img src="${p.imageUrl}" alt="${p.title}" style="max-height: 100%; max-width: 100%; object-fit: contain;">` :
+                                        `<img src="${p.imageUrl}" alt="${p.title}" referrerpolicy="no-referrer" style="max-height: 100%; max-width: 100%; object-fit: contain;">` :
                                         `<div style="width: 100%; height: 100%; background: #f5f5f7; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #86868b; font-size: 12px;">No Image</div>`
                                     }
                                                 </div>
@@ -3303,7 +3303,7 @@
                                                 </div>
                                                 <div class="lp-bottom-bar">
                                                     <div class="lp-price">${p.price}</div>
-                                                    <a href="${p.productUrl || '#'}" target="_blank" class="lp-buy-button">Buy</a>
+                                                    <a href="/product-checkout?name=${encodeURIComponent(p.title)}&price=${encodeURIComponent(p.price)}&image=${encodeURIComponent(p.imageUrl)}" class="lp-buy-button">Buy</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -3359,12 +3359,12 @@
                                     for (const line of dataLines) {
                                         const fields = parseCSVLine(line);
                                         // Index map based on your CSV: 
-                                        // 0: ?, 1: Title, 2: Brand/Size, 3: Price, 4: Description, 5: Image, 6: ?, 7: URL
-                                        const [id, title, brand, price, description, driveImageUrl, , productUrl] = fields;
+                                        // 0: ?, 1: Title, 2: Brand/Size, 3: Price, 4: Description, 5: Image
+                                        const [id, title, brand, price, description, driveImageUrl] = fields;
                                         if (!title) continue;
 
                                         let imageUrl = driveImageUrl || '';
-                                        const driveIdMatch = imageUrl.match(/[?&]id=([^&]+)/);
+                                        const driveIdMatch = imageUrl.match(/[?&]id=([^&]+)/) || imageUrl.match(/\/d\/([^/?]+)/);
                                         if (driveIdMatch) {
                                             imageUrl = `https://lh3.googleusercontent.com/d/${driveIdMatch[1]}=s800`;
                                         }
@@ -3375,8 +3375,7 @@
                                             brand: brand || '',
                                             price: price || 'Contact for Price',
                                             description: description || '',
-                                            imageUrl: imageUrl,
-                                            productUrl: productUrl || '#'
+                                            imageUrl: imageUrl
                                         });
                                     }
 

@@ -1,7 +1,16 @@
-export default function Page() {
+'use client';
+
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
+
+function PageContent() {
+    const searchParams = useSearchParams();
+    const query = searchParams.toString();
+    const src = query ? `/pages/product-checkout.html?${query}` : '/pages/product-checkout.html';
+
     return (
         <iframe
-            src="/pages/product-checkout.html"
+            src={src}
             style={{
                 width: '100%',
                 height: '100vh',
@@ -10,5 +19,13 @@ export default function Page() {
             }}
             title="Product Checkout"
         />
+    );
+}
+
+export default function Page() {
+    return (
+        <Suspense fallback={null}>
+            <PageContent />
+        </Suspense>
     );
 }
