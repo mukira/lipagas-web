@@ -14203,12 +14203,12 @@
           if (mt1) {
             const textSpan1 = mt1.querySelector('.model-title-text');
             if (textSpan1) {
-              textSpan1.textContent = "30- Minutes delivery ";
+              textSpan1.textContent = "30 Minute Delivery ";
             } else {
               if (mt1.childNodes[0] && mt1.childNodes[0].nodeType === 3) {
-                mt1.childNodes[0].textContent = "30- Minutes delivery ";
+                mt1.childNodes[0].textContent = "30 Minute Delivery ";
               } else {
-                mt1.innerText = "30- Minutes delivery ";
+                mt1.innerText = "30 Minute Delivery ";
               }
             }
           }
@@ -14314,6 +14314,19 @@
           // Update subheader title (the model name)
           document.querySelectorAll('.model-title-text').forEach(el => {
             el.innerText = name;
+          });
+
+          // Final catch-all for delivery labels that might still have old text
+          document.querySelectorAll('.form-selector-title').forEach(el => {
+            const text = el.innerText;
+            if (text.includes('Shell Afrigas') || text.includes('iPhone')) {
+              // Map based on order or specific keywords if possible
+              if (el.id === 'model-title-1' || text.toLowerCase().includes('gb') || text.toLowerCase().includes('minutes')) {
+                el.innerText = "30 Minute Delivery";
+              } else {
+                el.innerText = "Free Delivery";
+              }
+            }
           });
         }
 
