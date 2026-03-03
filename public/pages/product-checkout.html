@@ -14238,13 +14238,11 @@
           const delivery = 0;
           const total = subtotal + delivery;
 
-          // Add Cart totals after the delivery options instead of replacing them
+          // Hide the old capacity/refill radio options
           const capacitySection = document.querySelector('.rf-bfe-dimension-dimensioncapacity');
-          if (capacitySection && !document.getElementById('cart-totals-section')) {
-            const tableDiv = document.createElement('div');
-            tableDiv.id = 'cart-totals-section';
-            tableDiv.style.padding = '40px 0 20px 0';
-            tableDiv.innerHTML = `
+          if (capacitySection) {
+            capacitySection.innerHTML = `
+            <div style="padding: 40px 0 20px 0;">
               <h2 style="font-size: 21px; font-weight: 700; color: #1d1d1f; margin: 0 0 16px 0; font-family: 'SF Pro Display', -apple-system, sans-serif;">Cart totals</h2>
               <table style="width: 100%; border-collapse: collapse; font-family: 'SF Pro Text', -apple-system, sans-serif; font-size: 15px;">
                 <tr style="border-bottom: 1px solid #e5e5e5;">
@@ -14260,8 +14258,8 @@
                   <td style="padding: 14px 0; text-align: right; color: #1d1d1f; font-weight: 700; font-size: 17px;">${formatKSh(total)}</td>
                 </tr>
               </table>
-            `;
-            capacitySection.appendChild(tableDiv);
+            </div>
+          `;
           }
 
           // Also update single-price displays elsewhere on page
@@ -14320,14 +14318,23 @@
 
           // Final catch-all for delivery labels that might still have old text
           document.querySelectorAll('.form-selector-title').forEach(el => {
-            const text = el.innerText;
-            if (text.includes('Shell Afrigas') || text.includes('iPhone')) {
-              // Map based on order or specific keywords if possible
-              if (el.id === 'model-title-1' || text.toLowerCase().includes('gb') || text.toLowerCase().includes('minutes')) {
-                el.innerText = "30 Minute Delivery";
-              } else {
-                el.innerText = "Free Delivery";
+            const titleTextSpan = el.querySelector('.model-title-text');
+            if (titleTextSpan) {
+              const text = titleTextSpan.innerText;
+              if (text.includes('Shell Afrigas') || text.includes('iPhone') || text.includes('GB') || text.includes('Minutes')) {
+                titleTextSpan.innerText = (el.id === 'model-title-1' || text.toLowerCase().includes('gb') || text.toLowerCase().includes('minutes'))
+                  ? "30 Minute Delivery"
+                  : "Free Delivery";
               }
+            } else {
+              // If no span, update only the text nodes to preserve icons
+              el.childNodes.forEach(node => {
+                if (node.nodeType === 3 && (node.textContent.includes('Shell Afrigas') || node.textContent.includes('iPhone'))) {
+                  node.textContent = (el.id === 'model-title-1' || node.textContent.toLowerCase().includes('gb') || node.textContent.toLowerCase().includes('minutes'))
+                    ? "30 Minute Delivery"
+                    : "Free Delivery";
+                }
+              });
             }
           });
         }
