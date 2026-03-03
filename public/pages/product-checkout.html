@@ -12346,6 +12346,19 @@
                   </fieldset>
 
                 </div>
+                <div class="rf-bfe-step rf-bfe-right-rail-step rf-bfe-dimension" style="padding-top: 20px;">
+                  <div class="rc-dimension rf-bfe-product-dimension-group">
+                    <h2 class="rf-bfe-dimension-header typography-eyebrow">
+                      <span>Delivery Location. </span><span class="as-subheading">Where should we deliver?</span>
+                    </h2>
+                    <div style="margin-top: 16px; position: relative;">
+                      <input type="text" id="delivery-location" placeholder="Enter your delivery address..."
+                        style="width: 100%; padding: 18px 20px; border-radius: 12px; border: 1px solid #d2d2d7; font-family: 'SF Pro Text', -apple-system, sans-serif; font-size: 17px; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); transition: all 0.3s ease; outline: none; box-shadow: 0 2px 4px rgba(0,0,0,0.02);"
+                        onfocus="this.style.borderColor='#0071e3'; this.style.boxShadow='0 0 0 4px rgba(0,113,227,0.1)';"
+                        onblur="this.style.borderColor='#d2d2d7'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.02)';">
+                    </div>
+                  </div>
+                </div>
                 <div
                   class="rf-bfe-step rf-bfe-last-step rf-bfe-right-rail-step rf-bfe-dimension rf-bfe-dimension-dimensioncapacity"
                   data-analytics-section=dimensionCapacity data-step-enabled=true data-step-complete=true
@@ -14327,6 +14340,16 @@
 
         const payMonthlyPromo = document.querySelector('.rf-bfe-header-learnmorelink:not(.rf-bfe-header-tradein-learnmorelink)');
         if (payMonthlyPromo) payMonthlyPromo.style.display = 'none';
+
+        // Persist Delivery Location
+        const locationInput = document.getElementById('delivery-location');
+        if (locationInput) {
+          const savedLocation = localStorage.getItem('delivery-location');
+          if (savedLocation) locationInput.value = savedLocation;
+          locationInput.addEventListener('input', (e) => {
+            localStorage.setItem('delivery-location', e.target.value);
+          });
+        }
       }
 
       initDynamicContent();
