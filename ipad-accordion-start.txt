@@ -1,0 +1,51 @@
+							<h2 id="accordion-section-10-header"
+								class="SectionHeader_headline__aqRKz MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
+								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><span>Significant
+									others.</span></h2>
+						</div>
+						<div class="responsive-content_responsiveContent__S1ntz">
+							<div class="ImageAccordion_imageAccordionContainer__WaT9u AccordionSection_enhanced--active__3FUXZ animationDefaults_buildIn__OdEKA ImageAccordion_backgroundColorAlt__SyoxZ"
+								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
+								<ul class="ImageAccordion_accordion__vRgS6" role="list"
+									aria-labelledby="accordion-section-10-header">
+									<li class="ImageAccordion_accordionItem__jYIo_" role="listitem">
+										<h3
+											class="ImageAccordion_accordionItemHeadline__bdCG0 typography_headline__zZkHA">
+											<button class="ImageAccordion_accordionButton__qj7ql"
+												aria-controls="accordion-item-0-tray" type="button" role="button"
+												data-analytics-click="prop3:open accordion - ipad and mac"
+												data-analytics-title="open accordion - ipad and mac"
+												data-analytics-intrapage-link="" aria-expanded="true"><span
+													class="ImageAccordion_accordionTitleText__6ouHq"><span>PAYG LPG and
+														Infrastructure</span></span><span
+													class="ImageAccordion_accordionIcon__Ygs7m"><svg
+														class="ImageAccordion_accordionIconSvg__sixZm"
+														viewBox="0 0 17 8.85">
+														<polyline data-accordion-icon-shape="true" stroke="currentColor"
+															stroke-linecap="round" stroke-linejoin="round" fill="none"
+															fill-rule="evenodd" points="15 7.72 8.5 1.13 2 7.72">
+															<animate attributeName="points"
+																values="15 1.13 8.5 7.72 2 1.13; 15.85 4.42 8.5 4.42 1.15 4.42; 15 7.72 8.5 1.13 2 7.72"
+																dur="320ms" begin="indefinite" fill="freeze"
+																keyTimes="0;0.5;1" calcMode="spline"
+																keySplines="0.12, 0, 0.38, 0; 0.2, 1, 0.68, 1">
+															</animate>
+															<animate attributeName="points"
+																values="15 7.72 8.5 1.13 2 7.72; 15.85 4.42 8.5 4.42 1.15 4.42; 15 1.13 8.5 7.72 2 1.13"
+																dur="320ms" begin="indefinite" fill="freeze"
+																keyTimes="0;0.5;1" calcMode="spline"
+																keySplines="0.2, 0, 0.68, 0; 0.2, 1, 0.68, 1"></animate>
+														</polyline>
+													</svg></span></button>
+										</h3>
+										<div id="accordion-item-0-tray" class="ImageAccordion_accordionTray__BHx_I">
+											<div class="ImageAccordion_accordionContent__qFdLA">
+												<div>
+													<p>PAYG LPG is perfect for taking the content you capture on
+														Infrastructure and bringing it to life on an immersive canvas.
+														You can shoot videos and photos on your Infrastructure and use
+														the large display of your PAYG LPG to edit, add animations, and
+														more. You can also pick up wherever you left off with Handoff.
+													</p>
+												</div>
+												<div class="ImageAccordion_accordionItemImageContainer__3SNxX">

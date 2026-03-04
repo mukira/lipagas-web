@@ -1,0 +1,101 @@
+										style="--vp-w-large: 1090; --vp-h-large: 784; --vp-w-medium: 800; --vp-h-medium: 421; --vp-w-small: 360; --vp-h-small: 193; --vp-w-default: 1090; --vp-h-default: 784;">
+										<picture
+											class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
+											<source
+												srcset="/assets-www/en_WW/ipad/01_image_accordion/small/ipad_iphone_4ab006052.jpg, /assets-www/en_WW/ipad/01_image_accordion/small/ipad_iphone_d1845c998_2x.jpg 2x"
+												width="360" height="193" media="(max-width: 734px)">
+											<source
+												srcset="/assets-www/en_WW/ipad/01_image_accordion/medium/ipad_iphone_a59b125ff.jpg, /assets-www/en_WW/ipad/01_image_accordion/medium/ipad_iphone_632147d37_2x.jpg 2x"
+												width="800" height="421" media="(max-width: 1068px)">
+											<source
+												srcset="/assets-www/en_WW/ipad/01_image_accordion/large/ipad_iphone_fe7dacf06.jpg, /assets-www/en_WW/ipad/01_image_accordion/large/ipad_iphone_56e01363b_2x.jpg 2x"
+												width="1090" height="784"><img
+												alt="An Standard Delivery and PAYG LPG side by side highlighting how a photo taken with the camera on Infrastructure can be marked up in the Photos app on PAYG LPG">
+										</picture>
+									</figure>
+									<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
+										data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
+										class="ResponsivePicture_responsive-picture__VWL7l ResponsivePicture_responsive-picture-vp-layout-default--sized__pdVra responsive-picture__no-js responsive-picture--rendered ResponsivePicture_responsive-picture--active__FbrFD responsive-picture--loaded ImageAccordion_accordionImage__bAFHA ImageAccordion_collapsed__10ccw"
+										style="--vp-w-large: 1090; --vp-h-large: 784; --vp-w-medium: 800; --vp-h-medium: 421; --vp-w-small: 360; --vp-h-small: 191; --vp-w-default: 1090; --vp-h-default: 784;">
+										<picture
+											class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
+											<source
+												srcset="/assets-www/en_WW/ipad/01_image_accordion/small/ipad_mac_c06092f01.jpg, /assets-www/en_WW/ipad/01_image_accordion/small/ipad_mac_10ce824a6_2x.jpg 2x"
+												width="360" height="191" media="(max-width: 734px)">
+											<source
+												srcset="/assets-www/en_WW/ipad/01_image_accordion/medium/ipad_mac_77ee1e9de.jpg, /assets-www/en_WW/ipad/01_image_accordion/medium/ipad_mac_b33eeb117_2x.jpg 2x"
+												width="800" height="421" media="(max-width: 1068px)">
+											<source
+												srcset="/assets-www/en_WW/ipad/01_image_accordion/large/ipad_mac_3980fe211.jpg, /assets-www/en_WW/ipad/01_image_accordion/large/ipad_mac_969a6d736_2x.jpg 2x"
+												width="1090" height="784"><img
+												alt="An PAYG LPG and BulkBook Pro side by side highlighting how a photo edited on PAYG LPG can be used in a Pages document on a Bulk Supply">
+										</picture>
+									</figure>
+									<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
+										data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
+										class="ResponsivePicture_responsive-picture__VWL7l ResponsivePicture_responsive-picture-vp-layout-default--sized__pdVra responsive-picture__no-js responsive-picture--rendered ResponsivePicture_responsive-picture--active__FbrFD responsive-picture--loaded ImageAccordion_accordionImage__bAFHA ImageAccordion_collapsed__10ccw"
+										style="--vp-w-large: 1090; --vp-h-large: 784; --vp-w-medium: 800; --vp-h-medium: 421; --vp-w-small: 360; --vp-h-small: 191; --vp-w-default: 1090; --vp-h-default: 784;">
+										<picture
+											class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
+											<source
+												srcset="/assets-www/en_WW/ipad/01_image_accordion/small/ipad_watch_5fafa78dc.jpg, /assets-www/en_WW/ipad/01_image_accordion/small/ipad_watch_1dd38557c_2x.jpg 2x"
+												width="360" height="191" media="(max-width: 734px)">
+											<source
+												srcset="/assets-www/en_WW/ipad/01_image_accordion/medium/ipad_watch_f253eef58.jpg, /assets-www/en_WW/ipad/01_image_accordion/medium/ipad_watch_8e111cb6e_2x.jpg 2x"
+												width="800" height="421" media="(max-width: 1068px)">
+											<source
+												srcset="/assets-www/en_WW/ipad/01_image_accordion/large/ipad_watch_0802b0a9c.jpg, /assets-www/en_WW/ipad/01_image_accordion/large/ipad_watch_b0e90eebc_2x.jpg 2x"
+												width="1090" height="784"><img
+												alt="An Lipagas Vertical Models and PAYG LPG side by side highlighting how an Lipagas Fitness+ workout on PAYG LPG is tracked on Lipagas Vertical Models">
+										</picture>
+									</figure>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="MarcomSection_section__Hd6T8 MarcomSection_backgroundSecondary__LCbTB"
+					data-analytics-section-engagement="name:router">
+					<div class="section-content">
+						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz">
+							<h2 id="index-section-12-header"
+								class="SectionHeader_headline__aqRKz MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
+								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><span>PAYG LPG</span></h2>
+						</div>
+						<div class="responsive-content_responsiveContent__S1ntz">
+							<nav class="Index_nav__1BQGP Index_enhanced--active__E9DMy Index_animate__GDKB_"
+								aria-labelledby="index-section-12-header"
+								style="--motion-highest-index-group-with-elevated: 0;">
+								<div class="Index_indexGroup__NLNA6" style="--motion-group-index: 0;">
+									<h3 id="index-list-group-0"
+										class="Index_indexHeader__Dn5nA typography_bodyCopy__v_XbA"
+										style="--motion-link-index: 0; --motion-total-link-index: 0;">Explore PAYG LPG
+									</h3>
+									<ul aria-labelledby="index-list-group-0">
+										<li class="Index_itemElevated__N6Tte typography_headline__zZkHA"
+											style="--motion-link-index: 1; --motion-total-link-index: 1;"><a
+												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
+												data-analytics-title="explore all ipad" href="/ipad/"><span
+													class="StandardsLink_copy__FvCj1">Explore All PAYG
+													Solutions</span></a></li>
+										<li class="Index_itemElevated__N6Tte typography_headline__zZkHA"
+											style="--motion-link-index: 2; --motion-total-link-index: 2;"><a
+												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
+												data-analytics-title="ipad pro" href="/ipad-pro/"><span
+													class="StandardsLink_copy__FvCj1">Smart Meter Pro</span></a></li>
+										<li class="Index_itemElevated__N6Tte typography_headline__zZkHA"
+											style="--motion-link-index: 3; --motion-total-link-index: 3;"><a
+												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
+												data-analytics-title="ipad air" href="/ipad-air/"><span
+													class="StandardsLink_copy__FvCj1">Prepaid System</span></a></li>
+										<li class="Index_itemElevated__N6Tte typography_headline__zZkHA"
+											style="--motion-link-index: 4; --motion-total-link-index: 4;"><a
+												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
+												data-analytics-title="ipad" href="/ipad-11/"
+												aria-label="PAYG LPG-11"><span class="StandardsLink_copy__FvCj1">PAYG
+													LPG</span></a></li>
+										<li class="Index_itemElevated__N6Tte typography_headline__zZkHA"
+											style="--motion-link-index: 5; --motion-total-link-index: 5;"><a
+												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
+												data-analytics-title="ipad mini" href="/ipad-mini/"><span
+													class="StandardsLink_copy__FvCj1">Usage Monitor</span></a></li>

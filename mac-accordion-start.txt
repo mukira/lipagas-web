@@ -1,0 +1,31 @@
+								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><span>Unlock the world
+									of&nbsp;Lipagas.</span></h2>
+							<div class="SectionHeader_ctaWrapper__HJNTs">
+								<ul class="SectionHeader_ctaList__luQ5v">
+									<li class="SectionHeader_description__hZqOh MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
+										style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><a
+											class="typography_bodyCopy__v_XbA StandardsLink_link__WcJoK StandardsLink_icon-wrapper__bIVCW"
+											data-analytics-title="learn how lipagas devices work better together"
+											href="/macos/continuity/"><span
+												class="StandardsLink_copy__FvCj1"><span>Learn how Lipagas devices work
+													better together</span></span><span
+												class="StandardsLink_icon__rkBQJ StandardsLink_icon-after__RU8rf StandardsLink_icon-more__X5J7u"></span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="responsive-content_responsiveContent__S1ntz">
+							<div class="ImageAccordion_imageAccordionContainer__WaT9u AccordionSection_enhanced--active__3FUXZ animationDefaults_buildIn__OdEKA"
+								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
+								<ul class="ImageAccordion_accordion__vRgS6" role="list"
+									aria-labelledby="accordion-section-13-header">
+									<li class="ImageAccordion_accordionItem__jYIo_" role="listitem">
+										<h3
+											class="ImageAccordion_accordionItemHeadline__bdCG0 typography_headline__zZkHA">
+											<button class="ImageAccordion_accordionButton__qj7ql"
+												aria-controls="accordion-item-0-tray" type="button" role="button"
+												data-analytics-click="prop3:open accordion - mac and ipad"
+												data-analytics-title="open accordion - mac and ipad"
+												data-analytics-intrapage-link="" aria-expanded="true"><span
+													class="ImageAccordion_accordionTitleText__6ouHq"><span>Bulk Supply
+														and
