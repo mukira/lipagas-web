@@ -1,8 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Intercept clicks on links
     document.addEventListener('click', (e) => {
+        // If another script already prevented the default action (like the mobile menu), ignore it.
+        if (e.defaultPrevented) return;
+
         const link = e.target.closest('a');
         if (link && link.href) {
+            // Ignore script-only links (links that only have a hash like href="#")
+            const href = link.getAttribute('href');
+            if (href === '#' || href === 'javascript:void(0)') return;
+
             // Only intercept relative links or links to the same origin
             const url = new URL(link.href);
             if (url.origin === window.location.origin) {
