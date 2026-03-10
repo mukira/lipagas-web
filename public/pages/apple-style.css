@@ -455,3 +455,140 @@ body {
         font-size: 40px !important;
     }
 }
+
+/* Accordion Section Refinement - EXACT Apple Specs */
+/* Accordion Section Refinement - EXACT Apple Specs */
+.section-image-accordion .viewport-content {
+    max-width: 1260px !important;
+    margin-inline-start: auto !important;
+    margin-inline-end: auto !important;
+    width: 87.5% !important;
+    padding-top: 112px !important;
+    padding-bottom: 112px !important;
+}
+
+.section-image-accordion .card-container .card {
+    background-color: rgb(245, 245, 247) !important;
+    border-radius: 18px !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.section-image-accordion .accordion {
+    width: 42% !important;
+    flex-shrink: 0 !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 60px 8.3333333333% 60px 8.3333333333% !important;
+    z-index: 2 !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+}
+
+.section-image-accordion .accordion-item {
+    border-top: 1px solid rgb(210, 210, 215) !important;
+    width: 100% !important;
+}
+
+.section-image-accordion .accordion-item:first-child {
+    border-top: none !important;
+}
+
+.section-image-accordion .accordion-button {
+    font-size: 28px !important;
+    line-height: 1.1428571429 !important;
+    font-weight: 600 !important;
+    letter-spacing: .007em !important;
+    padding: 22px 0 !important;
+    color: rgb(29, 29, 31) !important;
+    width: 100% !important;
+    text-align: left !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+
+.section-image-accordion .accordion-paragraph-text {
+    font-size: 17px !important;
+    line-height: 1.4705882353 !important;
+    font-weight: 400 !important;
+    letter-spacing: -0.022em !important;
+    margin-top: 0.8em !important;
+    padding-bottom: 24px !important;
+    color: rgb(29, 29, 31) !important;
+}
+
+/* Apple's EXACT accordion image layout — verified from live computed styles */
+/* Container: flex-grow:1, 0-height, centered, overflow:visible */
+.section-image-accordion .image-container-large {
+    display: flex !important;
+    position: relative !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 0 !important;
+    flex-grow: 1 !important;
+    pointer-events: none !important;
+    overflow: visible !important;
+}
+
+/* Picture: absolute, max-width:100% clamps to container width (~730px) */
+.section-image-accordion .image-container-large picture {
+    position: absolute !important;
+    max-width: 100% !important;
+    transition: opacity 200ms ease-in-out 0s !important;
+    display: block !important;
+}
+
+/* Hidden pictures */
+.section-image-accordion .image-container-large picture.hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Img: constrained to Apple's logical display dimensions */
+/* Custom images are 2× retina — must size to logical px to match Apple layout */
+.section-image-accordion .image-container-large img {
+    display: block !important;
+}
+
+/* Mac / screens-both: Apple logical size 1052×632px */
+.section-image-accordion .image-container-large picture.overview-augment-mac img {
+    width: 1052px !important;
+    height: 632px !important;
+}
+
+/* Watch / holding-phone: Apple logical size 497×784px */
+.section-image-accordion .image-container-large picture.overview-augment-watch img {
+    width: 497px !important;
+    height: 784px !important;
+}
+
+/* AirPods / rider-man-app: Apple logical size 509×784px */
+.section-image-accordion .image-container-large picture.overview-augment-airpods img {
+    width: 509px !important;
+    height: 784px !important;
+}
+
+@media (max-width: 1068px) {
+    .section-image-accordion .card-container .card {
+        display: block !important;
+        padding: 40px 20px !important;
+    }
+
+    .section-image-accordion .accordion {
+        width: 100% !important;
+    }
+
+    .section-image-accordion .image-container-large {
+        display: none !important;
+    }
+}
