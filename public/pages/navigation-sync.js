@@ -1,38 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Intercept clicks on links
     document.addEventListener('click', (e) => {
-        // If another script already prevented the default action (like the mobile menu), ignore it.
-        if (e.defaultPrevented) return;
-
         const link = e.target.closest('a');
-        if (link && link.href) {
-            // Ignore script-only links (links that only have a hash like href="#")
-            const href = link.getAttribute('href');
-            if (href === '#' || href === 'javascript:void(0)') return;
+        if (!link || !link.href) return;
 
-            // Only intercept relative links or links to the same origin
-            const url = new URL(link.href);
-            if (url.origin === window.location.origin) {
-                // If it's an anchor link on the same page, just scroll to it
-                if (url.pathname === window.location.pathname && url.hash) {
-                    return; // Let the browser handle the hash scroll natively inside the iframe
-                }
+        // If another script already prevented the default action, respect it but capture navigation links.
+        const href = link.getAttribute('href');
+        if (!href || href === '#' || href.startsWith('javascript:')) {
+            return;
+        }
 
-                e.preventDefault();
+        // Resolve absolute URL
+        const url = new URL(link.href, window.location.origin);
+        
+        // Only intercept if it's our own domain
+        if (url.origin === window.location.origin) {
+            // Anchor link on same page
+            if (url.pathname === window.location.pathname && url.hash) {
+                return;
+            }
 
-                // Map the inner HTML path to the outer Next.js route
-                let nextRoute = url.pathname;
-                if (nextRoute.startsWith('/pages/')) {
-                    nextRoute = nextRoute.replace('/pages/', '/').replace('.html', '');
-                } else if (nextRoute.endsWith('.html')) {
-                    nextRoute = nextRoute.replace('.html', '');
-                }
+            e.preventDefault();
 
-                // Keep the hash/query if any
-                nextRoute += url.search + url.hash;
+            // Map the path to Next.js route
+            let nextRoute = url.pathname;
+            if (nextRoute.startsWith('/pages/')) {
+                nextRoute = nextRoute.replace('/pages/', '/');
+            }
+            if (nextRoute.endsWith('.html')) {
+                nextRoute = nextRoute.replace('.html', '');
+            }
+            if (nextRoute === '/index' || nextRoute === '/') {
+                nextRoute = '/';
+            }
 
-                // Send a message to the Next.js parent telling it to navigate
-                window.parent.postMessage({ type: 'NAVIGATE', url: nextRoute }, '*');
+            // Keep search/hash
+            const fullRoute = nextRoute + url.search + url.hash;
+
+            // Notify parent
+            if (window.parent !== window) {
+                window.parent.postMessage({ type: 'NAVIGATE', url: fullRoute }, '*');
+            } else {
+                window.location.href = fullRoute;
             }
         }
     });
