@@ -30,22 +30,45 @@ body {
 
 .main, main {
     padding-top: 44px !important;
+    position: relative !important;
+    z-index: 1 !important;
 }
 
 /* Navbar container */
+/* Ensure the navbar container is on top but doesn't block underlying content */
+#app, .LayoutApp_app__HmVQW {
+    position: relative !important;
+    z-index: 999999 !important;
+    pointer-events: none !important;
+}
+
+#app > div:first-of-type,
+.LayoutApp_app__HmVQW > div:first-of-type {
+    position: static !important;
+    pointer-events: none !important;
+}
+
 .global-nav {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     width: 100% !important;
     height: var(--nav-height) !important;
-    background-color: #ffffff !important; /* Force opaque white */
+    background-color: var(--nav-bg) !important;
     backdrop-filter: saturate(180%) blur(20px) !important;
     -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
-    z-index: 2000000000 !important; 
+    z-index: 9999999 !important;
     transition: background-color 0.5s cubic-bezier(0.28, 0.11, 0.32, 1) !important;
     margin: 0 !important;
     padding: 0 !important;
+    pointer-events: auto !important;
+}
+
+.global-nav.nav-active {
+    background-color: rgba(251, 251, 253, 1) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    z-index: 1000001 !important;
 }
 
 .nav-content {
@@ -111,18 +134,37 @@ body {
 
 /* Dropdown styling */
 .nav-dropdown {
-    position: fixed !important;
+    position: absolute !important;
     top: var(--nav-height) !important;
     left: 0 !important;
     width: 100% !important;
-    background: #ffffff !important;
-    background-color: #ffffff !important;
+    background-color: #fbfbfd !important;
     height: 0;
-    overflow: hidden;
-    transition: height 0.5s cubic-bezier(0.4, 0, 0.6, 1);
-    z-index: 2000000001 !important; 
+    overflow: hidden !important;
+    transition: height 0.5s cubic-bezier(0.4, 0, 0.6, 1) !important;
+    z-index: 999999999 !important;
+    pointer-events: auto !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+}
+
+.globalnav-curtain {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0,0,0,0.4) !important;
+    z-index: 99999998 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.6, 1) !important;
+    pointer-events: none !important;
+}
+
+.nav-active .globalnav-curtain {
     opacity: 1 !important;
     visibility: visible !important;
+    pointer-events: auto !important;
 }
 
 
@@ -132,9 +174,6 @@ body {
     padding: 40px 22px;
     opacity: 0;
     transition: opacity 0.3s;
-    position: relative;
-    z-index: 2000000002 !important;
-    background-color: #ffffff !important;
 }
 
 .dropdown-section {
