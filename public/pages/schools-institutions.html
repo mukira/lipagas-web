@@ -98,6 +98,146 @@
 	<link rel="alternate" href="/fr/ipad/" hreflang="fr-FR" data-next-head="">
 	<link rel="alternate" href="/de/ipad/" hreflang="de-DE" data-next-head="">
 	<link rel="alternate" href="/ae-ar/ipad/" hreflang="ar-AE" data-next-head="">
+	<style>
+		/* Circular Plus Button Styles */
+		.IconControl_control__vxiHY.IconControl_primary__n_54r {
+			background-color: rgba(29, 29, 31, 0.8) !important;
+			backdrop-filter: blur(10px) !important;
+			-webkit-backdrop-filter: blur(10px) !important;
+			border-radius: 50% !important;
+			width: 44px !important;
+			height: 44px !important;
+			display: flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			transition: background-color 0.2s, transform 0.2s !important;
+			border: none !important;
+		}
+
+		.IconControl_control__vxiHY.IconControl_primary__n_54r:hover {
+			background-color: rgba(29, 29, 31, 1) !important;
+			transform: scale(1.05) !important;
+		}
+
+		.IconControl_control__vxiHY.IconControl_primary__n_54r svg {
+			width: 20px !important;
+			height: 20px !important;
+			fill: #ffffff !important;
+			margin: 0 !important;
+		}
+
+		/* Positioning for the plus icon on the cards */
+		.cards_cardLink__W1UKy {
+			position: absolute !important;
+			bottom: 30px !important;
+			right: 30px !important;
+			z-index: 10 !important;
+			border: none !important;
+			background: none !important;
+			padding: 0 !important;
+			cursor: pointer !important;
+		}
+
+		.CardControl_controlContainer__fsXIE {
+			display: block !important;
+		}
+
+		/* Modal Styles */
+		.lipagas-modal-overlay {
+			position: fixed !important;
+			top: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
+			height: 100% !important;
+			background-color: rgba(0, 0, 0, 0.4) !important;
+			backdrop-filter: blur(20px) !important;
+			-webkit-backdrop-filter: blur(20px) !important;
+			display: none !important;
+			align-items: center !important;
+			justify-content: center !important;
+			z-index: 9999 !important;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.4s ease, visibility 0.4s ease !important;
+		}
+
+		.lipagas-modal-overlay.active {
+			display: flex !important;
+			opacity: 1 !important;
+			visibility: visible !important;
+		}
+
+		.lipagas-modal-content {
+			background-color: #fff !important;
+			width: 90% !important;
+			max-width: 800px !important;
+			max-height: 90vh !important;
+			border-radius: 20px !important;
+			position: relative !important;
+			padding: 40px !important;
+			overflow-y: auto !important;
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+		}
+
+		.lipagas-modal-close {
+			position: absolute !important;
+			top: 20px !important;
+			right: 20px !important;
+			background: #f5f5f7 !important;
+			border: none !important;
+			width: 36px !important;
+			height: 36px !important;
+			border-radius: 50% !important;
+			cursor: pointer !important;
+			display: flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			transition: transform 0.2s ease !important;
+			z-index: 10 !important;
+		}
+
+		.lipagas-modal-close:hover {
+			transform: scale(1.1) !important;
+		}
+
+		.lipagas-modal-close svg {
+			width: 12px !important;
+			height: 12px !important;
+			fill: #1d1d1f !important;
+		}
+
+		.modal-topic {
+			font-size: 14px !important;
+			font-weight: 600 !important;
+			color: #86868b !important;
+			margin-bottom: 8px !important;
+			text-transform: uppercase !important;
+			letter-spacing: 0.02em !important;
+		}
+
+		.modal-headline {
+			font-size: 40px !important;
+			line-height: 1.1 !important;
+			font-weight: 600 !important;
+			color: #1d1d1f !important;
+			margin-bottom: 24px !important;
+		}
+
+		.modal-body {
+			font-size: 19px !important;
+			line-height: 1.47 !important;
+			color: #424245 !important;
+		}
+
+		.modal-body p {
+			margin-bottom: 1.5em !important;
+		}
+
+		.modal-body strong {
+			color: #1d1d1f !important;
+			font-weight: 600 !important;
+		}
+	</style>
 	<link rel="alternate" href="/la/ipad/" hreflang="es-HN" data-next-head="">
 	<link rel="alternate" href="/tr/ipad/" hreflang="tr-TR" data-next-head="">
 	<link rel="alternate" href="/uk/ipad/" hreflang="en-GB" data-next-head="">
@@ -1041,7 +1181,8 @@
 																					<source
 																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/technitans.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						src="/assets-www/en_WW/ipad/01_product_tile/large/technitans.jpg"
+																						alt="LipaGas Full-Service Setup">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1110,17 +1251,18 @@
 																				<picture
 																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/small/ipad_80a6a106f.jpg, /assets-www/en_WW/ipad/01_product_tile/small/ipad_25abb44d1_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/safety.jpg"
 																						width="232" height="276"
 																						media="(max-width: 734px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/medium/ipad_75ec2d856.jpg, /assets-www/en_WW/ipad/01_product_tile/medium/ipad_58cedcb8b_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/safety.jpg"
 																						width="344" height="410"
 																						media="(max-width: 1068px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/ipad_5d225e1ea.jpg, /assets-www/en_WW/ipad/01_product_tile/large/ipad_34eb18065_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/safety.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						src="/assets-www/en_WW/ipad/01_product_tile/large/safety.jpg"
+																						alt="Safety by Design">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1190,17 +1332,18 @@
 																				<picture
 																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/small/ipad_mini_55d888566.jpg, /assets-www/en_WW/ipad/01_product_tile/small/ipad_mini_be76a8ea6_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/onboarding.jpg"
 																						width="232" height="276"
 																						media="(max-width: 734px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/medium/ipad_mini_47e237156.jpg, /assets-www/en_WW/ipad/01_product_tile/medium/ipad_mini_4a65565e0_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/onboarding.jpg"
 																						width="344" height="410"
 																						media="(max-width: 1068px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/ipad_mini_b108b56ae.jpg, /assets-www/en_WW/ipad/01_product_tile/large/ipad_mini_65fde8705_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/onboarding.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						src="/assets-www/en_WW/ipad/01_product_tile/large/onboarding.jpg"
+																						alt="Specialist Onboarding">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1269,17 +1412,18 @@
 																				<picture
 																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/cook.jpg"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/pricing.jpg"
 																						width="232" height="276"
 																						media="(max-width: 734px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/cook.jpg"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/pricing.jpg"
 																						width="344" height="410"
 																						media="(max-width: 1068px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/cook.jpg"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/pricing.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						src="/assets-www/en_WW/ipad/01_product_tile/large/pricing.jpg"
+																						alt="Predictable Pricing">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1347,17 +1491,18 @@
 																				<picture
 																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/technitans.jpg"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/happy.jpg"
 																						width="232" height="276"
 																						media="(max-width: 734px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/technitans.jpg"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/happy.jpg"
 																						width="344" height="410"
 																						media="(max-width: 1068px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/technitans.jpg"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/happy.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						src="/assets-www/en_WW/ipad/01_product_tile/large/happy.jpg"
+																						alt="LipaGas Energy Managed">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1427,17 +1572,18 @@
 																				<picture
 																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/small/ipad_80a6a106f.jpg, /assets-www/en_WW/ipad/01_product_tile/small/ipad_25abb44d1_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/consultancy.jpg"
 																						width="232" height="276"
 																						media="(max-width: 734px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/medium/ipad_75ec2d856.jpg, /assets-www/en_WW/ipad/01_product_tile/medium/ipad_58cedcb8b_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/consultancy.jpg"
 																						width="344" height="410"
 																						media="(max-width: 1068px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/ipad_5d225e1ea.jpg, /assets-www/en_WW/ipad/01_product_tile/large/ipad_34eb18065_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/consultancy.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						src="/assets-www/en_WW/ipad/01_product_tile/large/consultancy.jpg"
+																						alt="Institutional Consultation">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1505,17 +1651,18 @@
 																				<picture
 																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/small/ipad_mini_55d888566.jpg, /assets-www/en_WW/ipad/01_product_tile/small/ipad_mini_be76a8ea6_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/smart-meter.jpg"
 																						width="232" height="276"
 																						media="(max-width: 734px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/medium/ipad_mini_47e237156.jpg, /assets-www/en_WW/ipad/01_product_tile/medium/ipad_mini_4a65565e0_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/smart-meter.jpg"
 																						width="344" height="410"
 																						media="(max-width: 1068px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/ipad_mini_b108b56ae.jpg, /assets-www/en_WW/ipad/01_product_tile/large/ipad_mini_65fde8705_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/smart-meter.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						src="/assets-www/en_WW/ipad/01_product_tile/large/smart-meter.jpg"
+																						alt="Real-time Monitoring">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1579,20 +1726,22 @@
 					</div>
 				</section>
 				<section class="MarcomSection_section__Hd6T8 MarcomSection_backgroundTertiary___LAi8"
-					data-analytics-section-engagement="name:why lipagas">
+					data-analytics-section-engagement="name:why lipagas"
+					style="padding-top: 150px !important; padding-bottom: 150px !important; background-color: #f5f5f7 !important;">
 					<div class="section-content">
-						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz">
+						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz"
+							style="display: flex !important; justify-content: space-between !important; align-items: flex-end !important; margin-bottom: 100px !important;">
 							<h2 id="icon-card-section-5-header"
 								class="SectionHeader_headline__aqRKz MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
-								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><span>Built for the demands of
+								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1; font-size: 56px !important; font-weight: 600 !important; line-height: 1.07 !important; letter-spacing: -0.005em !important;"><span>Built for the demands of<br>
 									leading institutions.</span></h2>
-							<div class="SectionHeader_ctaWrapper__HJNTs">
+							<div class="SectionHeader_ctaWrapper__HJNTs" style="margin-bottom: 15px !important;">
 								<ul class="SectionHeader_ctaList__luQ5v">
 									<li class="SectionHeader_description__hZqOh MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
 										style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><a
 											class="typography_bodyCopy__v_XbA StandardsLink_link__WcJoK StandardsLink_icon-wrapper__bIVCW"
-											data-analytics-title="shop ipad" href="/ipad"
-											aria-label="Shop LipaGas LPG"><span
+											data-analytics-title="shop ipad" href="/order"
+											aria-label="Shop LipaGas LPG" style="font-size: 21px !important; font-weight: 400 !important;"><span
 												class="StandardsLink_copy__FvCj1"><span>Shop LipaGas
 													LPG</span></span><span
 												class="StandardsLink_icon__rkBQJ StandardsLink_icon-after__RU8rf StandardsLink_icon-more__X5J7u"></span></a>
@@ -1612,7 +1761,7 @@
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
 												<div class="IconCard_contentContainer__G34xf"><img alt="" width="46"
 														height="56"
-														src="/assets-www/en_WW/common/icon_card/creditcard_elevated_b70609ee9.svg">
+														src="/assets-www/en_WW/common/icon_card/survey.svg">
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 1: Request
 																a Survey</span></h4>
@@ -1649,9 +1798,9 @@
 											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="40"
+												<div class="IconCard_contentContainer__G34xf"><img alt="" width="46"
 														height="56"
-														src="/assets-www/en_WW/common/icon_card/arrow.2.squarepath.devices_elevated_fac99429a.svg">
+														src="/assets-www/en_WW/common/icon_card/proposal.svg">
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 2: Custom
 																Proposal</span></h4>
@@ -1690,7 +1839,7 @@
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
 												<div class="IconCard_contentContainer__G34xf"><img alt="" width="46"
 														height="56"
-														src="/assets-www/en_WW/common/icon_card/graduationcap_elevated_e406e6e68.svg">
+														src="/assets-www/en_WW/common/icon_card/financing.svg">
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 3:
 																Financing Approval</span></h4>
@@ -1722,14 +1871,14 @@
 										</div>
 									</li>
 									<li class="Gallery_galleryItem__cc2Of" role="listitem" tabindex="-1"
-										data-analytics-gallery-item-id="personal setup ">
+										data-analytics-gallery-item-id="personal-setup">
 										<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw animationDefaults_buildIn__OdEKA"
 											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="56"
+												<div class="IconCard_contentContainer__G34xf"><img alt="" width="46"
 														height="56"
-														src="/assets-www/en_WW/common/icon_card/person.line.dotted.person_elevated_83a5eeeb4.svg">
+														src="/assets-www/en_WW/common/icon_card/installation.svg">
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 4:
 																Professional Installation</span></h4>
@@ -1742,10 +1891,8 @@
 														</p>
 													</div>
 												</div><button class="cards_cardLink__W1UKy"
-													data-analytics-intrapage-link=""
-													aria-label="Learn more about specialist setup support"
-													data-analytics-title="open modal - personal setup"
-													data-analytics-click="prop3:open modal - personal setup">
+													aria-label="Learn more about Installation"
+													data-analytics-title="open modal - personal-setup">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -1766,9 +1913,9 @@
 											class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="49"
+												<div class="IconCard_contentContainer__G34xf"><img alt="" width="46"
 														height="56"
-														src="/assets-www/en_WW/common/icon_card/truck.box_elevated_d74c82127.svg">
+														src="/assets-www/en_WW/common/icon_card/training.svg">
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 5: Staff
 																Training</span></h4>
@@ -1805,9 +1952,9 @@
 											class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="40"
+												<div class="IconCard_contentContainer__G34xf"><img alt="" width="46"
 														height="56"
-														src="/assets-www/en_WW/common/icon_card/emoji.face.grinning_elevated_bd5991c26.svg">
+														src="/assets-www/en_WW/common/icon_card/dashboard.svg">
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 6:
 																Dashboard Activation</span></h4>
@@ -1839,30 +1986,28 @@
 										</div>
 									</li>
 									<li class="Gallery_galleryItem__cc2Of" role="listitem" tabindex="-1"
-										data-analytics-gallery-item-id="shop with a specialist">
+										data-analytics-gallery-item-id="shop-specialist">
 										<div
 											class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="42"
+												<div class="IconCard_contentContainer__G34xf"><img alt="" width="46"
 														height="56"
-														src="/assets-www/en_WW/common/icon_card/person.macwindow_elevated_53b58701b.svg">
+														src="/assets-www/en_WW/common/icon_card/refills.svg">
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 7:
-																Automatic Refills</span></h4>
+1905: 																Automatic Refills</span></h4>
 														<h3 class="typography_headline__zZkHA IconCard_headline__0cXta">
 															<span>We handle replenishment.</span>
 														</h3>
 														<p class="typography_bodyCopy__v_XbA IconCard_bodyCopy__AxRxx">
 															<span>Smart meters trigger refill orders automatically — no
-																manual reordering.</span>
+ manual reordering.</span>
 														</p>
 													</div>
 												</div><button class="cards_cardLink__W1UKy"
-													data-analytics-intrapage-link=""
-													aria-label="Learn more about shopping with a Specialist over video"
-													data-analytics-title="open modal - shop with a specialist"
-													data-analytics-click="prop3:open modal - shop with a specialist">
+													aria-label="Learn more about Refills"
+													data-analytics-title="open modal - shop-specialist">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -1883,9 +2028,9 @@
 											class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="36"
+												<div class="IconCard_contentContainer__G34xf"><img alt="" width="46"
 														height="56"
-														src="/assets-www/en_WW/common/icon_card/app.lipagasstore_elevated_8102e7f71.svg">
+														src="/assets-www/en_WW/common/icon_card/support.svg">
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 8: Ongoing
 																Support</span></h4>
@@ -1919,7 +2064,8 @@
 								</ul>
 							</div>
 							<div class="PaddleNav_paddlenav__QfLbi responsive-content_responsiveContent__S1ntz Gallery_paddleNav__hBEEI"
-								data-analytics-gallery-interaction-type="paddlenav">
+								data-analytics-gallery-interaction-type="paddlenav"
+								style="display: flex !important; justify-content: flex-end !important; padding-top: 40px !important; width: 100% !important; max-width: none !important; padding-right: 48px !important;">
 								<ul class="PaddleNav_grid__l38V7">
 									<li><button aria-label="Previous item in Why Lipagas gallery"
 											class="IconControl_control__vxiHY IconControl_disabled__28z4j IconControl_tertiary__YE5Ln"
@@ -1942,7 +2088,8 @@
 						</div>
 					</div>
 				</section>
-				<section class="MarcomSection_section__Hd6T8" data-analytics-section-engagement="name:get to know ipad">
+				<section class="MarcomSection_section__Hd6T8" data-analytics-section-engagement="name:get to know ipad"
+					style="padding-top: 100px !important; padding-bottom: 100px !important;">
 					<div class="section-content">
 						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz">
 							<h2 id="feature-card-section-7-header"
@@ -1956,7 +2103,7 @@
 								<ul aria-labelledby="feature-card-section-7-header" role="list"
 									class="Gallery_itemContainer__Zirbx">
 									<li class="Gallery_galleryItem__cc2Of" role="listitem" tabindex="-1"
-										data-analytics-gallery-item-id="ipados + apps">
+										data-analytics-gallery-item-id="ipados-apps">
 										<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw animationDefaults_buildIn__OdEKA"
 											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
@@ -1994,11 +2141,9 @@
 																alt="Clean and healthy kitchen environment without firewood smoke">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=ipados-apps"
-													aria-label="Learn more about LipaGasOS + Apps" role="button"
-													data-analytics-title="open modal - ipados"
-													data-analytics-click="prop3:open modal - ipados">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Faster meal prep"
+													data-analytics-title="open modal - faster-meal-prep">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2009,12 +2154,12 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
 									<li class="Gallery_galleryItem__cc2Of" role="listitem" tabindex="-1"
-										data-analytics-gallery-item-id="lipagas intelligence">
+										data-analytics-gallery-item-id="lipagas-intelligence">
 										<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw animationDefaults_buildIn__OdEKA"
 											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
@@ -2030,7 +2175,7 @@
 														</p>
 														<p class="typography_bodyCopy__v_XbA">
 															<span>Kitchens on LPG report near-total elimination of
-																smoke-related respiratory illness.</span>
+ smoke-related respiratory illness.</span>
 														</p>
 													</div>
 												</div>
@@ -2054,11 +2199,9 @@
 																alt="LipaGas kitchen setup showing fast cooking times">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=lipagas-intelligence"
-													aria-label="Learn more about Lipagas Intelligence" role="button"
-													data-analytics-title="open modal - lipagas intelligence"
-													data-analytics-click="prop3:open modal - lipagas intelligence">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Health & Safety"
+													data-analytics-title="open modal - health-safety">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2069,7 +2212,7 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
@@ -2088,8 +2231,8 @@
 														</p>
 														<p class="typography_bodyCopy__v_XbA">
 															<span>Institutions switching from firewood cut their
-																per-meal
-																energy spend dramatically.</span>
+ per-meal
+ energy spend dramatically.</span>
 														</p>
 													</div>
 												</div>
@@ -2113,11 +2256,9 @@
 																alt="Stable, predictable LPG pricing for schools">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=productivity"
-													aria-label="Learn more about Productivity" role="button"
-													data-analytics-title="open modal - productivity"
-													data-analytics-click="prop3:open modal - productivity">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Efficiency"
+													data-analytics-title="open modal - productivity">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2128,7 +2269,7 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
@@ -2148,8 +2289,8 @@
 														</p>
 														<p class="typography_bodyCopy__v_XbA">
 															<span>Tanks, piping, and installation financed at 1%. No
-																capital
-																outlay required.</span>
+ capital
+ outlay required.</span>
 														</p>
 													</div>
 												</div>
@@ -2173,10 +2314,9 @@
 																alt="Clean school institution devoid of bulky firewood storage">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=creativity" aria-label="Learn more about Creativity"
-													role="button" data-analytics-title="open modal - creativity"
-													data-analytics-click="prop3:open modal - creativity">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Financing"
+													data-analytics-title="open modal - creativity">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2187,7 +2327,7 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
@@ -2206,7 +2346,7 @@
 														</p>
 														<p class="typography_bodyCopy__v_XbA">
 															<span>Route-optimised logistics and buffer stock ensure your
-																kitchen never stops.</span>
+ kitchen never stops.</span>
 														</p>
 													</div>
 												</div>
@@ -2230,10 +2370,9 @@
 																alt="Smart meter and dashboard showing real-time LPG consumption">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=learning" aria-label="Learn more about Learning"
-													role="button" data-analytics-title="open modal - learning"
-													data-analytics-click="prop3:open modal - learning">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Reliability"
+													data-analytics-title="open modal - learning">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2244,7 +2383,7 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
@@ -2264,7 +2403,7 @@
 														</p>
 														<p class="typography_bodyCopy__v_XbA">
 															<span>Track every gram consumed, every shilling spent — from
-																your phone or desktop.</span>
+ your phone or desktop.</span>
 														</p>
 													</div>
 												</div>
@@ -2288,11 +2427,9 @@
 																alt="Automatic LPG refill truck delivery for schools">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=entertainment"
-													aria-label="Learn more about Partnerships" role="button"
-													data-analytics-title="open modal - entertainment"
-													data-analytics-click="prop3:open modal - entertainment">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Monitoring"
+													data-analytics-title="open modal - entertainment">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2303,12 +2440,12 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
 									<li class="Gallery_galleryItem__cc2Of" role="listitem" tabindex="-1"
-										data-analytics-gallery-item-id="lipagas pencil">
+										data-analytics-gallery-item-id="lipagas-pencil">
 										<div
 											class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
 											<div
@@ -2324,7 +2461,7 @@
 														</p>
 														<p class="typography_bodyCopy__v_XbA">
 															<span>Schools, hospitals, and universities across Kenya
-																already trust LipaGas.</span>
+ already trust LipaGas.</span>
 														</p>
 													</div>
 												</div>
@@ -2348,11 +2485,9 @@
 																alt="An Lipagas Pencil with colorful lettering in Notes">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=lipagas-pencil"
-													aria-label="Learn more about Lipagas Pencil" role="button"
-													data-analytics-title="open modal - lipagas pencil"
-													data-analytics-click="prop3:open modal - lipagas pencil">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Trust"
+													data-analytics-title="open modal - lipagas-pencil">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2363,14 +2498,15 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
 								</ul>
 							</div>
 							<div class="PaddleNav_paddlenav__QfLbi responsive-content_responsiveContent__S1ntz Gallery_paddleNav__hBEEI"
-								data-analytics-gallery-interaction-type="paddlenav">
+								data-analytics-gallery-interaction-type="paddlenav"
+								style="display: flex !important; justify-content: flex-end !important; padding-top: 40px !important; width: 100% !important; max-width: none !important; padding-right: 48px !important;">
 								<ul class="PaddleNav_grid__l38V7">
 									<li><button aria-label="Previous item in Get to know LipaGas LPG gallery"
 											class="IconControl_control__vxiHY IconControl_disabled__28z4j IconControl_tertiary__YE5Ln"
@@ -2395,7 +2531,8 @@
 				</section>
 				<section
 					class="MarcomSection_section__Hd6T8 MarcomSection_backgroundTertiary___LAi8 MarcomSection_noBottomPadding__dUGgu"
-					data-analytics-section-engagement="name:ipad essentials">
+					data-analytics-section-engagement="name:ipad essentials"
+					style="padding-top: 100px !important; padding-bottom: 100px !important;">
 					<div class="section-content">
 						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz">
 							<h2 id="banner-card-section-9-header"
@@ -2414,12 +2551,11 @@
 										tabindex="-1"></a>
 									<div class="BannerCard_copyLockup__9uRdS CopyLockup_textAlignCenter__7B4Wl">
 										<div class="CopyLockup_headingContainer__eAcNT">
-											<h3 class="CopyLockup_header__BZWbY"><span>Built for massive
-													scale.</span></h3>
+											<h3 class="CopyLockup_header__BZWbY"><span>Institutions
+													powered.</span>
+											</h3>
 										</div>
-										<p class="CopyLockup_copy__t5rPE"><span>Whether you're feeding 5 or 5,000
-												students daily, our bulk LPG installations deliver consistent,
-												high-pressure heat to every burner in your kitchen
+										<p class="CopyLockup_copy__t5rPE"><span>From 5,000 to 50,000 meals
 												simultaneously.</span></p>
 										<div
 											class="OptionalCTABlock_ctaBlock__k2dm5 OptionalCTABlock_alignCenter__bgIt_ OptionalCTABlock_ctaInline__vG_6y">
@@ -2504,7 +2640,8 @@
 					</div>
 				</section>
 				<section class="MarcomSection_section__Hd6T8 MarcomSection_backgroundTertiary___LAi8"
-					data-analytics-section-engagement="name:ipad family">
+					data-analytics-section-engagement="name:ipad family"
+					style="padding-top: 100px !important; padding-bottom: 100px !important;">
 					<div class="section-content">
 						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz">
 							<h2 id="accordion-section-10-header"
@@ -3788,6 +3925,203 @@
 				</script>
 				<script src="/pages/navigation-sync.js"></script>
     <script src="apple-main.js"></script>
+	<!-- LipaGas Info Modal -->
+	<div id="lipagas-info-modal" class="lipagas-modal-overlay">
+		<div class="lipagas-modal-content">
+			<button class="lipagas-modal-close" onclick="closeModal()" aria-label="Close modal">
+				<svg viewBox="0 0 18 18">
+					<path d="M10.06 9l5.47-5.47a.75.75 0 0 0-1.06-1.06L9 7.94 3.53 2.47a.75.75 0 0 0-1.06 1.06L7.94 9l-5.47 5.47a.75.75 0 1 0 1.06 1.06L9 10.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L10.06 9z"></path>
+				</svg>
+			</button>
+			<div id="modal-content-area">
+				<p class="modal-topic" id="modal-topic"></p>
+				<h2 class="modal-headline" id="modal-headline"></h2>
+				<div class="modal-body" id="modal-body"></div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		const modalData = {
+			"financing": {
+				topic: "Step 1: Request a Survey",
+				headline: "We come to you.",
+				body: "<p><strong>Book a free site assessment.</strong> Our engineers evaluate your kitchen infrastructure and provide immediate feedback on the best installation path for your institution.</p>"
+			},
+			"full-service": {
+				topic: "Step 2: Custom Proposal",
+				headline: "Designed for your institution.",
+				body: "<p><strong>Tailored planning.</strong> Receive a comprehensive plan covering equipment specifications, piping layouts, and transparent pricing structures designed for scale.</p>"
+			},
+			"safety": {
+				topic: "Step 3: Financing Approval",
+				headline: "Approved in 48 hours.",
+				body: "<p><strong>Institutional financing.</strong> Apply for our 1% monthly financing model, designed to allow schools and hospitals to modernize without any upfront capital expenditure.</p>"
+			},
+			"personal-setup": {
+				topic: "Step 4: Professional Installation",
+				headline: "Certified teams, zero disruption.",
+				body: "<p><strong>Expert execution.</strong> ISO-certified technicians handle the entire installation process, ensuring compliance with all safety standards while maintaining your operational schedule.</p>"
+			},
+			"price-lock": {
+				topic: "Step 5: Staff Training",
+				headline: "Your team, fully prepared.",
+				body: "<p><strong>Empowering your staff.</strong> Comprehensive training sessions for kitchen and maintenance teams on safety protocols, daily operations, and emergency response procedures.</p>"
+			},
+			"core-promise": {
+				topic: "Step 6: Dashboard Activation",
+				headline: "Visibility from day one.",
+				body: "<p><strong>Data-driven management.</strong> Gain immediate access to your real-time dashboard, providing full visibility into consumption patterns and budget management across all outlets.</p>"
+			},
+			"shop-specialist": {
+				topic: "Step 7: Automatic Refills",
+				headline: "We handle replenishment.",
+				body: "<p><strong>Seamless supply.</strong> Our IoT-linked smart meters trigger automated refill orders before your reserve levels run low, ensuring you never experience a service interruption.</p>"
+			},
+			"overview-app": {
+				topic: "Step 8: Ongoing Support",
+				headline: "A long-term partnership.",
+				body: "<p><strong>Dedicated assistance.</strong> paired with a dedicated account manager and technical lead for quarterly reviews, preventive maintenance, and 24/7 priority support.</p>"
+			},
+			"ipados-apps": {
+				topic: "Energy Management",
+				headline: "Faster meal prep.",
+				body: "<p><strong>Institutional-grade speed.</strong> Our high-output LPG burners are engineered for simultaneous large-scale cooking, reducing preparation times by up to 60%.</p>"
+			},
+			"lipagas-intelligence": {
+				topic: "Health & Safety",
+				headline: "Fewer sick days.",
+				body: "<p><strong>Clean air, healthy students.</strong> Switching to LipaGas eliminates 99% of kitchen smoke, significantly improving respiratory health for kitchen staff and students.</p>"
+			},
+			"productivity": {
+				topic: "Efficiency",
+				headline: "Lower energy costs.",
+				body: "<p><strong>Waste-free cooking.</strong> Smart meters ensure you only pay for the gas you use, with thermal efficiency 3x higher than traditional solid fuels.</p>"
+			},
+			"creativity": {
+				topic: "Financing",
+				headline: "Upfront cost.",
+				body: "<p><strong>Modernize without the burden.</strong> Professional piping and bulk storage systems are installed with zero upfront cost, financed at an institutional rate of 1%.</p>"
+			},
+			"learning": {
+				topic: "Reliability",
+				headline: "Supply uptime.",
+				body: "<p><strong>Never miss a meal.</strong> Route-optimized logistics and real-time monitoring guarantee a 99.8% uptime rate for your institutional kitchen operations.</p>"
+			},
+			"entertainment": {
+				topic: "Monitoring",
+				headline: "Live monitoring.",
+				body: "<p><strong>Transparency in every gram.</strong> Track consumption from any device. Our live dashboard helps identify waste and reconcile spend with institutional audits instantly.</p>"
+			},
+			"lipagas-pencil": {
+				topic: "Trust",
+				headline: "Institutions powered.",
+				body: "<p><strong>A nationwide network.</strong> Join over 500 leading schools and hospitals that trust the LipaGas standard for safety, efficiency, and professional energy management.</p>"
+			}
+		};
+
+		function openModal(stepId) {
+			const data = modalData[stepId];
+			if (!data) {
+				console.warn("No modal data for ID:", stepId);
+				return;
+			}
+
+			document.getElementById('modal-topic').textContent = data.topic;
+			document.getElementById('modal-headline').textContent = data.headline;
+			document.getElementById('modal-body').innerHTML = data.body;
+
+			const modal = document.getElementById('lipagas-info-modal');
+			modal.classList.add('active');
+			document.body.style.overflow = 'hidden';
+		}
+
+		function closeModal() {
+			const modal = document.getElementById('lipagas-info-modal');
+			modal.classList.remove('active');
+			document.body.style.overflow = '';
+		}
+
+		document.getElementById('lipagas-info-modal').addEventListener('click', function(e) {
+			if (e.target === this) closeModal();
+		});
+
+		document.addEventListener('keydown', function(e) {
+			if (e.key === 'Escape') closeModal();
+		});
+
+		document.addEventListener('DOMContentLoaded', () => {
+			// Robust Modal Event Delegation
+			document.body.addEventListener('click', (e) => {
+				const btn = e.target.closest('button.cards_cardLink__W1UKy');
+				if (btn) {
+					const item = btn.closest('[data-analytics-gallery-item-id]');
+					if (item) {
+						const id = item.getAttribute('data-analytics-gallery-item-id');
+						if (modalData[id]) {
+							openModal(id);
+						}
+					}
+				}
+			});
+
+			// Ensure plus icons are accessible
+			document.querySelectorAll('button.cards_cardLink__W1UKy').forEach(btn => {
+				btn.setAttribute('type', 'button');
+			});
+
+			// Universal Gallery Scrolling Logic
+			const setupGallery = (galleryId, sectionSelector) => {
+				const galleryContainer = document.querySelector(`[data-analytics-gallery-id="${galleryId}"] .Gallery_scrollContainer__1LaRX`);
+				const section = document.querySelector(sectionSelector);
+				if (!galleryContainer || !section) {
+					// Fallback for different scroll container class if needed
+					const altContainer = document.querySelector(`[data-analytics-gallery-id="${galleryId}"] div[data-scrollable="true"]`);
+					if (!altContainer || !section) return;
+					
+					// Proceed with altContainer
+					bindGallery(altContainer, section);
+				} else {
+					bindGallery(galleryContainer, section);
+				}
+			};
+
+			function bindGallery(container, section) {
+				const prevBtn = section.querySelector('button[aria-label*="Previous item"]');
+				const nextBtn = section.querySelector('button[aria-label*="Next item"]');
+
+				if (prevBtn && nextBtn) {
+					const scrollAmount = 400;
+
+					prevBtn.onclick = () => {
+						container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+					};
+
+					nextBtn.onclick = () => {
+						container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+					};
+
+					const updateButtons = () => {
+						const isAtStart = container.scrollLeft <= 0;
+						const isAtEnd = container.scrollLeft + container.offsetWidth >= container.scrollWidth - 5;
+						
+						prevBtn.disabled = isAtStart;
+						prevBtn.classList.toggle('IconControl_disabled__28z4j', isAtStart);
+						
+						nextBtn.disabled = isAtEnd;
+						nextBtn.classList.toggle('IconControl_disabled__28z4j', isAtEnd);
+					};
+
+					container.addEventListener('scroll', updateButtons);
+					window.addEventListener('resize', updateButtons);
+					updateButtons();
+				}
+			}
+
+			setupGallery("why lipagas gallery", 'section[data-analytics-section-engagement="name:why lipagas"]');
+			setupGallery("get to know ipad gallery", 'section[data-analytics-section-engagement="name:get to know ipad"]');
+		});
+	</script>
 </body>
 <div cssdimensionstracker="true"
 	style="position: fixed; top: 0px; width: 100%; height: 100vh; pointer-events: none; visibility: hidden; z-index: -1;">
