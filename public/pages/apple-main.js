@@ -41,6 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (hasContent) {
             dropdown.style.height = '480px';
+            dropdown.style.setProperty('background-color', 'white', 'important');
+            dropdown.style.setProperty('z-index', '2000000005', 'important');
+            dropdown.style.setProperty('opacity', '1', 'important');
+            dropdown.style.setProperty('visibility', 'visible', 'important');
             dropdownContent.style.opacity = '1';
             nav.classList.add('nav-active');
         } else {
