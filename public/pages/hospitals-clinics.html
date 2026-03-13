@@ -327,6 +327,141 @@
 			.ChapterNav_chapternav__F68Cm {
 				margin-bottom: 30px !important;
 			}
+
+			/* Plus Button Positioning Fix */
+			.CardControl_controlContainer__fsXIE {
+				position: absolute !important;
+				bottom: 24px !important;
+				right: 24px !important;
+				z-index: 2 !important;
+				pointer-events: none !important;
+			}
+
+			.CardControl_controlContainer__fsXIE .IconControl_control__vxiHY {
+				pointer-events: auto !important;
+			}
+
+			/* Modal Styles */
+			.lipagas-info-modal {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.4);
+				backdrop-filter: blur(20px);
+				-webkit-backdrop-filter: blur(20px);
+				z-index: 9999;
+				display: none;
+				justify-content: center;
+				align-items: center;
+				opacity: 0;
+				transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			.lipagas-info-modal.active {
+				display: flex;
+				opacity: 1;
+			}
+
+			.modal-content {
+				background: rgba(255, 255, 255, 0.85);
+				width: 90%;
+				max-width: 800px;
+				max-height: 85vh;
+				border-radius: 30px;
+				position: relative;
+				padding: 60px;
+				overflow-y: auto;
+				box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+				transform: scale(0.95);
+				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			.lipagas-info-modal.active .modal-content {
+				transform: scale(1);
+			}
+
+			.modal-close {
+				position: absolute;
+				top: 25px;
+				right: 25px;
+				width: 36px;
+				height: 36px;
+				background: #e8e8ed;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				cursor: pointer;
+				border: none;
+				color: #1d1d1f;
+				transition: all 0.2s;
+				z-index: 10;
+			}
+
+			.modal-close:hover {
+				background: #d2d2d7;
+				transform: rotate(90deg);
+			}
+
+			#modal-topic {
+				text-transform: uppercase;
+				font-size: 12px;
+				font-weight: 600;
+				letter-spacing: 0.1em;
+				margin-bottom: 15px;
+				display: block;
+				color: #86868b;
+			}
+
+			#modal-headline {
+				font-size: 40px;
+				line-height: 1.1;
+				font-weight: 600;
+				margin-bottom: 25px;
+				color: #1d1d1f;
+			}
+
+			#modal-body {
+				font-size: 19px;
+				line-height: 1.5;
+				color: #1d1d1f;
+			}
+
+			#modal-body p { margin-bottom: 20px; }
+			#modal-body strong { font-weight: 600; }
+
+			.modal-pillars {
+				margin-top: 40px;
+				padding-top: 30px;
+				border-top: 1px solid #d2d2d7;
+			}
+
+			.modal-pillars h3 {
+				font-size: 17px;
+				font-weight: 600;
+				margin-bottom: 20px;
+			}
+
+			.modal-pillars ul {
+				list-style: none;
+				padding: 0;
+			}
+
+			.modal-pillars li {
+				margin-bottom: 12px;
+				padding-left: 25px;
+				position: relative;
+			}
+
+			.modal-pillars li::before {
+				content: "•";
+				position: absolute;
+				left: 0;
+				color: #00ca51;
+				font-weight: bold;
+			}
 		}
 	</style>
 	<link rel="stylesheet" href="/api-www/global-elements/global-footer/v1/en_US/styles/ac-globalfooter.built.css">
@@ -501,7 +636,7 @@
 			}
 		}
 	</style>
-    <link rel="stylesheet" href="apple-style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body data-anim-scroll-group="body">
@@ -548,7 +683,7 @@
 	<link rel="preload" as="image" href="/assets-www/en_WW/ipad/chapternav/ipad_ec6ec9ee7.svg">
 	<link rel="preload" as="image" href="/assets-www/en_WW/ipad/chapternav/ipad_mini_ca78d03ea.svg">
 	<link rel="preload" as="image" href="/assets-www/en_WW/ipad/chapternav/compare_ipad_93f95f0a1.svg">
-	<link rel="preload" as="image" href="/assets-www/en_WW/ipad/chapternav/lipagas_pencil_607b17f9f.svg">
+	<link rel="preload" as="image" href="/assets-www/en_WW/ipad/chapternav/apple_pencil_607b17f9f.svg">
 	<link rel="preload" as="image" href="/assets-www/en_WW/ipad/chapternav/keyboard_ipad_0113a1a87.svg">
 	<link rel="preload" as="image" href="/assets-www/en_WW/ipad/chapternav/accessories_ipad_1d680a4ad.svg">
 	<link rel="preload" as="image" href="/assets-www/en_WW/ipad/chapternav/ipados_1e9806c02.svg">
@@ -561,7 +696,7 @@
 	<link rel="preload" as="image" href="/assets-www/en_WW/common/icon_card/truck.box_elevated_d74c82127.svg">
 	<link rel="preload" as="image" href="/assets-www/en_WW/common/icon_card/emoji.face.grinning_elevated_bd5991c26.svg">
 	<link rel="preload" as="image" href="/assets-www/en_WW/common/icon_card/person.macwindow_elevated_53b58701b.svg">
-	<link rel="preload" as="image" href="/assets-www/en_WW/common/icon_card/app.lipagasstore_elevated_8102e7f71.svg">
+	<link rel="preload" as="image" href="/assets-www/en_WW/common/icon_card/app.applestore_elevated_8102e7f71.svg">
 	<meta property="position" content="1">
 	<div id="__next">
 		<div id="app" class="LayoutApp_app__HmVQW">
@@ -886,7 +1021,8 @@
 							class="Ribbon_column__elHPU Ribbon_content__tI6qS Ribbon_large-10__CqSIr Ribbon_large-centered__CJXuN">
 							<span>Empowering excellence through better energy.</span><a
 								class="Ribbon_link__8S_WE StandardsLink_link__WcJoK StandardsLink_icon-wrapper__bIVCW"
-								data-analytics-title="learn more - institutional impact" href="/impact"
+								data-analytics-title="learn more - institutional impact" href="javascript:void(0)"
+								onclick="openModal('institutional-impact')"
 								aria-label="See how Lipagas powers institutional excellence"><span
 									class="StandardsLink_copy__FvCj1"><span>See how</span></span><span
 									class="StandardsLink_icon__rkBQJ StandardsLink_icon-after__RU8rf StandardsLink_icon-more__X5J7u"></span></a>
@@ -933,7 +1069,8 @@
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
 																	data-analytics-title="learn more - ipad pro"
-																	href="/ipad-pro/"
+																	href="javascript:void(0)"
+																	onclick="openModal('learn-more-ipad-pro')"
 																	aria-label="Learn more, LipaGas LPG Pro"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
@@ -1011,7 +1148,8 @@
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
 																	data-analytics-title="learn more - ipad air"
-																	href="/ipad-air/"
+																	href="javascript:void(0)"
+																	onclick="openModal('learn-more-ipad-air')"
 																	aria-label="Learn more, LipaGas LPG Air"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
@@ -1089,7 +1227,8 @@
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
 																	data-analytics-title="learn more - ipad 11"
-																	href="/ipad-11/"
+																	href="javascript:void(0)"
+																	onclick="openModal('learn-more-ipad-11')"
 																	aria-label="Learn more, LipaGas LPG (A16)"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
@@ -1167,7 +1306,8 @@
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
 																	data-analytics-title="learn more - ipad mini"
-																	href="/ipad-mini/"
+																	href="javascript:void(0)"
+																	onclick="openModal('learn-more-ipad-mini')"
 																	aria-label="Learn more, LipaGas LPG mini"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
@@ -1245,7 +1385,8 @@
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
 																	data-analytics-title="learn more - pricing"
-																	href="/ipad/"
+																	href="javascript:void(0)"
+																	onclick="openModal('learn-more-pricing')"
 																	aria-label="Learn more, Predictable Pricing"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
@@ -1323,7 +1464,8 @@
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
 																	data-analytics-title="learn more - managed"
-																	href="/ipad/"
+																	href="javascript:void(0)"
+																	onclick="openModal('learn-more-managed')"
 																	aria-label="Learn more, Energy Managed"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
@@ -1400,7 +1542,8 @@
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
 																	data-analytics-title="learn more - consultation"
-																	href="/ipad/"
+																	href="javascript:void(0)"
+																	onclick="openModal('learn-more-consultation')"
 																	aria-label="Learn more, Institutional Consultation"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
@@ -1563,19 +1706,21 @@
 					</div>
 				</section>
 				<section class="MarcomSection_section__Hd6T8 MarcomSection_backgroundTertiary___LAi8"
-					data-analytics-section-engagement="name:why lipagas">
+					data-analytics-section-engagement="name:why lipagas"
+					style="padding-top: 150px !important; padding-bottom: 150px !important; background-color: #f5f5f7 !important;">
 					<div class="section-content">
-						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz">
+						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz"
+							style="display: flex !important; justify-content: space-between !important; align-items: flex-end !important; margin-bottom: 100px !important;">
 							<h2 id="icon-card-section-5-header"
 								class="SectionHeader_headline__aqRKz MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
-								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><span>Seamless Energy for Life-Saving Operations.</span></h2>
-							<div class="SectionHeader_ctaWrapper__HJNTs">
+								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1; font-size: 56px !important; font-weight: 600 !important; line-height: 1.07 !important; letter-spacing: -0.005em !important;"><span>Seamless Energy for<br>Life-Saving Operations.</span></h2>
+							<div class="SectionHeader_ctaWrapper__HJNTs" style="margin-bottom: 15px !important;">
 								<ul class="SectionHeader_ctaList__luQ5v">
 									<li class="SectionHeader_description__hZqOh MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
 										style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><a
 											class="typography_bodyCopy__v_XbA StandardsLink_link__WcJoK StandardsLink_icon-wrapper__bIVCW"
 											data-analytics-title="shop ipad" href="/ipad"
-											aria-label="Shop LipaGas LPG"><span
+											aria-label="Shop LipaGas LPG" style="font-size: 21px !important; font-weight: 400 !important;"><span
 												class="StandardsLink_copy__FvCj1"><span>Shop LipaGas
 													LPG</span></span><span
 												class="StandardsLink_icon__rkBQJ StandardsLink_icon-after__RU8rf StandardsLink_icon-more__X5J7u"></span></a>
@@ -1702,7 +1847,7 @@
 										</div>
 									</li>
 									<li class="Gallery_galleryItem__cc2Of" role="listitem" tabindex="-1"
-										data-analytics-gallery-item-id="personal setup ">
+										data-analytics-gallery-item-id="personal-setup">
 										<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw animationDefaults_buildIn__OdEKA"
 											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
@@ -1861,7 +2006,7 @@
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
 												<div class="IconCard_contentContainer__G34xf"><img alt="" width="36"
 														height="56"
-														src="/assets-www/en_WW/common/icon_card/app.lipagasstore_elevated_8102e7f71.svg">
+														src="/assets-www/en_WW/common/icon_card/app.applestore_elevated_8102e7f71.svg">
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 8:
 																Global Support Hub</span></h4>
@@ -1894,7 +2039,8 @@
 								</ul>
 							</div>
 							<div class="PaddleNav_paddlenav__QfLbi responsive-content_responsiveContent__S1ntz Gallery_paddleNav__hBEEI"
-								data-analytics-gallery-interaction-type="paddlenav">
+								data-analytics-gallery-interaction-type="paddlenav"
+								style="display: flex !important; justify-content: flex-end !important; padding-top: 40px !important; width: 100% !important; max-width: none !important; padding-right: 48px !important;">
 								<ul class="PaddleNav_grid__l38V7">
 									<li><button aria-label="Previous item in Why Lipagas gallery"
 											class="IconControl_control__vxiHY IconControl_disabled__28z4j IconControl_tertiary__YE5Ln"
@@ -1917,12 +2063,13 @@
 						</div>
 					</div>
 				</section>
-				<section class="MarcomSection_section__Hd6T8" data-analytics-section-engagement="name:get to know ipad">
+				<section class="MarcomSection_section__Hd6T8" data-analytics-section-engagement="name:get to know ipad"
+					style="padding-top: 150px !important; padding-bottom: 150px !important;">
 					<div class="section-content">
 						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz">
 							<h2 id="feature-card-section-7-header"
 								class="SectionHeader_headline__aqRKz MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
-								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><span>Reliability as a Service.</span></h2>
+								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1; font-size: 56px !important; font-weight: 600 !important; line-height: 1.07 !important; letter-spacing: -0.005em !important;"><span>Reliability as a Service.</span></h2>
 						</div>
 						<div id="«r2»" class="Gallery_gallery__ku_1u"
 							data-analytics-gallery-id="get to know ipad gallery">
@@ -1965,9 +2112,8 @@
 																alt="Clean and healthy kitchen environment without firewood smoke">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=ipados-apps"
-													aria-label="Learn more about LipaGasOS + Apps" role="button"
+												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
+													aria-label="Learn more about LipaGasOS + Apps"
 													data-analytics-title="open modal - ipados"
 													data-analytics-click="prop3:open modal - ipados">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
@@ -1980,7 +2126,7 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
@@ -2020,9 +2166,8 @@
 																alt="LipaGas kitchen setup showing fast cooking times">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=lipagas-intelligence"
-													aria-label="Learn more about Lipagas Intelligence" role="button"
+												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
+													aria-label="Learn more about Lipagas Intelligence"
 													data-analytics-title="open modal - lipagas intelligence"
 													data-analytics-click="prop3:open modal - lipagas intelligence">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
@@ -2035,7 +2180,7 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
@@ -2075,9 +2220,8 @@
 																alt="Stable, predictable LPG pricing for schools">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=productivity"
-													aria-label="Learn more about Productivity" role="button"
+												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
+													aria-label="Learn more about Productivity"
 													data-analytics-title="open modal - productivity"
 													data-analytics-click="prop3:open modal - productivity">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
@@ -2090,7 +2234,7 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
@@ -2129,9 +2273,9 @@
 																alt="Clean school institution devoid of bulky firewood storage">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=creativity" aria-label="Learn more about Creativity"
-													role="button" data-analytics-title="open modal - creativity"
+												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
+													aria-label="Learn more about Creativity"
+													data-analytics-title="open modal - creativity"
 													data-analytics-click="prop3:open modal - creativity">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
@@ -2143,7 +2287,7 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
@@ -2182,9 +2326,9 @@
 																alt="Smart meter and dashboard showing real-time LPG consumption">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=learning" aria-label="Learn more about Learning"
-													role="button" data-analytics-title="open modal - learning"
+												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
+													aria-label="Learn more about Learning"
+													data-analytics-title="open modal - learning"
 													data-analytics-click="prop3:open modal - learning">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
@@ -2196,7 +2340,7 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
@@ -2235,9 +2379,8 @@
 																alt="Automatic LPG refill truck delivery for schools">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=entertainment"
-													aria-label="Learn more about Partnerships" role="button"
+												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
+													aria-label="Learn more about Partnerships"
 													data-analytics-title="open modal - entertainment"
 													data-analytics-click="prop3:open modal - entertainment">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
@@ -2250,7 +2393,7 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
@@ -2289,9 +2432,8 @@
 																alt="An Lipagas Pencil with colorful lettering in Notes">
 														</picture>
 													</figure>
-												</div><a class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													href="?focus=lipagas-pencil"
-													aria-label="Learn more about Lipagas Pencil" role="button"
+												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
+													aria-label="Learn more about Lipagas Pencil"
 													data-analytics-title="open modal - lipagas pencil"
 													data-analytics-click="prop3:open modal - lipagas pencil">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
@@ -2304,14 +2446,15 @@
 																</path>
 															</svg></span>
 													</div>
-												</a>
+												</button>
 											</div>
 										</div>
 									</li>
 								</ul>
 							</div>
 							<div class="PaddleNav_paddlenav__QfLbi responsive-content_responsiveContent__S1ntz Gallery_paddleNav__hBEEI"
-								data-analytics-gallery-interaction-type="paddlenav">
+								data-analytics-gallery-interaction-type="paddlenav"
+								style="display: flex !important; justify-content: flex-end !important; padding-top: 40px !important; width: 100% !important; max-width: none !important; padding-right: 48px !important;">
 								<ul class="PaddleNav_grid__l38V7">
 									<li><button aria-label="Previous item in Get to know LipaGas LPG gallery"
 											class="IconControl_control__vxiHY IconControl_disabled__28z4j IconControl_tertiary__YE5Ln"
@@ -2336,7 +2479,8 @@
 				</section>
 				<section
 					class="MarcomSection_section__Hd6T8 MarcomSection_backgroundTertiary___LAi8 MarcomSection_noBottomPadding__dUGgu"
-					data-analytics-section-engagement="name:ipad essentials">
+					data-analytics-section-engagement="name:ipad essentials"
+					style="padding-top: 150px !important; padding-bottom: 150px !important;">
 					<div class="section-content">
 						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz">
 							<h2 id="banner-card-section-9-header"
@@ -2864,22 +3008,22 @@
 					<h2 class="ac-gf-label" id="ac-gf-label">Lipagas Footer</h2>
 					<div class="ac-gf-sosumi ">
 						<ul>
-							<li id="footnote-promoted-1"><small>* <span>Financing available to qualified customers,
-										subject to credit approval and credit limit, and requires you to select
-										Lipagas&nbsp;Card Monthly Installments (ACMI) as your payment type at checkout
+							<li id="footnote-promoted-1"><small>* <span>LipaGas: Clean energy, financed on your terms,
+										subject to system integration and precision audit, and requires you to select
+										Lipagas&nbsp;Card Monthly Installments (LipaGas Credits) as your payment type at checkout
 										at Lipagas. Financing terms vary by product. Taxes and shipping on items
-										purchased using ACMI are subject to your card’s variable APR, not the ACMI 0%
-										APR. ACMI is not available for purchases made at special storefronts or when
-										using such special discounts in-store at Lipagas, except ACMI is available at
+										purchased using LipaGas Credits are subject to your card’s variable APR, not the LipaGas Credits 0%
+										APR. LipaGas Credits is not available for purchases made at special storefronts or when
+										using such special discounts in-store at Lipagas, except LipaGas Credits is available at
 										the Education storefront and with the Education discount. The last month’s
 										payment for each product will be the product’s purchase price, less all other
-										payments at the monthly payment amount. ACMI is subject to change at any time
+										payments at the monthly payment amount. LipaGas Credits is subject to change at any time
 										for any reason, including but not limited to installment term lengths and
 										eligible products. See the <a class="InlineLink_link__LZPz0 link"
 											target="_blank" rel="nofollow"
-											href="https://www.goldmansachs.com/terms-and-conditions/Lipagas-Card-Customer-Agreement.pdf"><span
+											href="https://www.lipagas.com/terms-and-conditions/Lipagas-Card-Customer-Agreement.pdf"><span
 												class="InlineLink_copy__1Zfyy link-copy">Lipagas&nbsp;Card Customer
-												Agreement</span></a> for more information about ACMI.</span></small>
+												Agreement</span></a> for more information about LipaGas Credits.</span></small>
 							</li>
 							<li id="footnote-promoted-2"><small>** <span>Education pricing is available to current and
 										newly accepted college students and their parents, as well as faculty, staff,
@@ -2889,7 +3033,7 @@
 							</li>
 						</ul>
 						<ul>
-							<li id="footnote-external-1"><small>◊ <span>Lipagas&nbsp;Card Monthly Installments (ACMI) is
+							<li id="footnote-external-1"><small>◊ <span>Lipagas&nbsp;Card Monthly Installments (LipaGas Credits) is
 										a 0% APR payment option that is only available if you select it at checkout in
 										the U.S. for eligible products purchased at Lipagas&nbsp;Overview locations, <a
 											class="InlineLink_link__LZPz0 link" href="/"><span
@@ -2898,49 +3042,49 @@
 											target="_blank" rel="nofollow"
 											href="https://wa.me/254112250250?text=hi"><span
 												class="InlineLink_copy__1Zfyy link-copy">1⁠‑⁠8⁠0⁠0⁠‑⁠M⁠Y⁠‑⁠A⁠P⁠P⁠L⁠E</span></a>,
-										and is subject to credit approval and credit limit. See <a
+										and is subject to system integration and precision audit. See <a
 											class="InlineLink_link__LZPz0 link"
 											href="https://support.apple.com/102730"><span
 												class="InlineLink_copy__1Zfyy link-copy">here</span></a> for more
 										information about eligible products. Existing customers: See your Customer
 										Agreement for your variable APR. As of January 1, 2026, the variable APR on new
 										Lipagas&nbsp;Card accounts ranges from 17.49% to 27.74%. You must elect to use
-										ACMI at checkout. If you buy an ACMI‑eligible product with a one-time payment on
+										LipaGas Credits at checkout. If you buy an LipaGas Credits‑eligible product with a one-time payment on
 										Lipagas&nbsp;Card at checkout, that purchase is subject to your
-										Lipagas&nbsp;Card’s variable APR, not the ACMI 0% APR. Taxes and shipping on
-										items purchased using ACMI are subject to your Lipagas&nbsp;Card’s variable APR,
-										not the ACMI 0% APR. In order to buy an Infrastructure with ACMI, you must
+										Lipagas&nbsp;Card’s variable APR, not the LipaGas Credits 0% APR. Taxes and shipping on
+										items purchased using LipaGas Credits are subject to your Lipagas&nbsp;Card’s variable APR,
+										not the LipaGas Credits 0% APR. In order to buy an Infrastructure with LipaGas Credits, you must
 										select one of the following carriers (prepaid carrier plans are not supported):
 										AT&amp;T, Boost Mobile, T‑Mobile, or Verizon. An Infrastructure purchased with
-										ACMI is always unlocked, so you can switch carriers at any time, subject to your
-										carrier’s terms. ACMI is not available for purchases made at the following
+										LipaGas Credits is always unlocked, so you can switch carriers at any time, subject to your
+										carrier’s terms. LipaGas Credits is not available for purchases made at the following
 										special storefronts or when using these discounts in-store at Lipagas: Lipagas
 										Employee Purchase Plan; participating corporate Employee Purchase Programs;
 										Lipagas at Work for small businesses; Government and Veterans and Military
 										Purchase Programs; or on refurbished devices. The last month’s payment for each
 										product will be the product’s purchase price, less all other payments at the
-										monthly payment amount. ACMI is subject to change at any time for any reason,
+										monthly payment amount. LipaGas Credits is subject to change at any time for any reason,
 										including but not limited to installment term lengths and eligible products. See
 										the <a class="InlineLink_link__LZPz0 link" target="_blank" rel="nofollow"
-											href="https://www.goldmansachs.com/terms-and-conditions/Lipagas-Card-Customer-Agreement.pdf"><span
+											href="https://www.lipagas.com/terms-and-conditions/Lipagas-Card-Customer-Agreement.pdf"><span
 												class="InlineLink_copy__1Zfyy link-copy">Lipagas&nbsp;Card Customer
-												Agreement</span></a> for more information about ACMI.<br><br>To access
+												Agreement</span></a> for more information about LipaGas Credits.<br><br>To access
 										and use all Lipagas&nbsp;Card features and products available only to
 										Lipagas&nbsp;Card users, you must add Lipagas&nbsp;Card to Wallet on an
 										Infrastructure or LipaGas LPG that supports and has the latest version of
 										LipaGasOS
-										or LipaGasOS. Lipagas&nbsp;Card is subject to credit approval, available
-										only for qualifying applicants in the United States, and issued by Goldman Sachs
+										or LipaGasOS. Lipagas&nbsp;Card is subject to precision audit, available
+										only for qualifying applicants in the United States, and issued by LipaGas Energy Group
 										Bank USA, Salt Lake City Branch.<br><br>Lipagas Payments Services&nbsp;LLC, a
-										subsidiary of Lipagas&nbsp;Inc., is a service provider of Goldman Sachs Bank USA
+										subsidiary of Lipagas&nbsp;Inc., is a service provider of LipaGas Energy Group
 										for Lipagas&nbsp;Card and Savings accounts. Neither Lipagas&nbsp;Inc. nor
 										Lipagas Payments Services&nbsp;LLC is a&nbsp;bank.<br><br>All communications
-										from Lipagas and Goldman Sachs Bank USA about Lipagas&nbsp;Card (including
+										from Lipagas and LipaGas Energy Group about Lipagas&nbsp;Card (including
 										transactional and marketing communications) and customer service support are
 										available in English. Certain communications about Lipagas&nbsp;Card can be
 										viewed in another language depending on your device language settings. If you
 										reside in the U.S. Virgin Islands, American Samoa, Guam, Northern Mariana
-										Islands, or U.S. Minor Outlying Islands, please call Goldman Sachs at <a
+										Islands, or U.S. Minor Outlying Islands, please call LipaGas Energy Group at <a
 											class="InlineLink_link__LZPz0 link" target="_blank" rel="nofollow"
 											href="tel:1-877-255-5923"><span
 												class="InlineLink_copy__1Zfyy link-copy">8⁠7⁠7⁠-⁠2⁠5⁠5⁠-⁠5⁠9⁠2⁠3</span></a>
@@ -3685,22 +3829,268 @@
 							</div>
 						</section>
 					</div>
-				</div>
 			</footer>
-			<div>
-				<span style="visibility: hidden; position: absolute; top: 0px; z-index: -1;">&nbsp;</span>
-					data-nscript="afterInteractive"></script><next-route-announcer>
-					<p aria-live="assertive" id="__next-route-announcer__" role="alert"
-						style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; top: 0px; width: 1px; white-space: nowrap; overflow-wrap: normal;">
-					</p>
-				</next-route-announcer>
-				<script src="/metrics/data-relay/latest/scripts/data-relay.js" defer=""
-					data-nscript="afterInteractive"></script>
-				<script src="/api-www/global-elements/global-footer/v1/en_US/scripts/ac-globalfooter.built.js" defer=""
-					data-nscript="lazyOnload"></script>
-				<script src="/ac/localeswitcher/4/en_US/scripts/localeswitcher.built.js"
-					data-nscript="lazyOnload"></script>
-				<script>
+		</div>
+	</div>
+
+	<!-- Modal Overlay -->
+	<div id="lipagas-info-modal" class="lipagas-info-modal">
+		<div class="modal-content">
+			<button class="modal-close" onclick="closeModal()" aria-label="Close modal">×</button>
+			<span id="modal-topic"></span>
+			<h2 id="modal-headline"></h2>
+			<div id="modal-body"></div>
+		</div>
+	</div>
+
+	<div id="modal-data-relay" style="display:none;"></div>
+	<style>
+		.visually-hidden {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			border: 0;
+		}
+	</style>
+
+	<script src="/wss/fonts.js"></script>
+	<script id="__NEXT_DATA__" type="application/json"
+		data-nscript="beforeInteractive">{"props":{"pageProps":{"page":{}}},"page":"/[[...uri]]","query":{},"buildId":"fhMSe6YcS7tbnJy1wKQnx","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script>
+	<script src="/_apps/artisan/_next/static/chunks/pages/[[...uri]]-87717286633fa8ee.js"
+		data-nscript="afterInteractive"></script>
+	<script>
+					const modalData = {
+						"financing": {
+							topic: "Scale & Precision",
+							headline: "Rapid facility audit.",
+							body: "<p><strong>On-Site Evaluation.</strong> Our teams come to you to map energy flows and safety corridors, ensuring seamless energy for life-saving operations.</p>"
+						},
+						"full-service": {
+							topic: "Infrastructure",
+							headline: "Tailored infrastructure.",
+							body: "<p><strong>Streamlined Blueprint.</strong> Custom proposal for meters, piping, and logistics-ready storage designed specifically for hospital demands.</p>"
+						},
+						"safety": {
+							topic: "Compliance",
+							headline: "Frictionless approval.",
+							body: "<p><strong>Compliance Validation.</strong> We manage the fire and health safety certifications to fast-track your launch, ensuring zero-fail infrastructure.</p>"
+						},
+						"personal-setup": {
+							topic: "Installation",
+							headline: "Ready when you are.",
+							body: "<p><strong>Accelerated Installation.</strong> Professional teams deploy bulk tanks with zero disruption to patient care or hospital logistics.</p>"
+						},
+						"price-lock": {
+							topic: "Operations",
+							headline: "Onboarding and training.",
+							body: "<p><strong>Management Kickoff.</strong> We walk your staff through the PAYG dashboard for instant control and real-time consumption monitoring.</p>"
+						},
+						"core-promise": {
+							topic: "Activation",
+							headline: "GO live.",
+							body: "<p><strong>Real-time Activation.</strong> Instant visibility into your energy spend. No upfront deposits or waiting to start your transition to clean energy.</p>"
+						},
+						"shop-with-specialist": {
+							topic: "Logistics",
+							headline: "Intelligent refills.",
+							body: "<p><strong>Proactive Logistics.</strong> GPS-tracked delivery triggered by real-time burn rates. We ensure your medical facility never run dry.</p>"
+						},
+						"learn-more-ipad-pro": {
+							topic: "Efficiency",
+							headline: "Utility Optimization",
+							body: "<p><strong>Seamless allocation.</strong> Eliminate fixed overhead. Pay for precise energy your hospital consumes with medical-grade precision.</p>"
+						},
+						"learn-more-ipad-air": {
+							topic: "Deployment",
+							headline: "Turnkey Deployment",
+							body: "<p><strong>We handle the complexity.</strong> From precision surveys and compliant installation to ongoing maintenance and expert support.</p>"
+						},
+						"learn-more-ipad-11": {
+							topic: "Safety",
+							headline: "Medical-Grade Safety",
+							body: "<p><strong>Zero-fail infrastructure.</strong> Multi-layer leak detection, certified installation, and regular staff safety audits for peace of mind.</p>"
+						},
+						"learn-more-ipad-mini": {
+							topic: "Support",
+							headline: "Expert Launch Support",
+							body: "<p><strong>Operational from day one.</strong> Launch your real-time hospital energy dashboard with expert guidance and tailored onboarding.</p>"
+						},
+						"learn-more-pricing": {
+							topic: "Transparency",
+							headline: "Algorithmic Transparency",
+							body: "<p><strong>Budget with certainty.</strong> Lock in refill pricing with structured review cycles and 100% visibility into every gram of LPG.</p>"
+						},
+						"learn-more-managed": {
+							topic: "Continuity",
+							headline: "Managed Care Continuity",
+							body: "<p><strong>Fuel-security-as-a-service.</strong> We transform energy logistics into a managed hospital utility, ensuring uninterrupted patient care.</p>"
+						},
+						"learn-more-consultation": {
+							topic: "Advisory",
+							headline: "Strategic Advisory",
+							body: "<p><strong>Engineering insights.</strong> Direct access to energy specialists for high-volume sterilization planning and infrastructure scaling.</p>"
+						},
+						"institutional-impact": {
+							topic: "Medical Impact",
+							headline: "Empowering excellence through better energy.",
+							body: "<p>LipaGas is more than a utility—it is a critical partner in healthcare resilience. We transform hospital operations into precision-managed environments, allowing medical teams to focus on patient outcomes while we manage the energy grid.</p><div class='modal-pillars'><h3>The Pillars of Medical Transformation:</h3><ul><li><strong>Sterilization Continuity:</strong> Guarantee 99.8% uptime for high-volume steam and hot water sterilization.</li><li><strong>Air Quality & Safety:</strong> Eliminate respiratory health risks for staff by removing 99% of kitchen smoke from facility environments.</li><li><strong>Zero Upfront Barrier:</strong> Our 1% monthly financing model removes the burden of infrastructure costs for private and public clinics alike.</li><li><strong>100% Transparency:</strong> Integration with smart meters ensures every shilling spent is accounted for in institutional audits.</li></ul></div>"
+						},
+						"overview-app": {
+							topic: "Support",
+							headline: "Global Support Hub",
+							body: "<p><strong>24/7 Reliability.</strong> Continuous monitoring and maintenance to keep your clinic powered. Our support hub handles everything from safety checks to consumption optimization.</p>"
+						},
+						"ipad-pro": {
+							topic: "Efficiency",
+							headline: "Utility Optimization",
+							body: "<p><strong>Seamless allocation.</strong> Eliminate fixed overhead. Pay for precise energy your hospital consumes with medical-grade precision.</p>"
+						},
+						"ipad-air": {
+							topic: "Deployment",
+							headline: "Turnkey Deployment",
+							body: "<p><strong>We handle the complexity.</strong> From precision surveys and compliant installation to ongoing maintenance and expert support.</p>"
+						},
+						"ipad-11": {
+							topic: "Safety",
+							headline: "Medical-Grade Safety",
+							body: "<p><strong>Zero-fail infrastructure.</strong> Multi-layer leak detection, certified installation, and regular staff safety audits for peace of mind.</p>"
+						},
+						"ipad-mini": {
+							topic: "Support",
+							headline: "Expert Launch Support",
+							body: "<p><strong>Operational from day one.</strong> Launch your real-time hospital energy dashboard with expert guidance and tailored onboarding.</p>"
+						},
+						"pricing": {
+							topic: "Transparency",
+							headline: "Algorithmic Transparency",
+							body: "<p><strong>Budget with certainty.</strong> Lock in refill pricing with structured review cycles and 100% visibility into every gram of LPG.</p>"
+						},
+						"managed": {
+							topic: "Continuity",
+							headline: "Managed Care Continuity",
+							body: "<p><strong>Fuel-security-as-a-service.</strong> We transform energy logistics into a managed hospital utility, ensuring uninterrupted patient care.</p>"
+						},
+						"consultation": {
+							topic: "Advisory",
+							headline: "Strategic Advisory",
+							body: "<p><strong>Engineering insights.</strong> Direct access to energy specialists for high-volume sterilization planning and infrastructure scaling.</p>"
+						},
+						"monitoring": {
+							topic: "Monitoring",
+							headline: "24/7 Safety Monitoring",
+							body: "<p><strong>Continuous Vigilance.</strong> Real-time leak detection and pressure monitoring linked to our command center ensures hospital-wide safety.</p>"
+						}
+					};
+
+					function openModal(stepId) {
+						const data = modalData[stepId];
+						if (!data) {
+							console.warn("No modal data for ID:", stepId);
+							return;
+						}
+
+						document.getElementById('modal-topic').textContent = data.topic;
+						document.getElementById('modal-headline').textContent = data.headline;
+						document.getElementById('modal-body').innerHTML = data.body;
+
+						const modal = document.getElementById('lipagas-info-modal');
+						modal.classList.add('active');
+						document.body.style.overflow = 'hidden';
+					}
+
+					function closeModal() {
+						const modal = document.getElementById('lipagas-info-modal');
+						modal.classList.remove('active');
+						document.body.style.overflow = '';
+					}
+
+					document.getElementById('lipagas-info-modal').addEventListener('click', function (e) {
+						if (e.target === this) closeModal();
+					});
+
+					document.addEventListener('keydown', function (e) {
+						if (e.key === 'Escape') closeModal();
+					});
+
+					document.addEventListener('DOMContentLoaded', () => {
+						// Robust Modal Event Delegation
+						document.body.addEventListener('click', (e) => {
+							const btn = e.target.closest('button.cards_cardLink__W1UKy');
+							if (btn) {
+								const item = btn.closest('[data-analytics-gallery-item-id]');
+								if (item) {
+									let id = item.getAttribute('data-analytics-gallery-item-id').trim().toLowerCase();
+									// Mapping for IDs containing spaces or special characters
+									const mapping = {
+										"ipad pro": "ipad-pro",
+										"ipad air": "ipad-air",
+										"ipad 11": "ipad-11",
+										"ipad mini": "ipad-mini",
+										"personal setup": "personal-setup",
+										"ipados + apps": "ipados-apps",
+										"lipagas intelligence": "lipagas-intelligence",
+										"lipagas pencil": "lipagas-pencil",
+										"shop with a specialist": "shop-with-specialist"
+									};
+									if (mapping[id]) id = mapping[id];
+									
+									if (modalData[id]) {
+										openModal(id);
+									}
+								}
+							}
+						});
+
+						// Universal Gallery Scrolling Logic
+						const setupGallery = (galleryId, sectionSelector) => {
+							const galleryItem = document.querySelector(`[data-analytics-gallery-id="${galleryId}"]`);
+							if (!galleryItem) return;
+							const galleryContainer = galleryItem.querySelector('.Gallery_scrollContainer__1LaRX') || galleryItem.querySelector('div[data-scrollable="true"]');
+							const section = document.querySelector(sectionSelector);
+							if (galleryContainer && section) {
+								bindGallery(galleryContainer, section);
+							}
+						};
+
+						function bindGallery(container, section) {
+							const prevBtn = section.querySelector('button[aria-label*="Previous item"]');
+							const nextBtn = section.querySelector('button[aria-label*="Next item"]');
+
+							if (prevBtn && nextBtn) {
+								const scrollAmount = 400;
+
+								prevBtn.onclick = () => {
+									container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+								};
+
+								nextBtn.onclick = () => {
+									container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+								};
+
+								const updateButtons = () => {
+									const isAtStart = container.scrollLeft <= 0;
+									const isAtEnd = container.scrollLeft + container.offsetWidth >= container.scrollWidth - 5;
+
+									prevBtn.disabled = isAtStart;
+									prevBtn.classList.toggle('IconControl_disabled__28z4j', isAtStart);
+
+									nextBtn.disabled = isAtEnd;
+									nextBtn.classList.toggle('IconControl_disabled__28z4j', isAtEnd);
+								};
+
+								container.addEventListener('scroll', updateButtons);
+								window.addEventListener('resize', updateButtons);
+								updateButtons();
+							}
+						}
+
+						setupGallery("why lipagas gallery", 'section[data-analytics-section-engagement="name:why lipagas"]');
+					});
+
 					document.addEventListener("click", function (e) {
 						const link = e.target.closest("a");
 						if (link && link.href) {
@@ -3717,7 +4107,7 @@
 					}, true);
 				</script>
 				<script src="/pages/navigation-sync.js"></script>
-    <script src="apple-main.js"></script>
+    <script src="main.js"></script>
 </body>
 <div cssdimensionstracker="true"
 	style="position: fixed; top: 0px; width: 100%; height: 100vh; pointer-events: none; visibility: hidden; z-index: -1;">

@@ -227,7 +227,7 @@
 				</h3>
 				<ul id="footer-directory-column-section-applewallet" class="ac-gf-directory-column-section-list" role="list">
 					<li class="ac-gf-directory-column-section-item" role="listitem"><a class="ac-gf-directory-column-section-link" href="/wallet/" data-analytics-title="wallet">Wallet</a></li>
-					<li class="ac-gf-directory-column-section-item" role="listitem"><a class="ac-gf-directory-column-section-link" href="/apple-card/" data-analytics-title="apple card">Apple Card</a></li>
+					<li class="ac-gf-directory-column-section-item" role="listitem"><a class="ac-gf-directory-column-section-link" href="/apple-card/" data-analytics-title="LipaGas Credit">Apple Card</a></li>
 					<li class="ac-gf-directory-column-section-item" role="listitem"><a class="ac-gf-directory-column-section-link" href="/apple-pay/" data-analytics-title="apple pay">Apple Pay</a></li>
 					<li class="ac-gf-directory-column-section-item" role="listitem"><a class="ac-gf-directory-column-section-link" href="/apple-cash/" data-analytics-title="apple cash">Apple Cash</a></li>
 				</ul>
