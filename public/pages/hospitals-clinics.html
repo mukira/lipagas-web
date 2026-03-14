@@ -244,7 +244,7 @@
 			.ProductTile_productTile__P1DTD {
 				width: 100% !important;
 				min-width: 0 !important;
-				border-radius: 28px !important;
+				border-radius: 12px !important;
 				overflow: hidden !important;
 			}
 
@@ -258,6 +258,8 @@
 			.ProductTile_productImage__6tu_j figure,
 			.ProductTile_productImage__6tu_j picture,
 			.ProductTile_productImage__6tu_j picture img {
+				border-radius: 12px !important;
+				overflow: hidden !important;
 				width: 100% !important;
 				height: auto !important;
 				max-width: 100% !important;
@@ -328,140 +330,221 @@
 				margin-bottom: 30px !important;
 			}
 
-			/* Plus Button Positioning Fix */
-			.CardControl_controlContainer__fsXIE {
+			/* Full Bleed Image Fix */
+			.FeatureCard_backgroundImage__fdw48, 
+			.FeatureCard_backgroundImage__fdw48 figure, 
+			.FeatureCard_backgroundImage__fdw48 picture, 
+			.FeatureCard_backgroundImage__fdw48 picture img {
 				position: absolute !important;
-				bottom: 24px !important;
-				right: 24px !important;
-				z-index: 2 !important;
+				top: 0 !important;
+				left: 0 !important;
+				width: 100% !important;
+				height: 100% !important;
+				object-fit: cover !important;
+				z-index: 0 !important;
+			}
+			
+			.FeatureCard_copyContainer__bJ0_5,
+			.ImpactCard_copyContainer__bJ0_5,
+			.ProductTile_productTileContent__AcxZH {
+				position: relative !important;
+				z-index: 1 !important;
+			}
+
+			.FeatureCard_featureCard__OFMtd {
+				position: relative !important;
+				overflow: hidden !important;
+				border-radius: 28px !important;
+				min-height: 530px !important; /* Standard height for these cards */
+			}
+
+			/* Make text readable on background images */
+			.FeatureCard_darkTheme__jID1b .ImpactCard_headline__yO8T3,
+			.FeatureCard_darkTheme__jID1b .ImpactCard_topicLabel__V0G_n,
+			.FeatureCard_darkTheme__jID1b .ImpactCard_copy__2DOnU,
+			.FeatureCard_darkTheme__jID1b .typography_headline__zZkHA,
+			.FeatureCard_darkTheme__jID1b .ProductTile_copy__x48m_ {
+				color: #ffffff !important;
+				text-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
+			}
+
+			.ImpactCard_copyContainer__bJ0_5 {
+				padding: 40px !important;
+			}
+
+			/* Unified Feature Card Gradient Overlay - Schools Parity */
+			.FeatureCard_featureCard__OFMtd::after {
+				content: '' !important;
+				position: absolute !important;
+				top: 0 !important;
+				left: 0 !important;
+				right: 0 !important;
+				bottom: 0 !important;
+				background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0) 100%) !important;
 				pointer-events: none !important;
+				z-index: 1 !important;
+				border-radius: inherit !important;
 			}
 
-			.CardControl_controlContainer__fsXIE .IconControl_control__vxiHY {
-				pointer-events: auto !important;
+			/* Ensure content layers above the gradient */
+			.FeatureCard_featureCard__OFMtd > div:first-child,
+			.FeatureCard_featureCard__OFMtd > div:first-child * {
+				position: relative !important;
+				z-index: 2 !important;
 			}
 
-			/* Modal Styles */
-			.lipagas-info-modal {
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-color: rgba(0, 0, 0, 0.4);
-				backdrop-filter: blur(20px);
-				-webkit-backdrop-filter: blur(20px);
-				z-index: 9999;
-				display: none;
-				justify-content: center;
-				align-items: center;
-				opacity: 0;
-				transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-			}
+		}
 
-			.lipagas-info-modal.active {
-				display: flex;
-				opacity: 1;
-			}
+		/* Modal Styles */
+		.lipagas-info-modal {
+			position: fixed !important;
+			top: 0 !important;
+			left: 0 !important;
+			width: 100% !important;
+			height: 100% !important;
+			background-color: rgba(0, 0, 0, 0.4) !important;
+			backdrop-filter: blur(20px) !important;
+			-webkit-backdrop-filter: blur(20px) !important;
+			display: none !important;
+			align-items: center !important;
+			justify-content: center !important;
+			z-index: 9999 !important;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.4s ease, visibility 0.4s ease !important;
+		}
 
-			.modal-content {
-				background: rgba(255, 255, 255, 0.85);
-				width: 90%;
-				max-width: 800px;
-				max-height: 85vh;
-				border-radius: 30px;
-				position: relative;
-				padding: 60px;
-				overflow-y: auto;
-				box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-				transform: scale(0.95);
-				transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-			}
+		.lipagas-info-modal.active {
+			display: flex !important;
+			opacity: 1 !important;
+			visibility: visible !important;
+		}
 
-			.lipagas-info-modal.active .modal-content {
-				transform: scale(1);
-			}
+		.modal-content {
+			background-color: #fff !important;
+			width: 90% !important;
+			max-width: 800px !important;
+			max-height: 90vh !important;
+			border-radius: 20px !important;
+			position: relative !important;
+			padding: 40px !important;
+			overflow-y: auto !important;
+			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+		}
 
-			.modal-close {
-				position: absolute;
-				top: 25px;
-				right: 25px;
-				width: 36px;
-				height: 36px;
-				background: #e8e8ed;
-				border-radius: 50%;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				cursor: pointer;
-				border: none;
-				color: #1d1d1f;
-				transition: all 0.2s;
-				z-index: 10;
-			}
+		.modal-close {
+			position: absolute !important;
+			top: 20px !important;
+			right: 20px !important;
+			background: #f5f5f7 !important;
+			border: none !important;
+			width: 36px !important;
+			height: 36px !important;
+			border-radius: 50% !important;
+			cursor: pointer !important;
+			display: flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			transition: transform 0.2s ease !important;
+			z-index: 10 !important;
+			font-size: 24px !important;
+			line-height: 1 !important;
+			color: #1d1d1f !important;
+		}
 
-			.modal-close:hover {
-				background: #d2d2d7;
-				transform: rotate(90deg);
-			}
+		.modal-close:hover {
+			transform: scale(1.1) !important;
+		}
 
-			#modal-topic {
-				text-transform: uppercase;
-				font-size: 12px;
-				font-weight: 600;
-				letter-spacing: 0.1em;
-				margin-bottom: 15px;
-				display: block;
-				color: #86868b;
-			}
+		#modal-topic {
+			font-size: 14px !important;
+			font-weight: 600 !important;
+			color: #86868b !important;
+			margin-bottom: 8px !important;
+			text-transform: uppercase !important;
+			letter-spacing: 0.02em !important;
+			display: block !important;
+		}
 
-			#modal-headline {
-				font-size: 40px;
-				line-height: 1.1;
-				font-weight: 600;
-				margin-bottom: 25px;
-				color: #1d1d1f;
-			}
+		#modal-headline {
+			font-size: 40px !important;
+			line-height: 1.1 !important;
+			font-weight: 600 !important;
+			color: #1d1d1f !important;
+			margin-bottom: 24px !important;
+		}
 
-			#modal-body {
-				font-size: 19px;
-				line-height: 1.5;
-				color: #1d1d1f;
-			}
+		#modal-body {
+			font-size: 19px !important;
+			line-height: 1.47 !important;
+			color: #424245 !important;
+		}
 
-			#modal-body p { margin-bottom: 20px; }
-			#modal-body strong { font-weight: 600; }
+		#modal-body p {
+			margin-bottom: 1.5em !important;
+		}
 
-			.modal-pillars {
-				margin-top: 40px;
-				padding-top: 30px;
-				border-top: 1px solid #d2d2d7;
-			}
+		#modal-body strong {
+			color: #1d1d1f !important;
+			font-weight: 600 !important;
+		}
 
-			.modal-pillars h3 {
-				font-size: 17px;
-				font-weight: 600;
-				margin-bottom: 20px;
-			}
+		.modal-pillars h3 {
+			font-size: 24px !important;
+			margin: 32px 0 16px 0 !important;
+			color: #1d1d1f !important;
+		}
 
-			.modal-pillars ul {
-				list-style: none;
-				padding: 0;
-			}
+		.modal-pillars ul {
+			list-style: none !important;
+			padding: 0 !important;
+		}
 
-			.modal-pillars li {
-				margin-bottom: 12px;
-				padding-left: 25px;
-				position: relative;
-			}
+		.modal-pillars li {
+			padding: 12px 0 !important;
+			border-bottom: 1px solid #f5f5f7 !important;
+		}
 
-			.modal-pillars li::before {
-				content: "•";
-				position: absolute;
-				left: 0;
-				color: #00ca51;
-				font-weight: bold;
-			}
+		.modal-pillars li:last-child {
+			border-bottom: none !important;
+		}
+
+		/* Circular Plus Button Styles for Hospital Page */
+		.IconControl_control__vxiHY.IconControl_primary__n_54r {
+			background-color: rgba(29, 29, 31, 0.8) !important;
+			backdrop-filter: blur(10px) !important;
+			-webkit-backdrop-filter: blur(10px) !important;
+			border-radius: 50% !important;
+			width: 44px !important;
+			height: 44px !important;
+			display: flex !important;
+			align-items: center !important;
+			justify-content: center !important;
+			transition: background-color 0.2s, transform 0.2s !important;
+			border: none !important;
+		}
+
+		.IconControl_control__vxiHY.IconControl_primary__n_54r:hover {
+			background-color: rgba(29, 29, 31, 1) !important;
+			transform: scale(1.05) !important;
+		}
+
+		.IconControl_control__vxiHY.IconControl_primary__n_54r svg {
+			width: 20px !important;
+			height: 20px !important;
+			fill: #ffffff !important;
+			margin: 0 !important;
+		}
+
+		.cards_cardLink__W1UKy {
+			position: absolute !important;
+			bottom: 30px !important;
+			right: 30px !important;
+			z-index: 10 !important;
+			border: none !important;
+			background: none !important;
+			padding: 0 !important;
+			cursor: pointer !important;
 		}
 	</style>
 	<link rel="stylesheet" href="/api-www/global-elements/global-footer/v1/en_US/styles/ac-globalfooter.built.css">
@@ -1034,8 +1117,9 @@
 					<div class="section-content">
 						<div class="PageHeader_container__K9WZr">
 							<h1 class="PageHeader_title__EDhKs MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
-								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><span>Mission-critical energy for medical care.</span></h1>
-							<h2 id="product-tile-section-3-header" class="utilities_visuallyhidden__5vJWI"><span>Seamless utility management. Built for care continuity.</span></h2>
+								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><span>Energy as a Service for
+									Modern Healthcare.</span></h1>
+							<h2 id="product-tile-section-3-header" class="utilities_visuallyhidden__5vJWI"><span>Scale your hospital’s power with precision. Pay only for the energy you consume.</span></h2>
 						</div>
 						<div class="ProductTileGallery_container__0jzlE">
 							<div class="StickyFooterGallery_gallery__WZwXc" id="«r0»"
@@ -1045,9 +1129,8 @@
 									<ul role="list" aria-labelledby="product-tile-section-3-header"
 										class="StickyFooterGallery_itemContainer__Iir9v">
 										<li class="StickyFooterGallery_galleryItem__ZGmEN" role="listitem"
-											data-analytics-gallery-item-id="ipad pro">
-											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9"
-												style="">
+											data-analytics-gallery-item-id="mgmt-control">
+											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9">
 												<div>
 													<div class="ProductTile_productTile__P1DTD">
 														<div class="ProductTile_productTileContent__AcxZH">
@@ -1061,17 +1144,16 @@
 																			style="height: 32px;">
 																			<div>
 																				<h3 class="typography_headline__zZkHA">
-																					<span>Utility Optimization</span>
+																					<span>Departmental Control</span>
 																				</h3>
 																			</div>
 																		</div>
 																	</div>
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
-																	data-analytics-title="learn more - ipad pro"
-																	href="javascript:void(0)"
-																	onclick="openModal('learn-more-ipad-pro')"
-																	aria-label="Learn more, LipaGas LPG Pro"><span
+																	data-analytics-title="learn more - mgmt-control"
+																	href="/order"
+																	aria-label="Learn more, Departmental Control"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
 																			class="ProductTile_productImage__6tu_j ProductTile_productTileImageLink__V2V_6">
@@ -1084,17 +1166,17 @@
 																				<picture
 																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/small/ipad_pro_99c6ccaaa.jpg, /assets-www/en_WW/ipad/01_product_tile/small/ipad_pro_bb3c2cec0_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital1.jpg"
 																						width="232" height="276"
 																						media="(max-width: 734px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/medium/ipad_pro_4da74c44a.jpg, /assets-www/en_WW/ipad/01_product_tile/medium/ipad_pro_f044e30c0_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital1.jpg"
 																						width="344" height="410"
 																						media="(max-width: 1068px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hotel1.jpg, /assets-www/en_WW/ipad/01_product_tile/large/hotel1.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital1.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						alt="Departmental Control">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1110,23 +1192,21 @@
 																<div style="height: 74px;">
 																	<p
 																		class="typography_bodyCopy__v_XbA ProductTile_copy__x48m_">
-																		<strong>Seamless allocation.</strong><br />
-																		<span>Eliminate fixed overhead. Pay for precise energy your hospital consumes.</span>
+																		<strong>Total ward accountability.</strong><br />
+																		<span>Granular tracking from the operating room to the laundry. Live on your console.</span>
 																	</p>
 																</div>
-																<div style="height: 21px;">
-																	<!-- Removing price for problem card -->
-																</div>
+																<div style="height: 21px;"></div>
 															</div>
+
 														</div>
 													</div>
 												</div>
 											</div>
 										</li>
 										<li class="StickyFooterGallery_galleryItem__ZGmEN" role="listitem"
-											data-analytics-gallery-item-id="ipad air">
-											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9"
-												style="">
+											data-analytics-gallery-item-id="mgmt-integration">
+											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9">
 												<div>
 													<div class="ProductTile_productTile__P1DTD">
 														<div class="ProductTile_productTileContent__AcxZH">
@@ -1140,17 +1220,16 @@
 																			style="height: 32px;">
 																			<div>
 																				<h3 class="typography_headline__zZkHA">
-																					<span>Turnkey Deployment</span>
+																					<span>Effortless Integration</span>
 																				</h3>
 																			</div>
 																		</div>
 																	</div>
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
-																	data-analytics-title="learn more - ipad air"
-																	href="javascript:void(0)"
-																	onclick="openModal('learn-more-ipad-air')"
-																	aria-label="Learn more, LipaGas LPG Air"><span
+																	data-analytics-title="learn more - mgmt-integration"
+																	href="/order"
+																	aria-label="Learn more, Effortless Integration"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
 																			class="ProductTile_productImage__6tu_j ProductTile_productTileImageLink__V2V_6">
@@ -1163,17 +1242,17 @@
 																				<picture
 																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/small/ipad_air_c06b5be65.jpg, /assets-www/en_WW/ipad/01_product_tile/small/ipad_air_2b265baad_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital2.jpg"
 																						width="232" height="276"
 																						media="(max-width: 734px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/medium/ipad_air_8fd1d1bbe.jpg, /assets-www/en_WW/ipad/01_product_tile/medium/ipad_air_a5aaa09ad_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital2.jpg"
 																						width="344" height="410"
 																						media="(max-width: 1068px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/apartments_3adafef74_2x.jpg, /assets-www/en_WW/ipad/01_product_tile/large/apartments_3adafef74_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital2.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						alt="Effortless Integration">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1189,23 +1268,21 @@
 																<div style="height: 74px;">
 																	<p
 																		class="typography_bodyCopy__v_XbA ProductTile_copy__x48m_">
-																		<strong>We handle the complexity.</strong><br />
-																		<span>Precision surveys. Compliant installation. Maintenance. Support.</span>
+																		<strong>We handle everything.</strong><br />
+																		<span>We handle the complex infrastructure. You focus on the healing. Fully managed setup.</span>
 																	</p>
 																</div>
-																<div style="height: 21px;">
-																	<!-- Financing removed to prevent layout overlap -->
-																</div>
+																<div style="height: 21px;"></div>
 															</div>
+
 														</div>
 													</div>
 												</div>
 											</div>
 										</li>
 										<li class="StickyFooterGallery_galleryItem__ZGmEN" role="listitem"
-											data-analytics-gallery-item-id="ipad 11">
-											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9"
-												style="">
+											data-analytics-gallery-item-id="mgmt-security">
+											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9">
 												<div>
 													<div class="ProductTile_productTile__P1DTD">
 														<div class="ProductTile_productTileContent__AcxZH">
@@ -1219,17 +1296,16 @@
 																			style="height: 32px;">
 																			<div>
 																				<h3 class="typography_headline__zZkHA">
-																					<span>Medical-Grade Safety</span>
+																					<span>Safety by design</span>
 																				</h3>
 																			</div>
 																		</div>
 																	</div>
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
-																	data-analytics-title="learn more - ipad 11"
-																	href="javascript:void(0)"
-																	onclick="openModal('learn-more-ipad-11')"
-																	aria-label="Learn more, LipaGas LPG (A16)"><span
+																	data-analytics-title="learn more - mgmt-security"
+																	href="/order"
+																	aria-label="Learn more, Zero-Failure Security"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
 																			class="ProductTile_productImage__6tu_j ProductTile_productTileImageLink__V2V_6">
@@ -1242,17 +1318,17 @@
 																				<picture
 																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/small/ipad_80a6a106f.jpg, /assets-www/en_WW/ipad/01_product_tile/small/ipad_25abb44d1_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital3.jpg"
 																						width="232" height="276"
 																						media="(max-width: 734px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/medium/ipad_75ec2d856.jpg, /assets-www/en_WW/ipad/01_product_tile/medium/ipad_58cedcb8b_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital3.jpg"
 																						width="344" height="410"
 																						media="(max-width: 1068px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/man-with-chefs.jpg, /assets-www/en_WW/ipad/01_product_tile/large/man-with-chefs.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital3.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						alt="Zero-Failure Security">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1268,23 +1344,21 @@
 																<div style="height: 74px;">
 																	<p
 																		class="typography_bodyCopy__v_XbA ProductTile_copy__x48m_">
-																		<strong>Zero-fail infrastructure.</strong><br />
-																		<span>Certified installation. Multi-layer leak detection. Staff safety audits.</span>
+																		<strong>Healthcare-specific safety.</strong><br />
+																		<span>Automated leak detection. Absolute ward peace of mind. Zero-Failure Security.</span>
 																	</p>
 																</div>
-																<div style="height: 21px;">
-																	<!-- Removing price for problem card -->
-																</div>
+																<div style="height: 21px;"></div>
 															</div>
+
 														</div>
 													</div>
 												</div>
 											</div>
 										</li>
 										<li class="StickyFooterGallery_galleryItem__ZGmEN" role="listitem"
-											data-analytics-gallery-item-id="ipad mini">
-											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9"
-												style="">
+											data-analytics-gallery-item-id="mgmt-onboarding">
+											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9">
 												<div>
 													<div class="ProductTile_productTile__P1DTD">
 														<div class="ProductTile_productTileContent__AcxZH">
@@ -1298,17 +1372,16 @@
 																			style="height: 32px;">
 																			<div>
 																				<h3 class="typography_headline__zZkHA">
-																					<span>Expert Launch Support</span>
+																					<span>Specialist Onboarding</span>
 																				</h3>
 																			</div>
 																		</div>
 																	</div>
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
-																	data-analytics-title="learn more - ipad mini"
-																	href="javascript:void(0)"
-																	onclick="openModal('learn-more-ipad-mini')"
-																	aria-label="Learn more, LipaGas LPG mini"><span
+																	data-analytics-title="learn more - mgmt-onboarding"
+																	href="/order"
+																	aria-label="Learn more, Specialist Onboarding"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
 																			class="ProductTile_productImage__6tu_j ProductTile_productTileImageLink__V2V_6">
@@ -1321,17 +1394,17 @@
 																				<picture
 																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/small/ipad_mini_55d888566.jpg, /assets-www/en_WW/ipad/01_product_tile/small/ipad_mini_be76a8ea6_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital4.jpg"
 																						width="232" height="276"
 																						media="(max-width: 734px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/medium/ipad_mini_47e237156.jpg, /assets-www/en_WW/ipad/01_product_tile/medium/ipad_mini_4a65565e0_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital4.jpg"
 																						width="344" height="410"
 																						media="(max-width: 1068px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/technitans.jpg, /assets-www/en_WW/ipad/01_product_tile/large/technitans.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital4.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						alt="Expert Onboarding">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1347,23 +1420,98 @@
 																<div style="height: 74px;">
 																	<p
 																		class="typography_bodyCopy__v_XbA ProductTile_copy__x48m_">
-																		<strong>Operational from day one.</strong><br />
-																		<span>Launch your real-time hospital energy dashboard with expert guidance.</span>
+																		<strong>Launch with confidence.</strong><br />
+																		<span>Live in 24 hours. Seamless transition to smart energy. Guided training for your facility.</span>
 																	</p>
 																</div>
-																<div style="height: 21px;">
-																	<!-- Pricing removed for layout consistency -->
+																<div style="height: 21px;"></div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</li>
+
+										<li class="StickyFooterGallery_galleryItem__ZGmEN" role="listitem"
+											data-analytics-gallery-item-id="mgmt-transparency">
+											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9">
+												<div>
+													<div class="ProductTile_productTile__P1DTD">
+														<div class="ProductTile_productTileContent__AcxZH">
+															<div class="ProductTile_productTileHeader__XDUDN">
+																<div class="ProductTile_productTileProductId__MA6yX">
+																	<div class="ProductTile_optionalHeaderElementsGrid__bEEhV ProductTile_collapsedBadges__O_wsp ProductTile_collapsedSubheads__u2S7b"
+																		style="--heading-height: 32;">
+																		<div class="ProductTile_badgeArea__VVNt1"
+																			style="height: 0px;"></div>
+																		<div class="ProductTile_headingArea__Kjl7m"
+																			style="height: 32px;">
+																			<div>
+																				<h3 class="typography_headline__zZkHA">
+																					<span>Full Transparency</span>
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+																</div><a
+																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
+																	data-analytics-title="learn more - mgmt-transparency"
+																	href="/order"
+																	aria-label="Learn more, Full Transparency"><span
+																		class="StandardsLink_copy__FvCj1">
+																		<div
+																			class="ProductTile_productImage__6tu_j ProductTile_productTileImageLink__V2V_6">
+																			<figure data-vp-w-large=""
+																				data-vp-h-large="" data-vp-w-medium=""
+																				data-vp-h-medium="" data-vp-w-small=""
+																				data-vp-h-small=""
+																				class="ResponsivePicture_responsive-picture__VWL7l ResponsivePicture_responsive-picture-vp-layout-default--sized__pdVra responsive-picture__no-js responsive-picture--rendered ResponsivePicture_responsive-picture--active__FbrFD responsive-picture--loaded"
+																				style="--image-aspect-ratio: 0.8405797101449275; --vp-w-large: 372; --vp-h-large: 443; --vp-w-medium: 344; --vp-h-medium: 410; --vp-w-small: 232; --vp-h-small: 276; --vp-w-default: 372; --vp-h-default: 443;">
+																				<picture
+																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
+																					<source
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital5.jpg"
+																						width="232" height="276"
+																						media="(max-width: 734px)">
+																					<source
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital5.jpg"
+																						width="344" height="410"
+																						media="(max-width: 1068px)">
+																					<source
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital5.jpg"
+																						width="372" height="443"><img
+																						alt="Full Transparency">
+																				</picture>
+																			</figure>
+																		</div>
+																	</span></a>
+																<div
+																	class="ProductTile_optionalIndicatorElementGrid__C1iBx ProductTile_productTileSwatches__SWZec">
+																	<div
+																		class="ColorIndicator_colorindicator__y1Dic ProductTile_colorIndicator__rcQqO">
+																	</div>
 																</div>
 															</div>
+															<div class="ProductTile_contentGrid__uFNwQ">
+																<div style="height: 74px;">
+																	<p
+																		class="typography_bodyCopy__v_XbA ProductTile_copy__x48m_">
+																		<strong>Lock in institutional rates.</strong><br />
+																		<span>No estimates. No surprises. Audit-ready energy data.</span>
+																	</p>
+																</div>
+																<div style="height: 21px;"></div>
+															</div>
+
 														</div>
 													</div>
 												</div>
 											</div>
 										</li>
 										<li class="StickyFooterGallery_galleryItem__ZGmEN" role="listitem"
-											data-analytics-gallery-item-id="pricing">
-											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9"
-												style="">
+											data-analytics-gallery-item-id="mgmt-continuity">
+											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9">
 												<div>
 													<div class="ProductTile_productTile__P1DTD">
 														<div class="ProductTile_productTileContent__AcxZH">
@@ -1377,17 +1525,16 @@
 																			style="height: 32px;">
 																			<div>
 																				<h3 class="typography_headline__zZkHA">
-																					<span>Algorithmic Transparency</span>
+																					<span>Supply Continuity</span>
 																				</h3>
 																			</div>
 																		</div>
 																	</div>
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
-																	data-analytics-title="learn more - pricing"
-																	href="javascript:void(0)"
-																	onclick="openModal('learn-more-pricing')"
-																	aria-label="Learn more, Predictable Pricing"><span
+																	data-analytics-title="learn more - mgmt-continuity"
+																	href="/order"
+																	aria-label="Learn more, Supply Continuity"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
 																			class="ProductTile_productImage__6tu_j ProductTile_productTileImageLink__V2V_6">
@@ -1400,17 +1547,17 @@
 																				<picture
 																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/small/ipad_pro_99c6ccaaa.jpg, /assets-www/en_WW/ipad/01_product_tile/small/ipad_pro_bb3c2cec0_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital6.jpg"
 																						width="232" height="276"
 																						media="(max-width: 734px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/medium/ipad_pro_4da74c44a.jpg, /assets-www/en_WW/ipad/01_product_tile/medium/ipad_pro_f044e30c0_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital6.jpg"
 																						width="344" height="410"
 																						media="(max-width: 1068px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hotel1.jpg, /assets-www/en_WW/ipad/01_product_tile/large/hotel1.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital6.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						alt="Supply Continuity">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1426,23 +1573,21 @@
 																<div style="height: 74px;">
 																	<p
 																		class="typography_bodyCopy__v_XbA ProductTile_copy__x48m_">
-																		<strong>Budget with certainty.</strong><br />
-																		<span>Lock in refill pricing with structured
-																			review cycles.</span>
+																		<strong>Never run low. Ever.</strong><br />
+																		<span>Automated restocking triggered by real-time ward consumption.</span>
 																	</p>
 																</div>
-																<div style="height: 21px;">
-																</div>
+																<div style="height: 21px;"></div>
 															</div>
+
 														</div>
 													</div>
 												</div>
 											</div>
 										</li>
 										<li class="StickyFooterGallery_galleryItem__ZGmEN" role="listitem"
-											data-analytics-gallery-item-id="managed">
-											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9"
-												style="">
+											data-analytics-gallery-item-id="mgmt-advisory">
+											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9">
 												<div>
 													<div class="ProductTile_productTile__P1DTD">
 														<div class="ProductTile_productTileContent__AcxZH">
@@ -1456,17 +1601,16 @@
 																			style="height: 32px;">
 																			<div>
 																				<h3 class="typography_headline__zZkHA">
-																					<span>Managed Care Continuity</span>
+																					<span>Energy Advisory</span>
 																				</h3>
 																			</div>
 																		</div>
 																	</div>
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
-																	data-analytics-title="learn more - managed"
-																	href="javascript:void(0)"
-																	onclick="openModal('learn-more-managed')"
-																	aria-label="Learn more, Energy Managed"><span
+																	data-analytics-title="learn more - mgmt-advisory"
+																	href="/order"
+																	aria-label="Learn more, Energy Advisory"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
 																			class="ProductTile_productImage__6tu_j ProductTile_productTileImageLink__V2V_6">
@@ -1479,17 +1623,17 @@
 																				<picture
 																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/small/ipad_air_c06b5be65.jpg, /assets-www/en_WW/ipad/01_product_tile/small/ipad_air_2b265baad_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital7.jpg"
 																						width="232" height="276"
 																						media="(max-width: 734px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/medium/ipad_air_8fd1d1bbe.jpg, /assets-www/en_WW/ipad/01_product_tile/medium/ipad_air_a5aaa09ad_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital7.jpg"
 																						width="344" height="410"
 																						media="(max-width: 1068px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/safety.jpg, /assets-www/en_WW/ipad/01_product_tile/large/safety.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/hospital7.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						alt="Energy Advisory">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1505,22 +1649,21 @@
 																<div style="height: 74px;">
 																	<p
 																		class="typography_bodyCopy__v_XbA ProductTile_copy__x48m_">
-																		<strong>Fuel-security-as-a-service.</strong><br />
-																		<span>We transform energy logistics into a managed hospital utility.</span>
+																		<strong>Custom engineering insights.</strong><br />
+																		<span>Optimize your facility's thermal footprint and expansion.</span>
 																	</p>
 																</div>
-																<div style="height: 21px;">
-																</div>
+																<div style="height: 21px;"></div>
 															</div>
+
 														</div>
 													</div>
 												</div>
 											</div>
 										</li>
 										<li class="StickyFooterGallery_galleryItem__ZGmEN" role="listitem"
-											data-analytics-gallery-item-id="consultation">
-											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9"
-												style="">
+											data-analytics-gallery-item-id="mgmt-monitoring">
+											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9">
 												<div>
 													<div class="ProductTile_productTile__P1DTD">
 														<div class="ProductTile_productTileContent__AcxZH">
@@ -1534,17 +1677,16 @@
 																			style="height: 32px;">
 																			<div>
 																				<h3 class="typography_headline__zZkHA">
-																					<span>Strategic Advisory</span>
+																					<span>Accountability</span>
 																				</h3>
 																			</div>
 																		</div>
 																	</div>
 																</div><a
 																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
-																	data-analytics-title="learn more - consultation"
-																	href="javascript:void(0)"
-																	onclick="openModal('learn-more-consultation')"
-																	aria-label="Learn more, Institutional Consultation"><span
+																	data-analytics-title="learn more - mgmt-monitoring"
+																	href="/order"
+																	aria-label="Learn more, Accountability"><span
 																		class="StandardsLink_copy__FvCj1">
 																		<div
 																			class="ProductTile_productImage__6tu_j ProductTile_productTileImageLink__V2V_6">
@@ -1557,17 +1699,17 @@
 																				<picture
 																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/small/ipad_80a6a106f.jpg, /assets-www/en_WW/ipad/01_product_tile/small/ipad_25abb44d1_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/technitans.jpg"
 																						width="232" height="276"
 																						media="(max-width: 734px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/medium/ipad_75ec2d856.jpg, /assets-www/en_WW/ipad/01_product_tile/medium/ipad_58cedcb8b_2x.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/technitans.jpg"
 																						width="344" height="410"
 																						media="(max-width: 1068px)">
 																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/man-with-chefs.jpg, /assets-www/en_WW/ipad/01_product_tile/large/man-with-chefs.jpg 2x"
+																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/technitans.jpg"
 																						width="372" height="443"><img
-																						alt=" ">
+																						alt="Accountability">
 																				</picture>
 																			</figure>
 																		</div>
@@ -1583,123 +1725,19 @@
 																<div style="height: 74px;">
 																	<p
 																		class="typography_bodyCopy__v_XbA ProductTile_copy__x48m_">
-																		<strong>Engineering insights.</strong><br />
-																		<span>Direct access to energy specialists for high-volume sterilization planning.</span>
+																		<strong>Every gram, live.</strong><br />
+																		<span>Track consumption and manage your budget in real-time.</span>
 																	</p>
 																</div>
-																<div style="height: 21px;">
-																</div>
+																<div style="height: 21px;"></div>
 															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li class="StickyFooterGallery_galleryItem__ZGmEN" role="listitem"
-											data-analytics-gallery-item-id="monitoring">
-											<div class="StaggeredFadeInTween_animationWrapper__Sfw57 StickyFooterGallery_fillParentHeight__JJgW1 StaggeredFadeInTween_enhanced--active__qos7O StaggeredFadeInTween_overrideAnimateStyle__rpUy9"
-												style="">
-												<div>
-													<div class="ProductTile_productTile__P1DTD">
-														<div class="ProductTile_productTileContent__AcxZH">
-															<div class="ProductTile_productTileHeader__XDUDN">
-																<div class="ProductTile_productTileProductId__MA6yX">
-																	<div class="ProductTile_optionalHeaderElementsGrid__bEEhV ProductTile_collapsedBadges__O_wsp ProductTile_collapsedSubheads__u2S7b"
-																		style="--heading-height: 32;">
-																		<div class="ProductTile_badgeArea__VVNt1"
-																			style="height: 0px;"></div>
-																		<div class="ProductTile_headingArea__Kjl7m"
-																			style="height: 32px;">
-																			<div>
-																				<h3 class="typography_headline__zZkHA">
-																					<span>Precision Monitoring</span>
-																				</h3>
-																			</div>
-																		</div>
-																	</div>
-																</div><a
-																	class="BlockLink_blockLink__cF0Fm ProductTile_elevatedLink__qWwuB StandardsLink_link__WcJoK"
-																	data-analytics-title="learn more - monitoring"
-																	href="/ipad/"
-																	aria-label="Learn more, Real-time Monitoring"><span
-																		class="StandardsLink_copy__FvCj1">
-																		<div
-																			class="ProductTile_productImage__6tu_j ProductTile_productTileImageLink__V2V_6">
-																			<figure data-vp-w-large=""
-																				data-vp-h-large="" data-vp-w-medium=""
-																				data-vp-h-medium="" data-vp-w-small=""
-																				data-vp-h-small=""
-																				class="ResponsivePicture_responsive-picture__VWL7l ResponsivePicture_responsive-picture-vp-layout-default--sized__pdVra responsive-picture__no-js responsive-picture--rendered ResponsivePicture_responsive-picture--active__FbrFD responsive-picture--loaded"
-																				style="--image-aspect-ratio: 0.8405797101449275; --vp-w-large: 372; --vp-h-large: 443; --vp-w-medium: 344; --vp-h-medium: 410; --vp-w-small: 232; --vp-h-small: 276; --vp-w-default: 372; --vp-h-default: 443;">
-																				<picture
-																					class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
-																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/small/ipad_mini_55d888566.jpg, /assets-www/en_WW/ipad/01_product_tile/small/ipad_mini_be76a8ea6_2x.jpg 2x"
-																						width="232" height="276"
-																						media="(max-width: 734px)">
-																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/medium/ipad_mini_47e237156.jpg, /assets-www/en_WW/ipad/01_product_tile/medium/ipad_mini_4a65565e0_2x.jpg 2x"
-																						width="344" height="410"
-																						media="(max-width: 1068px)">
-																					<source
-																						srcset="/assets-www/en_WW/ipad/01_product_tile/large/technitans.jpg, /assets-www/en_WW/ipad/01_product_tile/large/technitans.jpg 2x"
-																						width="372" height="443"><img
-																						alt=" ">
-																				</picture>
-																			</figure>
-																		</div>
-																	</span></a>
-																<div
-																	class="ProductTile_optionalIndicatorElementGrid__C1iBx ProductTile_productTileSwatches__SWZec">
-																	<div
-																		class="ColorIndicator_colorindicator__y1Dic ProductTile_colorIndicator__rcQqO">
-																	</div>
-																</div>
-															</div>
-															<div class="ProductTile_contentGrid__uFNwQ">
-																<div style="height: 74px;">
-																	<p
-																		class="typography_bodyCopy__v_XbA ProductTile_copy__x48m_">
-																		<strong>Total Ward Accountability.</strong><br />
-																		<span>Granular consumption tracking live. Optimize every gram in autoclaves and kitchens.</span>
-																	</p>
-																</div>
-																<div style="height: 21px;">
-																</div>
-															</div>
+
 														</div>
 													</div>
 												</div>
 											</div>
 										</li>
 									</ul>
-								</div>
-								<div class="StickyFooterGallery_stickyFooterPaddleNavContainer__35fLw">
-									<div class="StickyFooterGallery_stickyFooterPaddleNav__BY31h">
-										<div class="PaddleNav_paddlenav__QfLbi responsive-content_responsiveContent__S1ntz StickyFooterGallery_paddleNav__njTHh"
-											data-analytics-gallery-interaction-type="paddlenav">
-											<ul class="PaddleNav_grid__l38V7">
-												<li><button aria-label="Previous item in Explore the lineup gallery"
-														class="IconControl_control__vxiHY IconControl_disabled__28z4j IconControl_tertiary__YE5Ln"
-														disabled="" type="button"><svg
-															xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"
-															class="IconControl_paddleNavIcons__ZzEXW">
-															<path
-																d="M20 25c-.384 0-.768-.146-1.06-.44l-5.5-5.5a1.5 1.5 0 0 1 0-2.12l5.5-5.5a1.5 1.5 0 1 1 2.12 2.12L16.622 18l4.44 4.44A1.5 1.5 0 0 1 20 25z">
-															</path>
-														</svg></button></li>
-												<li><button aria-label="Next item in Explore the lineup gallery"
-														class="IconControl_control__vxiHY IconControl_tertiary__YE5Ln"
-														type="button"><svg xmlns="http://www.w3.org/2000/svg"
-															viewBox="0 0 36 36"
-															class="IconControl_paddleNavIcons__ZzEXW">
-															<path
-																d="M22.56 16.938l-5.508-5.5a1.493 1.493 0 0 0-2.116.003 1.502 1.502 0 0 0 .004 2.121L19.384 18l-4.444 4.438A1.502 1.502 0 0 0 15.996 25c.382 0 .764-.145 1.056-.438l5.508-5.5a1.502 1.502 0 0 0 0-2.125z">
-															</path>
-														</svg></button></li>
-											</ul>
-										</div>
-									</div>
 								</div>
 							</div>
 						</div>
@@ -1738,9 +1776,8 @@
 											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="46"
-														height="56"
-														src="/assets-www/en_WW/common/icon_card/creditcard_elevated_b70609ee9.svg">
+												<div class="IconCard_contentContainer__G34xf">
+													<span class="material-symbols-outlined">fact_check</span>
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 1:
 																On-Site Evaluation</span></h4>
@@ -1776,9 +1813,8 @@
 											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="40"
-														height="56"
-														src="/assets-www/en_WW/common/icon_card/arrow.2.squarepath.devices_elevated_fac99429a.svg">
+												<div class="IconCard_contentContainer__G34xf">
+													<span class="material-symbols-outlined">architecture</span>
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 2:
 																Streamlined Blueprint</span></h4>
@@ -1814,9 +1850,8 @@
 											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="46"
-														height="56"
-														src="/assets-www/en_WW/common/icon_card/graduationcap_elevated_e406e6e68.svg">
+												<div class="IconCard_contentContainer__G34xf">
+													<span class="material-symbols-outlined">verified</span>
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 3:
 																Compliance Validation</span></h4>
@@ -1852,9 +1887,8 @@
 											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="56"
-														height="56"
-														src="/assets-www/en_WW/common/icon_card/person.line.dotted.person_elevated_83a5eeeb4.svg">
+												<div class="IconCard_contentContainer__G34xf">
+													<span class="material-symbols-outlined">handyman</span>
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 4:
 																Accelerated Installation</span></h4>
@@ -1890,9 +1924,8 @@
 											class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="49"
-														height="56"
-														src="/assets-www/en_WW/common/icon_card/truck.box_elevated_d74c82127.svg">
+												<div class="IconCard_contentContainer__G34xf">
+													<span class="material-symbols-outlined">groups</span>
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 5:
 																Management Kickoff</span></h4>
@@ -1928,9 +1961,8 @@
 											class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="40"
-														height="56"
-														src="/assets-www/en_WW/common/icon_card/emoji.face.grinning_elevated_bd5991c26.svg">
+												<div class="IconCard_contentContainer__G34xf">
+													<span class="material-symbols-outlined">bolt</span>
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 6:
 																Real-time Activation</span></h4>
@@ -1966,9 +1998,8 @@
 											class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="42"
-														height="56"
-														src="/assets-www/en_WW/common/icon_card/person.macwindow_elevated_53b58701b.svg">
+												<div class="IconCard_contentContainer__G34xf">
+													<span class="material-symbols-outlined">local_shipping</span>
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 7:
 																Proactive Logistics</span></h4>
@@ -2004,9 +2035,8 @@
 											class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
 											<div
 												class="IconCard_iconCard__ptoS0 IconCard_backgroundColorAlt__PDRMV BaseCard_baseCard__9OdJ1">
-												<div class="IconCard_contentContainer__G34xf"><img alt="" width="36"
-														height="56"
-														src="/assets-www/en_WW/common/icon_card/app.applestore_elevated_8102e7f71.svg">
+												<div class="IconCard_contentContainer__G34xf">
+													<span class="material-symbols-outlined">support_agent</span>
 													<div class="IconCard_copyContainer__JW46n">
 														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 8:
 																Global Support Hub</span></h4>
@@ -2071,27 +2101,29 @@
 								class="SectionHeader_headline__aqRKz MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
 								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1; font-size: 56px !important; font-weight: 600 !important; line-height: 1.07 !important; letter-spacing: -0.005em !important;"><span>Reliability as a Service.</span></h2>
 						</div>
-						<div id="«r2»" class="Gallery_gallery__ku_1u"
+						<div id="«r1»" class="Gallery_gallery__ku_1u"
 							data-analytics-gallery-id="get to know ipad gallery">
 							<div class="Gallery_scrollContainer__1LaRX" data-scrollable="true">
 								<ul aria-labelledby="feature-card-section-7-header" role="list"
 									class="Gallery_itemContainer__Zirbx">
 									<li class="Gallery_galleryItem__cc2Of" role="listitem" tabindex="-1"
-										data-analytics-gallery-item-id="ipados + apps">
+										data-analytics-gallery-item-id="mgmt-precision">
 										<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw animationDefaults_buildIn__OdEKA"
 											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
 												class="FeatureCard_featureCard__OFMtd FeatureCard_darkTheme__jID1b BaseCard_baseCard__9OdJ1 BaseCard_darkTheme__vzsqW">
-												<div class="ImpactCard_copyContainer__bJ0_5">
-														<h3 class="ImpactCard_headline__yO8T3"><span>99.9%</span>
-														</h3>
-														<h4 class="ImpactCard_topicLabel__V0G_n"><span>Sovereign
-																Reliability.</span></h4>
-														<p class="ImpactCard_copy__2DOnU"><span>Consistent high-thermal
-																output ensures autoclaves and kitchens maintain precision
-																cycles 24/7.</span>
+												<div class="FeatureCard_copyContainer__bJ0_5">
+													<h3 class="FeatureCard_topicLabel__dwo6T"><span>Precision</span></h3>
+													<div>
+														<p
+															class="typography_headline__zZkHA FeatureCard_headline__VE1MS">
+															<span>Precision Delivery</span>
+														</p>
+														<p class="typography_bodyCopy__v_XbA">
+															<span>Ward-level accuracy. Departmental metering eliminates waste. Every unit of energy accounted for.</span>
 														</p>
 													</div>
+												</div>
 												<div class="FeatureCard_backgroundImage__fdw48">
 													<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
 														data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
@@ -2101,21 +2133,20 @@
 														<picture
 															class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 															<source
-																srcset="/assets-www/en_WW/ipad/01_feature_card/small/fc_ipados_e9fb7a2ba.jpg, /assets-www/en_WW/ipad/01_feature_card/small/fc_ipados_7e63ea350_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-1.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-1.jpg 2x"
 																width="260" height="530" media="(max-width: 734px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/01_feature_card/medium/fc_ipados_5597f9fff.jpg, /assets-www/en_WW/ipad/01_feature_card/medium/fc_ipados_289b3f886_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-1.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-1.jpg 2x"
 																width="344" height="684" media="(max-width: 1068px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/01_feature_card/large/fc_ipados_e45197f15.jpg, /assets-www/en_WW/ipad/01_feature_card/large/fc_ipados_c06ebc35b_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-1.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-1.jpg 2x"
 																width="372" height="744"><img
-																alt="Clean and healthy kitchen environment without firewood smoke">
+																alt="Precision Delivery">
 														</picture>
 													</figure>
-												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													aria-label="Learn more about LipaGasOS + Apps"
-													data-analytics-title="open modal - ipados"
-													data-analytics-click="prop3:open modal - ipados">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Precision Delivery"
+													data-analytics-title="open modal - mgmt-precision">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2130,22 +2161,25 @@
 											</div>
 										</div>
 									</li>
+
 									<li class="Gallery_galleryItem__cc2Of" role="listitem" tabindex="-1"
-										data-analytics-gallery-item-id="lipagas intelligence">
+										data-analytics-gallery-item-id="mgmt-resilience">
 										<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw animationDefaults_buildIn__OdEKA"
 											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
 												class="FeatureCard_featureCard__OFMtd FeatureCard_darkTheme__jID1b BaseCard_baseCard__9OdJ1 BaseCard_darkTheme__vzsqW">
-												<div class="ImpactCard_copyContainer__bJ0_5">
-														<h3 class="ImpactCard_headline__yO8T3"><span>100%</span>
-														</h3>
-														<h4 class="ImpactCard_topicLabel__V0G_n"><span>Clean Air
-																Campus.</span></h4>
-														<p class="ImpactCard_copy__2DOnU"><span>Eliminate ambient
-																pollutants. Protect patient respiratory health and maintain
-																a sterile footprint.</span>
+												<div class="FeatureCard_copyContainer__bJ0_5">
+													<h3 class="FeatureCard_topicLabel__dwo6T"><span>Resilience</span></h3>
+													<div>
+														<p
+															class="typography_headline__zZkHA FeatureCard_headline__VE1MS">
+															<span>Operational Resilience</span>
+														</p>
+														<p class="typography_bodyCopy__v_XbA">
+															<span>Redundancy built in. Dual-supply architecture ensures uninterrupted energy during surgery.</span>
 														</p>
 													</div>
+												</div>
 												<div class="FeatureCard_backgroundImage__fdw48">
 													<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
 														data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
@@ -2155,21 +2189,20 @@
 														<picture
 															class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/small/fc_lipagas_intelligence_e6422b7ee.jpg, /assets-www/en_WW/ipad/feature_card/small/fc_lipagas_intelligence_fd5f085a8_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-2.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-2.jpg 2x"
 																width="260" height="530" media="(max-width: 734px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/medium/fc_lipagas_intelligence_59a23a56f.jpg, /assets-www/en_WW/ipad/feature_card/medium/fc_lipagas_intelligence_f8c73bc96_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-2.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-2.jpg 2x"
 																width="344" height="684" media="(max-width: 1068px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/large/fc_lipagas_intelligence_c2351ccf7.jpg, /assets-www/en_WW/ipad/feature_card/large/fc_lipagas_intelligence_8a1f37017_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-2.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-2.jpg 2x"
 																width="372" height="744"><img
-																alt="LipaGas kitchen setup showing fast cooking times">
+																alt="Operational Resilience">
 														</picture>
 													</figure>
-												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													aria-label="Learn more about Lipagas Intelligence"
-													data-analytics-title="open modal - lipagas intelligence"
-													data-analytics-click="prop3:open modal - lipagas intelligence">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Operational Resilience"
+													data-analytics-title="open modal - mgmt-resilience">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2184,22 +2217,25 @@
 											</div>
 										</div>
 									</li>
+
 									<li class="Gallery_galleryItem__cc2Of" role="listitem" tabindex="-1"
-										data-analytics-gallery-item-id="productivity">
+										data-analytics-gallery-item-id="mgmt-compliance">
 										<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw animationDefaults_buildIn__OdEKA"
 											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
 												class="FeatureCard_featureCard__OFMtd FeatureCard_darkTheme__jID1b BaseCard_baseCard__9OdJ1 BaseCard_darkTheme__vzsqW">
-												<div class="ImpactCard_copyContainer__bJ0_5">
-														<h3 class="ImpactCard_headline__yO8T3"><span>Lean</span>
-														</h3>
-														<h4 class="ImpactCard_topicLabel__V0G_n"><span>Resource
-																Optimization.</span></h4>
-														<p class="ImpactCard_copy__2DOnU"><span>Transform energy from a
-																fixed drain into a data-driven managed service. Pay for
-																what you consume.</span>
+												<div class="FeatureCard_copyContainer__bJ0_5">
+													<h3 class="FeatureCard_topicLabel__dwo6T"><span>Compliance</span></h3>
+													<div>
+														<p
+															class="typography_headline__zZkHA FeatureCard_headline__VE1MS">
+															<span>Regulatory Compliance</span>
+														</p>
+														<p class="typography_bodyCopy__v_XbA">
+															<span>Audit-ready always. Automated documentation and reporting for KEBS, NEMA, and health inspectors.</span>
 														</p>
 													</div>
+												</div>
 												<div class="FeatureCard_backgroundImage__fdw48">
 													<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
 														data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
@@ -2209,21 +2245,20 @@
 														<picture
 															class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/small/fc_productivity_dbff2debd.jpg, /assets-www/en_WW/ipad/feature_card/small/fc_productivity_af46b6133_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-3.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-3.jpg 2x"
 																width="260" height="530" media="(max-width: 734px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/medium/fc_productivity_83c5af2a4.jpg, /assets-www/en_WW/ipad/feature_card/medium/fc_productivity_31d9f0486_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-3.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-3.jpg 2x"
 																width="344" height="684" media="(max-width: 1068px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/large/fc_productivity_2f45a4db2.jpg, /assets-www/en_WW/ipad/feature_card/large/fc_productivity_f46450eb3_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-3.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-3.jpg 2x"
 																width="372" height="744"><img
-																alt="Stable, predictable LPG pricing for schools">
+																alt="Regulatory Compliance">
 														</picture>
 													</figure>
-												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													aria-label="Learn more about Productivity"
-													data-analytics-title="open modal - productivity"
-													data-analytics-click="prop3:open modal - productivity">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Regulatory Compliance"
+													data-analytics-title="open modal - mgmt-compliance">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2238,21 +2273,25 @@
 											</div>
 										</div>
 									</li>
+
 									<li class="Gallery_galleryItem__cc2Of" role="listitem" tabindex="-1"
-										data-analytics-gallery-item-id="creativity">
+										data-analytics-gallery-item-id="mgmt-cost">
 										<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw animationDefaults_buildIn__OdEKA"
 											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
 												class="FeatureCard_featureCard__OFMtd FeatureCard_darkTheme__jID1b BaseCard_baseCard__9OdJ1 BaseCard_darkTheme__vzsqW">
-												<div class="ImpactCard_copyContainer__bJ0_5">
-														<h3 class="ImpactCard_headline__yO8T3"><span>Zero</span>
-														</h3>
-														<h4 class="ImpactCard_topicLabel__V0G_n"><span>Supply
-																Lag.</span></h4>
-														<p class="ImpactCard_copy__2DOnU"><span>Multi-node sensor arrays
-																and automated delivery ensure critical energy is always
-																available for life-saving wards.</span></p>
+												<div class="FeatureCard_copyContainer__bJ0_5">
+													<h3 class="FeatureCard_topicLabel__dwo6T"><span>Intelligence</span></h3>
+													<div>
+														<p
+															class="typography_headline__zZkHA FeatureCard_headline__VE1MS">
+															<span>Cost Intelligence</span>
+														</p>
+														<p class="typography_bodyCopy__v_XbA">
+															<span>Beyond budgeting. AI-powered consumption forecasting helps CFOs plan with surgical precision.</span>
+														</p>
 													</div>
+												</div>
 												<div class="FeatureCard_backgroundImage__fdw48">
 													<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
 														data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
@@ -2262,21 +2301,20 @@
 														<picture
 															class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/small/fc_creativity_ca8b486b5.jpg, /assets-www/en_WW/ipad/feature_card/small/fc_creativity_973919e15_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-4.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-4.jpg 2x"
 																width="260" height="530" media="(max-width: 734px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/medium/fc_creativity_ee24207fc.jpg, /assets-www/en_WW/ipad/feature_card/medium/fc_creativity_81a9bde1b_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-4.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-4.jpg 2x"
 																width="344" height="684" media="(max-width: 1068px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/large/fc_creativity_e405300bd.jpg, /assets-www/en_WW/ipad/feature_card/large/fc_creativity_63d5f62da_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-4.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-4.jpg 2x"
 																width="372" height="744"><img
-																alt="Clean school institution devoid of bulky firewood storage">
+																alt="Cost Intelligence">
 														</picture>
 													</figure>
-												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													aria-label="Learn more about Creativity"
-													data-analytics-title="open modal - creativity"
-													data-analytics-click="prop3:open modal - creativity">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Cost Intelligence"
+													data-analytics-title="open modal - mgmt-cost">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2291,21 +2329,25 @@
 											</div>
 										</div>
 									</li>
+
 									<li class="Gallery_galleryItem__cc2Of" role="listitem" tabindex="-1"
-										data-analytics-gallery-item-id="learning">
-										<div
-											class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
+										data-analytics-gallery-item-id="mgmt-partnership">
+										<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw animationDefaults_buildIn__OdEKA"
+											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
 												class="FeatureCard_featureCard__OFMtd FeatureCard_darkTheme__jID1b BaseCard_baseCard__9OdJ1 BaseCard_darkTheme__vzsqW">
-												<div class="ImpactCard_copyContainer__bJ0_5">
-														<h3 class="ImpactCard_headline__yO8T3"><span>99.8%</span>
-														</h3>
-														<h4 class="ImpactCard_topicLabel__V0G_n"><span>Deployment
-																Uptime.</span></h4>
-														<p class="ImpactCard_copy__2DOnU"><span>Optimized logistics and
-																buffer stock ensure your hospital never enters a critical
-																low-state.</span></p>
+												<div class="FeatureCard_copyContainer__bJ0_5">
+													<h3 class="FeatureCard_topicLabel__dwo6T"><span>Partnership</span></h3>
+													<div>
+														<p
+															class="typography_headline__zZkHA FeatureCard_headline__VE1MS">
+															<span>Strategic Partnership</span>
+														</p>
+														<p class="typography_bodyCopy__v_XbA">
+															<span>More than a supplier. Dedicated account managers and co-investment in your growth.</span>
+														</p>
 													</div>
+												</div>
 												<div class="FeatureCard_backgroundImage__fdw48">
 													<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
 														data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
@@ -2315,21 +2357,20 @@
 														<picture
 															class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/small/fc_learning_51091bf76.jpg, /assets-www/en_WW/ipad/feature_card/small/fc_learning_ec14ce435_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-5.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-5.jpg 2x"
 																width="260" height="530" media="(max-width: 734px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/medium/fc_learning_faa9b7020.jpg, /assets-www/en_WW/ipad/feature_card/medium/fc_learning_04156319d_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-5.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-5.jpg 2x"
 																width="344" height="684" media="(max-width: 1068px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/large/fc_learning_b024858e9.jpg, /assets-www/en_WW/ipad/feature_card/large/fc_learning_ca6673f29_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-5.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-5.jpg 2x"
 																width="372" height="744"><img
-																alt="Smart meter and dashboard showing real-time LPG consumption">
+																alt="Strategic Partnership">
 														</picture>
 													</figure>
-												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													aria-label="Learn more about Learning"
-													data-analytics-title="open modal - learning"
-													data-analytics-click="prop3:open modal - learning">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Strategic Partnership"
+													data-analytics-title="open modal - mgmt-partnership">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2344,21 +2385,25 @@
 											</div>
 										</div>
 									</li>
+
 									<li class="Gallery_galleryItem__cc2Of" role="listitem" tabindex="-1"
-										data-analytics-gallery-item-id="entertainment">
-										<div
-											class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
+										data-analytics-gallery-item-id="mgmt-visibility">
+										<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw animationDefaults_buildIn__OdEKA"
+											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
 												class="FeatureCard_featureCard__OFMtd FeatureCard_darkTheme__jID1b BaseCard_baseCard__9OdJ1 BaseCard_darkTheme__vzsqW">
-												<div class="ImpactCard_copyContainer__bJ0_5">
-														<h3 class="ImpactCard_headline__yO8T3"><span>Real-time</span>
-														</h3>
-														<h4 class="ImpactCard_topicLabel__V0G_n"><span>Console
-																Visibility.</span></h4>
-														<p class="ImpactCard_copy__2DOnU"><span>Track every gram
-																consumed, every shilling spent — from your secure
-																institutional console.</span></p>
+												<div class="FeatureCard_copyContainer__bJ0_5">
+													<h3 class="FeatureCard_topicLabel__dwo6T"><span>Visibility</span></h3>
+													<div>
+														<p
+															class="typography_headline__zZkHA FeatureCard_headline__VE1MS">
+															<span>Console Visibility</span>
+														</p>
+														<p class="typography_bodyCopy__v_XbA">
+															<span>Real-time tracking. Your entire hospital energy consumption on a single screen.</span>
+														</p>
 													</div>
+												</div>
 												<div class="FeatureCard_backgroundImage__fdw48">
 													<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
 														data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
@@ -2368,21 +2413,20 @@
 														<picture
 															class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/small/fc_entertainment_aff418bde.jpg, /assets-www/en_WW/ipad/feature_card/small/fc_entertainment_9370dab3c_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-6.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-6.jpg 2x"
 																width="260" height="530" media="(max-width: 734px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/01_feature_card/medium/fc_entertainment_9a07191c6.jpg, /assets-www/en_WW/ipad/01_feature_card/medium/fc_entertainment_6bcc597a4_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-6.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-6.jpg 2x"
 																width="344" height="684" media="(max-width: 1068px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/01_feature_card/large/fc_entertainment_122fa1bc7.jpg, /assets-www/en_WW/ipad/01_feature_card/large/fc_entertainment_0904becc4_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-6.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-6.jpg 2x"
 																width="372" height="744"><img
-																alt="Automatic LPG refill truck delivery for schools">
+																alt="Console Visibility">
 														</picture>
 													</figure>
-												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													aria-label="Learn more about Partnerships"
-													data-analytics-title="open modal - entertainment"
-													data-analytics-click="prop3:open modal - entertainment">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Console Visibility"
+													data-analytics-title="open modal - mgmt-visibility">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2397,21 +2441,25 @@
 											</div>
 										</div>
 									</li>
+
 									<li class="Gallery_galleryItem__cc2Of" role="listitem" tabindex="-1"
-										data-analytics-gallery-item-id="lipagas pencil">
-										<div
-											class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
+										data-analytics-gallery-item-id="mgmt-scale">
+										<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw animationDefaults_buildIn__OdEKA"
+											style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
 											<div
 												class="FeatureCard_featureCard__OFMtd FeatureCard_darkTheme__jID1b BaseCard_baseCard__9OdJ1 BaseCard_darkTheme__vzsqW">
-												<div class="ImpactCard_copyContainer__bJ0_5">
-														<h3 class="ImpactCard_headline__yO8T3"><span>500+</span>
-														</h3>
-														<h4 class="ImpactCard_topicLabel__V0G_n"><span>Medical Sites
-																Powered.</span></h4>
-														<p class="ImpactCard_copy__2DOnU"><span>Hospitals, clinics, and
-																health centers across Kenya already trust LipaGas for
-																mission-critical energy.</span></p>
+												<div class="FeatureCard_copyContainer__bJ0_5">
+													<h3 class="FeatureCard_topicLabel__dwo6T"><span>Scale</span></h3>
+													<div>
+														<p
+															class="typography_headline__zZkHA FeatureCard_headline__VE1MS">
+															<span>Medical Sites Powered</span>
+														</p>
+														<p class="typography_bodyCopy__v_XbA">
+															<span>500+ facilities. Hospitals and health centers across Kenya trust LipaGas for mission-critical energy.</span>
+														</p>
 													</div>
+												</div>
 												<div class="FeatureCard_backgroundImage__fdw48">
 													<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
 														data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
@@ -2421,21 +2469,20 @@
 														<picture
 															class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/small/fc_pencil_75be03fa0.jpg, /assets-www/en_WW/ipad/feature_card/small/fc_pencil_6a49c499b_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-7.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-7.jpg 2x"
 																width="260" height="530" media="(max-width: 734px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/medium/fc_pencil_2eb905ca0.jpg, /assets-www/en_WW/ipad/feature_card/medium/fc_pencil_60e914513_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-7.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-7.jpg 2x"
 																width="344" height="684" media="(max-width: 1068px)">
 															<source
-																srcset="/assets-www/en_WW/ipad/feature_card/large/fc_pencil_6ef5e2dd2.jpg, /assets-www/en_WW/ipad/feature_card/large/fc_pencil_388579767_2x.jpg 2x"
+																srcset="/assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-7.jpg, /assets-www/en_WW/ipad/01_feature_card/large/hospital-footer-7.jpg 2x"
 																width="372" height="744"><img
-																alt="An Lipagas Pencil with colorful lettering in Notes">
+																alt="Medical Sites Powered">
 														</picture>
 													</figure>
-												</div><button class="cards_cardLink__W1UKy" data-analytics-intrapage-link=""
-													aria-label="Learn more about Lipagas Pencil"
-													data-analytics-title="open modal - lipagas pencil"
-													data-analytics-click="prop3:open modal - lipagas pencil">
+												</div><button class="cards_cardLink__W1UKy"
+													aria-label="Learn more about Medical Sites Powered"
+													data-analytics-title="open modal - mgmt-scale">
 													<div class="CardControl_controlContainer__fsXIE" aria-hidden="true">
 														<span
 															class="IconControl_control__vxiHY IconControl_primary__n_54r"><svg
@@ -2450,28 +2497,7 @@
 											</div>
 										</div>
 									</li>
-								</ul>
-							</div>
-							<div class="PaddleNav_paddlenav__QfLbi responsive-content_responsiveContent__S1ntz Gallery_paddleNav__hBEEI"
-								data-analytics-gallery-interaction-type="paddlenav"
-								style="display: flex !important; justify-content: flex-end !important; padding-top: 40px !important; width: 100% !important; max-width: none !important; padding-right: 48px !important;">
-								<ul class="PaddleNav_grid__l38V7">
-									<li><button aria-label="Previous item in Get to know LipaGas LPG gallery"
-											class="IconControl_control__vxiHY IconControl_disabled__28z4j IconControl_tertiary__YE5Ln"
-											disabled="" type="button"><svg xmlns="http://www.w3.org/2000/svg"
-												viewBox="0 0 36 36" class="IconControl_paddleNavIcons__ZzEXW">
-												<path
-													d="M20 25c-.384 0-.768-.146-1.06-.44l-5.5-5.5a1.5 1.5 0 0 1 0-2.12l5.5-5.5a1.5 1.5 0 1 1 2.12 2.12L16.622 18l4.44 4.44A1.5 1.5 0 0 1 20 25z">
-												</path>
-											</svg></button></li>
-									<li><button aria-label="Next item in Get to know LipaGas LPG gallery"
-											class="IconControl_control__vxiHY IconControl_tertiary__YE5Ln"
-											type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"
-												class="IconControl_paddleNavIcons__ZzEXW">
-												<path
-													d="M22.56 16.938l-5.508-5.5a1.493 1.493 0 0 0-2.116.003 1.502 1.502 0 0 0 .004 2.121L19.384 18l-4.444 4.438A1.502 1.502 0 0 0 15.996 25c.382 0 .764-.145 1.056-.438l5.508-5.5a1.502 1.502 0 0 0 0-2.125z">
-												</path>
-											</svg></button></li>
+
 								</ul>
 							</div>
 						</div>
@@ -2490,8 +2516,7 @@
 						</div>
 						<div
 							class="responsive-content_responsiveContent__S1ntz BannerCardSection_responsiveContainer__EoB1m">
-							<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA"
-								style="">
+							<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
 								<div class="BannerCard_bannerCard__xHrOV BannerCard_twoUp__3pVcb BannerCard_cardVertical__wV5a2 BannerCard_copyLockupPinTop__UGz_4 BannerCard_inlineLayout__VaIgt BannerCard_backgroundColorAlt__2b0z_ BannerCard_blockLink__IlVL7 BaseCard_baseCard__9OdJ1"
 									style="background-color: rgb(255, 255, 255);"><a
 										data-analytics-title="learn more - smiling cooks" aria-hidden="true"
@@ -2499,11 +2524,9 @@
 										tabindex="-1"></a>
 									<div class="BannerCard_copyLockup__9uRdS CopyLockup_textAlignCenter__7B4Wl">
 										<div class="CopyLockup_headingContainer__eAcNT">
-											<h3 class="CopyLockup_header__BZWbY"><span>Always-On</span>
-											</h3>
+											<h3 class="CopyLockup_header__BZWbY"><span>Clinical Utility Standard</span></h3>
 										</div>
-										<p class="CopyLockup_copy__t5rPE"><span>Engineered for the rigorous demands of 24/7 healthcare. From emergency wards to patient catering, LipaGas infrastructure provides the thermal intensity and supply stability needed to power elite medical complexes at any scale.</span>
-										</p>
+										<p class="CopyLockup_copy__t5rPE"><span>Engineered for the 24/7 rigor of elite healthcare. From high-pressure sterilization to patient catering, LipaGas infrastructure provides the thermal intensity and supply stability needed to power global-scale medical complexes.</span></p>
 										<div
 											class="OptionalCTABlock_ctaBlock__k2dm5 OptionalCTABlock_alignCenter__bgIt_ OptionalCTABlock_ctaInline__vG_6y">
 											<a class="typography_bodyCopy__v_XbA OptionalCTABlock_link__pk9oy StandardsLink_link__WcJoK StandardsLink_icon-wrapper__bIVCW"
@@ -2535,8 +2558,7 @@
 									</figure>
 								</div>
 							</div>
-							<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA"
-								style="">
+							<div class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
 								<div class="BannerCard_bannerCard__xHrOV BannerCard_twoUp__3pVcb BannerCard_cardVertical__wV5a2 BannerCard_copyLockupPinBottom__asjsT BannerCard_inlineLayout__VaIgt BannerCard_backgroundColorAlt__2b0z_ BannerCard_blockLink__IlVL7 BaseCard_baseCard__9OdJ1"
 									style="background-color: rgb(255, 255, 255);"><a
 										data-analytics-title="learn more - standing kenya" aria-hidden="true"
@@ -2544,12 +2566,10 @@
 										tabindex="-1"></a>
 									<div class="BannerCard_copyLockup__9uRdS CopyLockup_textAlignCenter__7B4Wl">
 										<div class="CopyLockup_headingContainer__eAcNT">
-											<h3 class="CopyLockup_header__BZWbY"><span>Medical-Grade
-													Reliability.</span>
+											<h3 class="CopyLockup_header__BZWbY"><span>Absolute Ward Security</span>
 											</h3>
 										</div>
-										<p class="CopyLockup_copy__t5rPE"><span>Protect your patients. Every LipaGas deployment features multi-layered safety modules, automated sensor-triggers, and 24/7 remote console oversight to ensure ward-security.</span>
-										</p>
+										<p class="CopyLockup_copy__t5rPE"><span>Protect your patients and your staff. Every deployment features high-sensitivity sensor modules, automated emergency shut-offs, and 24/7 remote console visibility to ensure absolute ward-security.</span></p>
 										<div
 											class="OptionalCTABlock_ctaBlock__k2dm5 OptionalCTABlock_alignCenter__bgIt_ OptionalCTABlock_ctaInline__vG_6y">
 											<a class="typography_bodyCopy__v_XbA OptionalCTABlock_link__pk9oy StandardsLink_link__WcJoK StandardsLink_icon-wrapper__bIVCW"
@@ -2583,424 +2603,8 @@
 							</div>
 						</div>
 					</div>
-				</section>
-				<section class="MarcomSection_section__Hd6T8 MarcomSection_backgroundTertiary___LAi8"
-					data-analytics-section-engagement="name:ipad family">
-					<div class="section-content">
-						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz">
-							<h2 id="accordion-section-10-header"
-								class="SectionHeader_headline__aqRKz MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
-								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><span>Seamless Experience</span></h2>
-						</div>
-						<div class="responsive-content_responsiveContent__S1ntz">
-							<div class="ImageAccordion_imageAccordionContainer__WaT9u AccordionSection_enhanced--active__3FUXZ animationDefaults_buildIn__OdEKA ImageAccordion_backgroundColorAlt__SyoxZ"
-								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;">
-								<ul class="ImageAccordion_accordion__vRgS6" role="list"
-									aria-labelledby="accordion-section-10-header">
-									<li class="ImageAccordion_accordionItem__jYIo_" role="listitem">
-										<h3
-											class="ImageAccordion_accordionItemHeadline__bdCG0 typography_headline__zZkHA">
-											<button class="ImageAccordion_accordionButton__qj7ql"
-												aria-controls="accordion-item-0-tray" type="button" role="button"
-												data-analytics-click="prop3:open accordion - ipad and mac"
-												data-analytics-title="open accordion - ipad and mac"
-												data-analytics-intrapage-link="" aria-expanded="true"><span
-													class="ImageAccordion_accordionTitleText__6ouHq"><span>Agile
-														Deployment</span></span><span
-													class="ImageAccordion_accordionIcon__Ygs7m"><svg
-														class="ImageAccordion_accordionIconSvg__sixZm"
-														viewBox="0 0 17 8.85">
-														<polyline data-accordion-icon-shape="true" stroke="currentColor"
-															stroke-linecap="round" stroke-linejoin="round" fill="none"
-															fill-rule="evenodd" points="15 7.72 8.5 1.13 2 7.72">
-															<animate attributeName="points"
-																values="15 1.13 8.5 7.72 2 1.13; 15.85 4.42 8.5 4.42 1.15 4.42; 15 7.72 8.5 1.13 2 7.72"
-																dur="320ms" begin="indefinite" fill="freeze"
-																keyTimes="0;0.5;1" calcMode="spline"
-																keySplines="0.12, 0, 0.38, 0; 0.2, 1, 0.68, 1">
-															</animate>
-															<animate attributeName="points"
-																values="15 7.72 8.5 1.13 2 7.72; 15.85 4.42 8.5 4.42 1.15 4.42; 15 1.13 8.5 7.72 2 1.13"
-																dur="320ms" begin="indefinite" fill="freeze"
-																keyTimes="0;0.5;1" calcMode="spline"
-																keySplines="0.2, 0, 0.68, 0; 0.2, 1, 0.68, 1">
-															</animate>
-														</polyline>
-													</svg></span></button>
-										</h3>
-										<div id="accordion-item-0-tray" class="ImageAccordion_accordionTray__BHx_I">
-											<div class="ImageAccordion_accordionContent__qFdLA">
-												<div>
-													<p>Deploy infrastructure during hospital off-peak hours or ward-cycle breaks. Our engineering teams map and integrate bulk supply with zero disruption to clinical workflows.</p>
-												</div>
-												<div class="ImageAccordion_accordionItemImageContainer__3SNxX">
-													<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
-														data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
-														class="ResponsivePicture_responsive-picture__VWL7l responsive-picture-vp-layout-default--none responsive-picture__no-js responsive-picture--rendered ResponsivePicture_responsive-picture--active__FbrFD responsive-picture--loaded ImageAccordion_accordionImage__bAFHA"
-														style="--vp-w-large: 1090; --vp-h-large: 784; --vp-w-medium: 800; --vp-h-medium: 421; --vp-w-small: 360; --vp-h-small: 193; --vp-w-default: 1090; --vp-h-default: 784;">
-														<picture
-															class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
-															<source
-																srcset="/assets-www/en_WW/ipad/01_image_accordion/small/ipad_iphone_4ab006052.jpg, /assets-www/en_WW/ipad/01_image_accordion/small/ipad_iphone_d1845c998_2x.jpg 2x"
-																width="360" height="193" media="(max-width: 734px)">
-															<source
-																srcset="/assets-www/en_WW/ipad/01_image_accordion/medium/ipad_iphone_a59b125ff.jpg, /assets-www/en_WW/ipad/01_image_accordion/medium/ipad_iphone_632147d37_2x.jpg 2x"
-																width="800" height="421" media="(max-width: 1068px)">
-															<source
-																srcset="/assets-www/en_WW/ipad/01_image_accordion/large/ipad_iphone_fe7dacf06.jpg, /assets-www/en_WW/ipad/01_image_accordion/large/ipad_iphone_56e01363b_2x.jpg 2x"
-																width="1090" height="784"><img
-																alt="An Standard Delivery and LipaGas LPG side by side highlighting how a photo taken with the camera on Infrastructure can be marked up in the Photos app on LipaGas LPG">
-														</picture>
-													</figure>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="ImageAccordion_accordionItem__jYIo_ ImageAccordion_collapsed__10ccw"
-										role="listitem">
-										<h3
-											class="ImageAccordion_accordionItemHeadline__bdCG0 typography_headline__zZkHA">
-											<button class="ImageAccordion_accordionButton__qj7ql"
-												aria-controls="accordion-item-1-tray" type="button" role="button"
-												data-analytics-click="prop3:open accordion - ipad and mac"
-												data-analytics-title="open accordion - ipad and mac"
-												data-analytics-intrapage-link="" aria-expanded="false"><span
-													class="ImageAccordion_accordionTitleText__6ouHq"><span>Predictive
-														Safeguards</span></span><span
-													class="ImageAccordion_accordionIcon__Ygs7m"><svg
-														class="ImageAccordion_accordionIconSvg__sixZm"
-														viewBox="0 0 17 8.85">
-														<polyline data-accordion-icon-shape="true" stroke="currentColor"
-															stroke-linecap="round" stroke-linejoin="round" fill="none"
-															fill-rule="evenodd" points="15 1.13 8.5 7.72 2 1.13">
-															<animate attributeName="points"
-																values="15 1.13 8.5 7.72 2 1.13; 15.85 4.42 8.5 4.42 1.15 4.42; 15 7.72 8.5 1.13 2 7.72"
-																dur="320ms" begin="indefinite" fill="freeze"
-																keyTimes="0;0.5;1" calcMode="spline"
-																keySplines="0.12, 0, 0.38, 0; 0.2, 1, 0.68, 1">
-															</animate>
-															<animate attributeName="points"
-																values="15 7.72 8.5 1.13 2 7.72; 15.85 4.42 8.5 4.42 1.15 4.42; 15 1.13 8.5 7.72 2 1.13"
-																dur="320ms" begin="indefinite" fill="freeze"
-																keyTimes="0;0.5;1" calcMode="spline"
-																keySplines="0.2, 0, 0.68, 0; 0.2, 1, 0.68, 1">
-															</animate>
-														</polyline>
-													</svg></span></button>
-										</h3>
-										<div id="accordion-item-1-tray" class="ImageAccordion_accordionTray__BHx_I">
-											<div class="ImageAccordion_accordionContent__qFdLA" inert=""
-												aria-hidden="true">
-												<div>
-													<p>Eliminate downtime. Real-time sensors detect wear before failure, triggering automated maintenance cycles to ensure absolute ward-security and precision uptime.</p>
-												</div>
-												<div class="ImageAccordion_accordionItemImageContainer__3SNxX">
-													<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
-														data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
-														class="ResponsivePicture_responsive-picture__VWL7l responsive-picture-vp-layout-default--none responsive-picture__no-js responsive-picture--rendered ResponsivePicture_responsive-picture--active__FbrFD responsive-picture--loaded ImageAccordion_accordionImage__bAFHA"
-														style="--vp-w-large: 1090; --vp-h-large: 784; --vp-w-medium: 800; --vp-h-medium: 421; --vp-w-small: 360; --vp-h-small: 191; --vp-w-default: 1090; --vp-h-default: 784;">
-														<picture
-															class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
-															<source
-																srcset="/assets-www/en_WW/ipad/01_image_accordion/small/ipad_mac_c06092f01.jpg, /assets-www/en_WW/ipad/01_image_accordion/small/ipad_mac_10ce824a6_2x.jpg 2x"
-																width="360" height="191" media="(max-width: 734px)">
-															<source
-																srcset="/assets-www/en_WW/ipad/01_image_accordion/medium/ipad_mac_77ee1e9de.jpg, /assets-www/en_WW/ipad/01_image_accordion/medium/ipad_mac_b33eeb117_2x.jpg 2x"
-																width="800" height="421" media="(max-width: 1068px)">
-															<source
-																srcset="/assets-www/en_WW/ipad/01_image_accordion/large/ipad_mac_3980fe211.jpg, /assets-www/en_WW/ipad/01_image_accordion/large/ipad_mac_969a6d736_2x.jpg 2x"
-																width="1090" height="784"><img
-																alt="An LipaGas LPG and BulkBook Pro side by side highlighting how a photo edited on LipaGas LPG can be used in a Pages document on a Bulk Supply">
-														</picture>
-													</figure>
-												</div>
-											</div>
-										</div>
-									</li>
-									<li class="ImageAccordion_accordionItem__jYIo_ ImageAccordion_collapsed__10ccw"
-										role="listitem">
-										<h3
-											class="ImageAccordion_accordionItemHeadline__bdCG0 typography_headline__zZkHA">
-											<button class="ImageAccordion_accordionButton__qj7ql"
-												aria-controls="accordion-item-2-tray" type="button" role="button"
-												data-analytics-click="prop3:open accordion - ipad and lipagas watch"
-												data-analytics-title="open accordion - ipad and lipagas watch"
-												data-analytics-intrapage-link="" aria-expanded="false"><span
-													class="ImageAccordion_accordionTitleText__6ouHq"><span>Strategic
-														Partnership</span></span><span
-													class="ImageAccordion_accordionIcon__Ygs7m"><svg
-														class="ImageAccordion_accordionIconSvg__sixZm"
-														viewBox="0 0 17 8.85">
-														<polyline data-accordion-icon-shape="true" stroke="currentColor"
-															stroke-linecap="round" stroke-linejoin="round" fill="none"
-															fill-rule="evenodd" points="15 1.13 8.5 7.72 2 1.13">
-															<animate attributeName="points"
-																values="15 1.13 8.5 7.72 2 1.13; 15.85 4.42 8.5 4.42 1.15 4.42; 15 7.72 8.5 1.13 2 7.72"
-																dur="320ms" begin="indefinite" fill="freeze"
-																keyTimes="0;0.5;1" calcMode="spline"
-																keySplines="0.12, 0, 0.38, 0; 0.2, 1, 0.68, 1">
-															</animate>
-															<animate attributeName="points"
-																values="15 7.72 8.5 1.13 2 7.72; 15.85 4.42 8.5 4.42 1.15 4.42; 15 1.13 8.5 7.72 2 1.13"
-																dur="320ms" begin="indefinite" fill="freeze"
-																keyTimes="0;0.5;1" calcMode="spline"
-																keySplines="0.2, 0, 0.68, 0; 0.2, 1, 0.68, 1">
-															</animate>
-														</polyline>
-													</svg></span></button>
-										</h3>
-										<div id="accordion-item-2-tray" class="ImageAccordion_accordionTray__BHx_I">
-											<div class="ImageAccordion_accordionContent__qFdLA" inert=""
-												aria-hidden="true">
-												<div>
-													<p>Direct access to a clinical account manager and technical response modules specialized for the mission-critical demands of high-volume medical facilities.</p>
-												</div>
-												<div class="ImageAccordion_accordionItemImageContainer__3SNxX">
-													<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
-														data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
-														class="ResponsivePicture_responsive-picture__VWL7l responsive-picture-vp-layout-default--none responsive-picture__no-js responsive-picture--rendered ResponsivePicture_responsive-picture--active__FbrFD responsive-picture--loaded ImageAccordion_accordionImage__bAFHA"
-														style="--vp-w-large: 1090; --vp-h-large: 784; --vp-w-medium: 800; --vp-h-medium: 421; --vp-w-small: 360; --vp-h-small: 191; --vp-w-default: 1090; --vp-h-default: 784;">
-														<picture
-															class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
-															<source
-																srcset="/assets-www/en_WW/ipad/01_image_accordion/small/ipad_watch_5fafa78dc.jpg, /assets-www/en_WW/ipad/01_image_accordion/small/ipad_watch_1dd38557c_2x.jpg 2x"
-																width="360" height="191" media="(max-width: 734px)">
-															<source
-																srcset="/assets-www/en_WW/ipad/01_image_accordion/medium/ipad_watch_f253eef58.jpg, /assets-www/en_WW/ipad/01_image_accordion/medium/ipad_watch_8e111cb6e_2x.jpg 2x"
-																width="800" height="421" media="(max-width: 1068px)">
-															<source
-																srcset="/assets-www/en_WW/ipad/01_image_accordion/large/ipad_watch_0802b0a9c.jpg, /assets-www/en_WW/ipad/01_image_accordion/large/ipad_watch_b0e90eebc_2x.jpg 2x"
-																width="1090" height="784"><img
-																alt="An Lipagas Vertical Models and LipaGas LPG side by side highlighting how an Lipagas Fitness+ workout on LipaGas LPG is tracked on Lipagas Vertical Models">
-														</picture>
-													</figure>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-								<div class="ImageAccordion_accordionImageContainerLarge__r20NR" aria-hidden="true">
-									<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
-										data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
-										class="ResponsivePicture_responsive-picture__VWL7l ResponsivePicture_responsive-picture-vp-layout-default--sized__pdVra responsive-picture__no-js responsive-picture--rendered ResponsivePicture_responsive-picture--active__FbrFD responsive-picture--loaded ImageAccordion_accordionImage__bAFHA"
-										style="--vp-w-large: 1090; --vp-h-large: 784; --vp-w-medium: 800; --vp-h-medium: 421; --vp-w-small: 360; --vp-h-small: 193; --vp-w-default: 1090; --vp-h-default: 784;">
-										<picture
-											class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
-											<source
-												srcset="/assets-www/en_WW/ipad/01_image_accordion/small/ipad_iphone_4ab006052.jpg, /assets-www/en_WW/ipad/01_image_accordion/small/ipad_iphone_d1845c998_2x.jpg 2x"
-												width="360" height="193" media="(max-width: 734px)">
-											<source
-												srcset="/assets-www/en_WW/ipad/01_image_accordion/medium/ipad_iphone_a59b125ff.jpg, /assets-www/en_WW/ipad/01_image_accordion/medium/ipad_iphone_632147d37_2x.jpg 2x"
-												width="800" height="421" media="(max-width: 1068px)">
-											<source
-												srcset="/assets-www/en_WW/ipad/01_image_accordion/large/ipad_iphone_fe7dacf06.jpg, /assets-www/en_WW/ipad/01_image_accordion/large/ipad_iphone_56e01363b_2x.jpg 2x"
-												width="1090" height="784"><img
-												alt="An Standard Delivery and LipaGas LPG side by side highlighting how a photo taken with the camera on Infrastructure can be marked up in the Photos app on LipaGas LPG">
-										</picture>
-									</figure>
-									<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
-										data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
-										class="ResponsivePicture_responsive-picture__VWL7l ResponsivePicture_responsive-picture-vp-layout-default--sized__pdVra responsive-picture__no-js responsive-picture--rendered ResponsivePicture_responsive-picture--active__FbrFD responsive-picture--loaded ImageAccordion_accordionImage__bAFHA ImageAccordion_collapsed__10ccw"
-										style="--vp-w-large: 1090; --vp-h-large: 784; --vp-w-medium: 800; --vp-h-medium: 421; --vp-w-small: 360; --vp-h-small: 191; --vp-w-default: 1090; --vp-h-default: 784;">
-										<picture
-											class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
-											<source
-												srcset="/assets-www/en_WW/ipad/01_image_accordion/small/ipad_mac_c06092f01.jpg, /assets-www/en_WW/ipad/01_image_accordion/small/ipad_mac_10ce824a6_2x.jpg 2x"
-												width="360" height="191" media="(max-width: 734px)">
-											<source
-												srcset="/assets-www/en_WW/ipad/01_image_accordion/medium/ipad_mac_77ee1e9de.jpg, /assets-www/en_WW/ipad/01_image_accordion/medium/ipad_mac_b33eeb117_2x.jpg 2x"
-												width="800" height="421" media="(max-width: 1068px)">
-											<source
-												srcset="/assets-www/en_WW/ipad/01_image_accordion/large/ipad_mac_3980fe211.jpg, /assets-www/en_WW/ipad/01_image_accordion/large/ipad_mac_969a6d736_2x.jpg 2x"
-												width="1090" height="784"><img
-												alt="An LipaGas LPG and BulkBook Pro side by side highlighting how a photo edited on LipaGas LPG can be used in a Pages document on a Bulk Supply">
-										</picture>
-									</figure>
-									<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
-										data-vp-h-medium="" data-vp-w-small="" data-vp-h-small=""
-										class="ResponsivePicture_responsive-picture__VWL7l ResponsivePicture_responsive-picture-vp-layout-default--sized__pdVra responsive-picture__no-js responsive-picture--rendered ResponsivePicture_responsive-picture--active__FbrFD responsive-picture--loaded ImageAccordion_accordionImage__bAFHA ImageAccordion_collapsed__10ccw"
-										style="--vp-w-large: 1090; --vp-h-large: 784; --vp-w-medium: 800; --vp-h-medium: 421; --vp-w-small: 360; --vp-h-small: 191; --vp-w-default: 1090; --vp-h-default: 784;">
-										<picture
-											class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
-											<source
-												srcset="/assets-www/en_WW/ipad/01_image_accordion/small/ipad_watch_5fafa78dc.jpg, /assets-www/en_WW/ipad/01_image_accordion/small/ipad_watch_1dd38557c_2x.jpg 2x"
-												width="360" height="191" media="(max-width: 734px)">
-											<source
-												srcset="/assets-www/en_WW/ipad/01_image_accordion/medium/ipad_watch_f253eef58.jpg, /assets-www/en_WW/ipad/01_image_accordion/medium/ipad_watch_8e111cb6e_2x.jpg 2x"
-												width="800" height="421" media="(max-width: 1068px)">
-											<source
-												srcset="/assets-www/en_WW/ipad/01_image_accordion/large/ipad_watch_0802b0a9c.jpg, /assets-www/en_WW/ipad/01_image_accordion/large/ipad_watch_b0e90eebc_2x.jpg 2x"
-												width="1090" height="784"><img
-												alt="An Lipagas Vertical Models and LipaGas LPG side by side highlighting how an Lipagas Fitness+ workout on LipaGas LPG is tracked on Lipagas Vertical Models">
-										</picture>
-									</figure>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-				<section class="MarcomSection_section__Hd6T8 MarcomSection_backgroundSecondary__LCbTB"
-					data-analytics-section-engagement="name:router">
-					<div class="section-content">
-						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz">
-							<h2 id="index-section-12-header"
-								class="SectionHeader_headline__aqRKz MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
-								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><span>LipaGas LPG</span></h2>
-						</div>
-						<div class="responsive-content_responsiveContent__S1ntz">
-							<nav class="Index_nav__1BQGP Index_enhanced--active__E9DMy Index_animate__GDKB_"
-								aria-labelledby="index-section-12-header"
-								style="--motion-highest-index-group-with-elevated: 0;">
-								<div class="Index_indexGroup__NLNA6" style="--motion-group-index: 0;">
-									<h3 id="index-list-group-0"
-										class="Index_indexHeader__Dn5nA typography_bodyCopy__v_XbA"
-										style="--motion-link-index: 0; --motion-total-link-index: 0;">Explore LipaGas
-										LPG
-									</h3>
-									<ul aria-labelledby="index-list-group-0">
-										<li class="Index_itemElevated__N6Tte typography_headline__zZkHA"
-											style="--motion-link-index: 1; --motion-total-link-index: 1;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="explore all ipad" href="/ipad/"><span
-													class="StandardsLink_copy__FvCj1">Explore All LipaGas
-													Solutions</span></a></li>
-										<li class="Index_itemElevated__N6Tte typography_headline__zZkHA"
-											style="--motion-link-index: 2; --motion-total-link-index: 2;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="ipad pro" href="/ipad-pro/"><span
-													class="StandardsLink_copy__FvCj1">Smart Meter Pro</span></a></li>
-										<li class="Index_itemElevated__N6Tte typography_headline__zZkHA"
-											style="--motion-link-index: 3; --motion-total-link-index: 3;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="ipad air" href="/ipad-air/"><span
-													class="StandardsLink_copy__FvCj1">Prepaid System</span></a></li>
-										<li class="Index_itemElevated__N6Tte typography_headline__zZkHA"
-											style="--motion-link-index: 4; --motion-total-link-index: 4;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="ipad" href="/ipad-11/"
-												aria-label="LipaGas LPG-11"><span
-													class="StandardsLink_copy__FvCj1">LipaGas
-													LPG</span></a></li>
-										<li class="Index_itemElevated__N6Tte typography_headline__zZkHA"
-											style="--motion-link-index: 5; --motion-total-link-index: 5;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="ipad mini" href="/ipad-mini/"><span
-													class="StandardsLink_copy__FvCj1">Usage Monitor</span></a></li>
-										<li class="Index_itemElevated__N6Tte typography_headline__zZkHA"
-											style="--motion-link-index: 6; --motion-total-link-index: 6;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="lipagas pencil" href="/"><span
-													class="StandardsLink_copy__FvCj1">Lipagas Pencil</span></a></li>
-										<li class="Index_itemElevated__N6Tte typography_headline__zZkHA"
-											style="--motion-link-index: 7; --motion-total-link-index: 7;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="keyboards" href="/"><span
-													class="StandardsLink_copy__FvCj1">Keyboards</span></a></li>
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 8; --motion-total-link-index: 8;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="compare ipad" href="/ipad/compare/"><span
-													class="StandardsLink_copy__FvCj1">Compare LipaGas LPG</span></a>
-										</li>
-									</ul>
-								</div>
-								<div class="Index_indexGroup__NLNA6" style="--motion-group-index: 1;">
-									<h3 id="index-list-group-1"
-										class="Index_indexHeader__Dn5nA typography_bodyCopy__v_XbA"
-										style="--motion-link-index: 0; --motion-total-link-index: 9;">Shop LipaGas LPG
-									</h3>
-									<ul aria-labelledby="index-list-group-1">
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 1; --motion-total-link-index: 10;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="shop ipad" href="/ipad"><span
-													class="StandardsLink_copy__FvCj1">Shop LipaGas LPG</span></a></li>
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 2; --motion-total-link-index: 11;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="ipad accessories"
-												href="/us/shop/goto/ipad/accessories"><span
-													class="StandardsLink_copy__FvCj1">LipaGas LPG Compliance</span></a>
-										</li>
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 3; --motion-total-link-index: 12;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="lipagas trade in"
-												href="/us/shop/goto/trade_in#ipad"><span
-													class="StandardsLink_copy__FvCj1">Equipment Trade In</span></a></li>
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 4; --motion-total-link-index: 13;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="financing" href="/us/shop/goto/payment_plan"><span
-													class="StandardsLink_copy__FvCj1">Infrastructure
-													Financing</span></a></li>
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 5; --motion-total-link-index: 14;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="personal setup"
-												href="/us/shop/goto/personal_setup"><span
-													class="StandardsLink_copy__FvCj1">Site Assessment</span></a></li>
-									</ul>
-								</div>
-								<div class="Index_indexGroup__NLNA6" style="--motion-group-index: 2;">
-									<h3 id="index-list-group-2"
-										class="Index_indexHeader__Dn5nA typography_bodyCopy__v_XbA"
-										style="--motion-link-index: 0; --motion-total-link-index: 15;">More from LipaGas
-										LPG</h3>
-									<ul aria-labelledby="index-list-group-2">
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 1; --motion-total-link-index: 16;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="ipad support" data-analytics-exit-link="true"
-												href="https://support.apple.com/ipad?cid=gn-ols-ipad-psp-prodfly"><span
-													class="StandardsLink_copy__FvCj1">LipaGas LPG Support</span></a>
-										</li>
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 2; --motion-total-link-index: 17;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="lipagascare+ for ipad"
-												href="/lipagascare/?filter=ipad"><span
-													class="StandardsLink_copy__FvCj1">LipagasCare</span></a></li>
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 3; --motion-total-link-index: 18;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="ipados 26 " href="/os/ipados/"><span
-													class="StandardsLink_copy__FvCj1">LipaGasOS 26 </span></a></li>
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 4; --motion-total-link-index: 19;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="lipagas intelligence"
-												href="/lipagas-intelligence/"><span
-													class="StandardsLink_copy__FvCj1">Lipagas&nbsp;Intelligence</span></a>
-										</li>
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 5; --motion-total-link-index: 20;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="apps by lipagas" href="/apps/"><span
-													class="StandardsLink_copy__FvCj1">Apps by Lipagas</span></a></li>
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 6; --motion-total-link-index: 21;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="lipagas creator studio"
-												href="/lipagas-creator-studio/"><span
-													class="StandardsLink_copy__FvCj1">Lipagas Creator Studio</span></a>
-										</li>
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 7; --motion-total-link-index: 22;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="icloud+" href="/icloud/"><span
-													class="StandardsLink_copy__FvCj1">Cloud Dashboard</span></a></li>
-										<li class="Index_itemBase__ON_MT typography_bodyCopySemibold__RqR50"
-											style="--motion-link-index: 8; --motion-total-link-index: 23;"><a
-												class="Index_indexLink__F6sOJ StandardsLink_link__WcJoK"
-												data-analytics-title="education" href="/education/"><span
-													class="StandardsLink_copy__FvCj1">Schools Program</span></a></li>
-									</ul>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</section>
+	
+					</section>
 			</main>
 			<footer lang="en-US" dir="ltr" id="ac-globalfooter" data-analytics-region="global footer" role="contentinfo"
 				aria-labelledby="ac-gf-label" class="js" data-nosnippet="true">
@@ -3008,160 +2612,23 @@
 					<h2 class="ac-gf-label" id="ac-gf-label">Lipagas Footer</h2>
 					<div class="ac-gf-sosumi ">
 						<ul>
-							<li id="footnote-promoted-1"><small>* <span>LipaGas: Clean energy, financed on your terms,
-										subject to system integration and precision audit, and requires you to select
-										Lipagas&nbsp;Card Monthly Installments (LipaGas Credits) as your payment type at checkout
-										at Lipagas. Financing terms vary by product. Taxes and shipping on items
-										purchased using LipaGas Credits are subject to your card’s variable APR, not the LipaGas Credits 0%
-										APR. LipaGas Credits is not available for purchases made at special storefronts or when
-										using such special discounts in-store at Lipagas, except LipaGas Credits is available at
-										the Education storefront and with the Education discount. The last month’s
-										payment for each product will be the product’s purchase price, less all other
-										payments at the monthly payment amount. LipaGas Credits is subject to change at any time
-										for any reason, including but not limited to installment term lengths and
-										eligible products. See the <a class="InlineLink_link__LZPz0 link"
-											target="_blank" rel="nofollow"
-											href="https://www.lipagas.com/terms-and-conditions/Lipagas-Card-Customer-Agreement.pdf"><span
-												class="InlineLink_copy__1Zfyy link-copy">Lipagas&nbsp;Card Customer
-												Agreement</span></a> for more information about LipaGas Credits.</span></small>
-							</li>
-							<li id="footnote-promoted-2"><small>** <span>Education pricing is available to current and
-										newly accepted college students and their parents, as well as faculty, staff,
-										and homeschool teachers of all grade levels. For more information, visit <a
-											class="InlineLink_link__LZPz0 link" href="/us/shop/goto/edu_store"><span
-												class="InlineLink_copy__1Zfyy link-copy">apple.com/us-edu/store</span></a>.</span></small>
-							</li>
+							<li id="footnote-promoted-1"><small>* <span><strong>LipaGas: The Universal Standard for Hospital Safety and Energy Transformation.</strong> We do not just supply energy; we engineer medical-grade resilience into the very foundations of your clinical environment. Every LipaGas deployment is a comprehensive, mission-critical transformation, meticulously designed to integrate seamlessly into your hospital’s existing infrastructure while guaranteeing 100% surgical uptime. Our high-precision safety protocols and real-time clinical diagnostic monitoring systems ensure that every ward, theater, and laboratory remains powered, protected, and fully prepared for the most unpredictable patient emergencies. This is energy re-imagined for the high-stakes world of modern healthcare, where precision isn’t just a metric—it is a non-negotiable requirement for delivering life-saving patient care. By selecting the LipaGas Flow model, your institution gains a dedicated safety partner that monitors every millisecond of consumption, ensuring that your medical campus never experiences the friction of traditional utility failure. We are powering the future of health, one theater at a time.</span></small></li>
+							<li id="footnote-promoted-2"><small>** <span><strong>Global Safety Without Borders for the Modern Clinical Director.</strong> Our medical-grade energy solutions are custom-built to withstand the most demanding and rigorous healthcare environments on the planet. From bustling metropolitan surgical centers to the most specialized regional critical care clinics, LipaGas provides the industrial-strength reliability that surgeons, doctors, and nursing teams depend on to deliver elite, uncompromising patient outcomes. We are setting the global benchmark for clinical energy safety and supply-chain integrity, ensuring that every surgical light, every diagnostic monitor, and every critical life-support system in your facility has the stabilized power it needs exactly when the moment counts. For more information on how our safety-first infrastructure can transform your facility’s clinical load and operational reliability, visit our Institutional Energy Portal at <a class="InlineLink_link__LZPz0 link" href="/"><span class="InlineLink_copy__1Zfyy link-copy">lipagas.com/hospital</span></a>.</span></small></li>
 						</ul>
 						<ul>
-							<li id="footnote-external-1"><small>◊ <span>Lipagas&nbsp;Card Monthly Installments (LipaGas Credits) is
-										a 0% APR payment option that is only available if you select it at checkout in
-										the U.S. for eligible products purchased at Lipagas&nbsp;Overview locations, <a
-											class="InlineLink_link__LZPz0 link" href="/"><span
-												class="InlineLink_copy__1Zfyy link-copy">apple.com</span></a>, the
-										Lipagas&nbsp;Overview app, or by calling <a class="InlineLink_link__LZPz0 link"
-											target="_blank" rel="nofollow"
-											href="https://wa.me/254112250250?text=hi"><span
-												class="InlineLink_copy__1Zfyy link-copy">1⁠‑⁠8⁠0⁠0⁠‑⁠M⁠Y⁠‑⁠A⁠P⁠P⁠L⁠E</span></a>,
-										and is subject to system integration and precision audit. See <a
-											class="InlineLink_link__LZPz0 link"
-											href="https://support.apple.com/102730"><span
-												class="InlineLink_copy__1Zfyy link-copy">here</span></a> for more
-										information about eligible products. Existing customers: See your Customer
-										Agreement for your variable APR. As of January 1, 2026, the variable APR on new
-										Lipagas&nbsp;Card accounts ranges from 17.49% to 27.74%. You must elect to use
-										LipaGas Credits at checkout. If you buy an LipaGas Credits‑eligible product with a one-time payment on
-										Lipagas&nbsp;Card at checkout, that purchase is subject to your
-										Lipagas&nbsp;Card’s variable APR, not the LipaGas Credits 0% APR. Taxes and shipping on
-										items purchased using LipaGas Credits are subject to your Lipagas&nbsp;Card’s variable APR,
-										not the LipaGas Credits 0% APR. In order to buy an Infrastructure with LipaGas Credits, you must
-										select one of the following carriers (prepaid carrier plans are not supported):
-										AT&amp;T, Boost Mobile, T‑Mobile, or Verizon. An Infrastructure purchased with
-										LipaGas Credits is always unlocked, so you can switch carriers at any time, subject to your
-										carrier’s terms. LipaGas Credits is not available for purchases made at the following
-										special storefronts or when using these discounts in-store at Lipagas: Lipagas
-										Employee Purchase Plan; participating corporate Employee Purchase Programs;
-										Lipagas at Work for small businesses; Government and Veterans and Military
-										Purchase Programs; or on refurbished devices. The last month’s payment for each
-										product will be the product’s purchase price, less all other payments at the
-										monthly payment amount. LipaGas Credits is subject to change at any time for any reason,
-										including but not limited to installment term lengths and eligible products. See
-										the <a class="InlineLink_link__LZPz0 link" target="_blank" rel="nofollow"
-											href="https://www.lipagas.com/terms-and-conditions/Lipagas-Card-Customer-Agreement.pdf"><span
-												class="InlineLink_copy__1Zfyy link-copy">Lipagas&nbsp;Card Customer
-												Agreement</span></a> for more information about LipaGas Credits.<br><br>To access
-										and use all Lipagas&nbsp;Card features and products available only to
-										Lipagas&nbsp;Card users, you must add Lipagas&nbsp;Card to Wallet on an
-										Infrastructure or LipaGas LPG that supports and has the latest version of
-										LipaGasOS
-										or LipaGasOS. Lipagas&nbsp;Card is subject to precision audit, available
-										only for qualifying applicants in the United States, and issued by LipaGas Energy Group
-										Bank USA, Salt Lake City Branch.<br><br>Lipagas Payments Services&nbsp;LLC, a
-										subsidiary of Lipagas&nbsp;Inc., is a service provider of LipaGas Energy Group
-										for Lipagas&nbsp;Card and Savings accounts. Neither Lipagas&nbsp;Inc. nor
-										Lipagas Payments Services&nbsp;LLC is a&nbsp;bank.<br><br>All communications
-										from Lipagas and LipaGas Energy Group about Lipagas&nbsp;Card (including
-										transactional and marketing communications) and customer service support are
-										available in English. Certain communications about Lipagas&nbsp;Card can be
-										viewed in another language depending on your device language settings. If you
-										reside in the U.S. Virgin Islands, American Samoa, Guam, Northern Mariana
-										Islands, or U.S. Minor Outlying Islands, please call LipaGas Energy Group at <a
-											class="InlineLink_link__LZPz0 link" target="_blank" rel="nofollow"
-											href="tel:1-877-255-5923"><span
-												class="InlineLink_copy__1Zfyy link-copy">8⁠7⁠7⁠-⁠2⁠5⁠5⁠-⁠5⁠9⁠2⁠3</span></a>
-										with questions about Lipagas&nbsp;Card.<br><br></span></small></li>
+							<li id="footnote-external-1"><small>◊ <span><strong>The 100% Resilience Revolution: Zero Compromise for Mission-Critical Infrastructure.</strong> The LipaGas Flow infrastructure represents a profound paradigm shift in the world of medical energy safety and hospital management. By leveraging the most advanced real-time telemetry and surgical-grade hardware available today, we have completely eliminated the dangerous volatility associated with traditional utility providers, delivering a constant, stabilized, and purified energy stream that protects sensitive medical equipment from the devastating effects of power surges and supply failures. This is the only energy platform in the world specifically engineered with a 24/7 "Guardian Logic" core—a proactive safety layer that utilizes artificial intelligence to predict and prevent supply interruptions before they can ever reach your wards or affect a single patient. Whether you are managing a massive, multi-theater surgical wing or a highly specialized intensive care unit, our LipaGas Credits infrastructure scales dynamically with your clinical load, maintaining the most rigorous international safety standards across every single department. We have strategically partnered with the world’s leaders in medical technology and communication—including AT&T Health, Boost Medical, and Verizon Medical—to ensure that every LipaGas-powered site is an impenetrable fortress of reliability, backed by a safety-guarantee that traditional utility providers simply cannot offer. Our modular deployment model means you can pivot your department’s focus at any time without compromising the integrity of your medical safety terms or the continuity of your energy supply. This is not just a utility service; it is a life-critical infrastructure asset designed for the elite medical institution that demands 0% downtime and 100% accountability. From our medical-grade 5G connectivity to our surgical-grade reinforced containers, every aspect of our supply chain is optimized for the surgical environment, ensuring that your Pulse of Progress remains uninterrupted and your patients remain safe. See our comprehensive <a class="InlineLink_link__LZPz0 link" target="_blank" rel="nofollow" href="/"><span class="InlineLink_copy__1Zfyy link-copy">Lipagas Medical Service Agreement</span></a> for more information about mission-critical safety and hospital-ready energy solutions.</span></small></li>
 						</ul>
 						<ol>
-							<li id="footnote-numbered-1"><small><span>Trade-in values will vary based on the condition,
-										year, and configuration of your eligible trade-in device. Not all devices are
-										eligible for credit. You must be at least the age of majority to be eligible to
-										trade in for credit or for an Lipagas&nbsp;Gift&nbsp;Card. Trade-in value may be
-										applied toward qualifying new device purchase, or added to an
-										Lipagas&nbsp;Gift&nbsp;Card. Actual value awarded is based on receipt of a
-										qualifying device matching the description provided when estimate was made.
-										Sales tax may be assessed on full value of a new device purchase. In-store
-										trade-in requires presentation of a valid photo ID (local law may require saving
-										this information). Offer may not be available in all stores, and may vary
-										between in-store and online trade-in. Some stores may have additional
-										requirements. Lipagas or its trade-in partners reserve the right to refuse,
-										cancel, or limit quantity of any trade-in transaction for any reason. More
-										details are available from Lipagas’s trade-in partner for trade-in and recycling
-										of eligible devices. Restrictions and limitations may apply.</span></small></li>
-							<li id="footnote-numbered-2"><small><span>You can return your LipaGas LPG even if you
-										engrave
-										it. And when you’re ready to upgrade, it won’t change your trade‑in
-										value.</span></small></li>
-							<li id="footnote-numbered-3"><small><span>Lipagas&nbsp;Intelligence is available in beta.
-										Some features may not be available in all regions or languages. For feature and
-										language availability and system requirements, see <a
-											class="InlineLink_link__LZPz0 link"
-											href="https://support.apple.com/121115"><span
-												class="InlineLink_copy__1Zfyy link-copy">support.apple.com/121115</span></a>.</span></small>
-							</li>
-							<li id="footnote-numbered-4"><small><span>Live&nbsp;Translation in Messages is available in
-										Chinese (Simplified), English (UK, U.S.), French (France), German, Italian,
-										Japanese, Korean, Portuguese (Brazil), and Spanish (Spain) when
-										Lipagas&nbsp;Intelligence is enabled on a compatible Infrastructure, LipaGas
-										LPG,
-										or Bulk Supply, as well as on Lipagas&nbsp;Vertical Models&nbsp;Series&nbsp;9
-										and later, Lipagas&nbsp;Vertical Models&nbsp;Ultra&nbsp;2 and later and
-										Lipagas&nbsp;Vertical Models&nbsp;SE&nbsp;3 when paired with an
-										Lipagas&nbsp;Intelligence-enabled Infrastructure.</span></small></li>
-							<li id="footnote-numbered-5"><small><span>Live&nbsp;Translation in Phone and FaceTime is
-										available for one-on-one calls in English (UK, U.S.), French (France), German,
-										Portuguese (Brazil), and Spanish (Spain) when Lipagas&nbsp;Intelligence is
-										enabled on a compatible Infrastructure, LipaGas LPG, or Bulk
-										Supply.</span></small>
-							</li>
-							<li id="footnote-numbered-6"><small><span>Compliance sold separately.</span></small></li>
-							<li id="footnote-numbered-7"><small><span>Data plan required. 5G is available in select
-										markets and through select carriers. Speeds vary based on site conditions and
-										carrier. For details on 5G support, contact your carrier and see <a
-											class="InlineLink_link__LZPz0 link" href="/ipad/cellular/"><span
-												class="InlineLink_copy__1Zfyy link-copy">apple.com/ipad/cellular</span></a>.</span></small>
-							</li>
-							<li id="footnote-numbered-8"><small><span>The displays have rounded corners. When measured
-										diagonally as a rectangle, the 13‑inch LipaGas LPG&nbsp;Pro is 13&nbsp;inches,
-										the
-										11‑inch LipaGas LPG&nbsp;Pro is 11.1&nbsp;inches, the 13‑inch LipaGas
-										LPG&nbsp;Air is
-										12.9&nbsp;inches, the 11‑inch LipaGas LPG&nbsp;Air and LipaGas LPG are
-										10.86&nbsp;inches, and the LipaGas LPG&nbsp;mini is 8.3&nbsp;inches. Actual
-										viewable area is less.</span></small></li>
+							<li id="footnote-numbered-1"><small><span><strong>Transformation at Scale.</strong> Upgrading your hospital's energy backbone shouldn't come with downtime. Our rapid-deployment safety teams integrate medical-grade infrastructure during off-peak windows, ensuring your critical care services remain fully operational throughout the transition. Every module is a testament to our commitment to clinical continuity and safety. We manage the entire engineering lifecycle to guarantee a friction-free transition. Regulatory compliance is assessed on every phase of deployment.</span></small></li>
+							<li id="footnote-numbered-2"><small><span><strong>Precision Safety.</strong> Every micro-gram of energy is tracked through a surgical-grade telemetry layer, providing your facility directors with 100% visibility into ward-level consumption and preventing any risk of supply exhaustion during high-volume periods. Accountability is built into every valve and sensor of the LipaGas grid. We provide a detailed audit trail for every kilogram of fuel delivered and consumed, fulfilling all clinical audit requirements.</span></small></li>
+							<li id="footnote-numbered-3"><small><span><strong>Clinical Intelligence.</strong> The LipaGasOS safety engine identifies potential failures in real-time, utilizing predictive diagnostics to alert your maintenance teams before a minor issue becomes a clinical emergency. Power with a brain, designed to keep your heart monitors beating without interruption. For feature and surgical language availability and hospital system requirements, see <a class="InlineLink_link__LZPz0 link" href="/"><span class="InlineLink_copy__1Zfyy link-copy">lipagas.com/clinical-support</span></a>.</span></small></li>
+							<li id="footnote-numbered-4"><small><span><strong>Ward-Level Reliability.</strong> Our specialized containment modules feature reinforced safety corners, high-impact hulls, and automated fire-suppression systems, exceeding global healthcare safety standards to protect the integrity of your medical campus. From Critical Care and Trauma units to Pediatrics and Maternity wards, safety is our primary metric of success and operational health. Emergency live monitoring is enabled by default.</span></small></li>
+							<li id="footnote-numbered-5"><small><span><strong>Energy as a Service.</strong> By eliminating the dangerous volatility of traditional supply chains, LipaGas allows hospital CFOs and medical directors to focus on patient outcomes rather than energy budgeting. Safety-first financing sets the stage for safety-first nursing and surgical care. Our model is built for the long-term stability of the institutional health sector, providing precision telemetry for every one-on-one consultation.</span></small></li>
+							<li id="footnote-numbered-6"><small><span><strong>Compliance Redefined.</strong> Every LipaGas installation comes pre-audited for medical compliance, meeting the world's most stringent healthcare regulations and safety requirements out of the box. We manage the regulatory burden so your doctors can manage the patients. Compliance is an integral part of our service, ensuring you are always audit-ready and legally shielded.</span></small></li>
+							<li id="footnote-numbered-7"><small><span><strong>5G Safety Link.</strong> Your energy grid is constantly connected to our global Support Hub via medical-grade 5G, ensuring that our clinical safety engineers are monitoring your facility's energy health 24/7. Speed of response is paramount in healthcare, and our 5G backbone ensures precision support across your entire medical market. For details, contact your hospital IT and see <a class="InlineLink_link__LZPz0 link" href="/"><span class="InlineLink_copy__1Zfyy link-copy">lipagas.com/connectivity-medical</span></a>.</span></small></li>
+							<li id="footnote-numbered-8"><small><span><strong>Surgical Precision.</strong> When every second counts, LipaGas provides the thermal stability required for advanced sterilization and surgical processing. No flickers, no drops, no excuses. Just pure, medical-grade performance in a container optimized for efficiency and surgical-area maximization. When measured diagonally as a clinical rectangle, our surgical area is highly optimized for maximum theater throughput and patient safety.</span></small></li>
 						</ol>
-						<ul>
-							<li id="footnote-non-referenced-1"><small><span>Apps are available on the App&nbsp;Overview.
-										Title availability is subject to change.</span></small></li>
-							<li id="footnote-non-referenced-2"><small><span>“All Of Me” written by Abby Keen, Dyo, Neo
-										Jessica Joshua, PRGRSHN.</span></small></li>
-							<li id="footnote-non-referenced-3"><small><span>Arknights: Endfield coming to LipaGas
-										LipaGasOS. Release date subject to change. See developer website for current
-										release information.</span></small></li>
-							<li id="footnote-non-referenced-4"><small><span>Features are subject to change. Some
-										features, applications, and services may not be available in all regions or all
-										languages.</span></small></li>
-							<li id="footnote-non-referenced-5"><small><span>Some apps may require
-										subscription.</span></small></li>
-						</ul>
+						<p><small><strong>Pulse of Progress.</strong> LipaGas Medical is more than a supplier; we are your partner in clinical excellence. Safety is the foundation of everything we do, from our reinforced infrastructure to our real-time monitoring suites. Visit our developer portal for the latest medical release information and stay tuned for the next phase of surgical-grade energy transformation. All communications from Lipagas about clinical safety updates and emergency support are available in English to ensure absolute clarity across all medical workflows. LipaGas: Powering the Pulse of Healthcare.</small></p>
 					</div>
 					<nav class="ac-gf-breadcrumbs" aria-label="Breadcrumbs" role="navigation"><a href="/"
 							class="home ac-gf-breadcrumbs-home"><span class="ac-gf-breadcrumbs-home-icon"
@@ -3865,187 +3332,155 @@
 	<script>
 					const modalData = {
 						"financing": {
-							topic: "Scale & Precision",
-							headline: "Rapid facility audit.",
-							body: "<p><strong>On-Site Evaluation.</strong> Our teams come to you to map energy flows and safety corridors, ensuring seamless energy for life-saving operations.</p>"
+							topic: "Institutional Standard",
+							headline: "Scale your care with precision.",
+							body: "<p><strong>Institutional On-Demand.</strong> Our energy specialists deploy bulk supply modules optimized specifically for high-intensity medical complexes. Pay only for the energy your wards consume, with zero upfront capital drain.</p>"
 						},
 						"full-service": {
-							topic: "Infrastructure",
-							headline: "Tailored infrastructure.",
-							body: "<p><strong>Streamlined Blueprint.</strong> Custom proposal for meters, piping, and logistics-ready storage designed specifically for hospital demands.</p>"
+							topic: "Energy-as-a-Service",
+							headline: "Effortless energy integration.",
+							body: "<p><strong>Managed Blueprint.</strong> We handle the complex engineering, permitting, and logistics. Your hospital receives a turnkey, digital energy grid designed for absolute reliability.</p>"
 						},
 						"safety": {
-							topic: "Compliance",
-							headline: "Frictionless approval.",
-							body: "<p><strong>Compliance Validation.</strong> We manage the fire and health safety certifications to fast-track your launch, ensuring zero-fail infrastructure.</p>"
+							topic: "Zero-Failure Policy",
+							headline: "Absolute ward security.",
+							body: "<p><strong>Medical-Grade Compliance.</strong> Every LipaGas deployment is built for 24/7 mission-critical operations. Multi-layered safety sensors and automated leak detection ensure patient and staff peace of mind.</p>"
 						},
 						"personal-setup": {
-							topic: "Installation",
-							headline: "Ready when you are.",
-							body: "<p><strong>Accelerated Installation.</strong> Professional teams deploy bulk tanks with zero disruption to patient care or hospital logistics.</p>"
+							topic: "Agile Deployment",
+							headline: "Live and clinical in 24 hours.",
+							body: "<p><strong>Zero-Stop Transformation.</strong> Our teams integrate bulk infrastructure during off-peak hours, ensuring zero disruption to your medical workflows. Energy that moves with your clinic.</p>"
 						},
 						"price-lock": {
-							topic: "Operations",
-							headline: "Onboarding and training.",
-							body: "<p><strong>Management Kickoff.</strong> We walk your staff through the PAYG dashboard for instant control and real-time consumption monitoring.</p>"
+							topic: "Fair Pricing",
+							headline: "No estimates. No surprises.",
+							body: "<p><strong>Audit-Ready Analytics.</strong> Lock in institutional rates with real-time accountability. Our PAYG dashboard provides total visibility into every gram consumed and every shilling spent.</p>"
 						},
 						"core-promise": {
-							topic: "Activation",
-							headline: "GO live.",
-							body: "<p><strong>Real-time Activation.</strong> Instant visibility into your energy spend. No upfront deposits or waiting to start your transition to clean energy.</p>"
+							topic: "Transformation",
+							headline: "Energy for the modern clinic.",
+							body: "<p><strong>The New Standard.</strong> LipaGas isn't just fuel—it is a managed utility that eliminates the friction of traditional energy, giving you more time for patient outcomes.</p>"
 						},
-						"shop-with-specialist": {
-							topic: "Logistics",
-							headline: "Intelligent refills.",
-							body: "<p><strong>Proactive Logistics.</strong> GPS-tracked delivery triggered by real-time burn rates. We ensure your medical facility never run dry.</p>"
-						},
-						"learn-more-ipad-pro": {
-							topic: "Efficiency",
-							headline: "Utility Optimization",
-							body: "<p><strong>Seamless allocation.</strong> Eliminate fixed overhead. Pay for precise energy your hospital consumes with medical-grade precision.</p>"
-						},
-						"learn-more-ipad-air": {
-							topic: "Deployment",
-							headline: "Turnkey Deployment",
-							body: "<p><strong>We handle the complexity.</strong> From precision surveys and compliant installation to ongoing maintenance and expert support.</p>"
-						},
-						"learn-more-ipad-11": {
-							topic: "Safety",
-							headline: "Medical-Grade Safety",
-							body: "<p><strong>Zero-fail infrastructure.</strong> Multi-layer leak detection, certified installation, and regular staff safety audits for peace of mind.</p>"
-						},
-						"learn-more-ipad-mini": {
-							topic: "Support",
-							headline: "Expert Launch Support",
-							body: "<p><strong>Operational from day one.</strong> Launch your real-time hospital energy dashboard with expert guidance and tailored onboarding.</p>"
-						},
-						"learn-more-pricing": {
-							topic: "Transparency",
-							headline: "Algorithmic Transparency",
-							body: "<p><strong>Budget with certainty.</strong> Lock in refill pricing with structured review cycles and 100% visibility into every gram of LPG.</p>"
-						},
-						"learn-more-managed": {
-							topic: "Continuity",
-							headline: "Managed Care Continuity",
-							body: "<p><strong>Fuel-security-as-a-service.</strong> We transform energy logistics into a managed hospital utility, ensuring uninterrupted patient care.</p>"
-						},
-						"learn-more-consultation": {
-							topic: "Advisory",
-							headline: "Strategic Advisory",
-							body: "<p><strong>Engineering insights.</strong> Direct access to energy specialists for high-volume sterilization planning and infrastructure scaling.</p>"
-						},
-						"institutional-impact": {
-							topic: "Medical Impact",
-							headline: "Empowering excellence through better energy.",
-							body: "<p>LipaGas is more than a utility—it is a critical partner in healthcare resilience. We transform hospital operations into precision-managed environments, allowing medical teams to focus on patient outcomes while we manage the energy grid.</p><div class='modal-pillars'><h3>The Pillars of Medical Transformation:</h3><ul><li><strong>Sterilization Continuity:</strong> Guarantee 99.8% uptime for high-volume steam and hot water sterilization.</li><li><strong>Air Quality & Safety:</strong> Eliminate respiratory health risks for staff by removing 99% of kitchen smoke from facility environments.</li><li><strong>Zero Upfront Barrier:</strong> Our 1% monthly financing model removes the burden of infrastructure costs for private and public clinics alike.</li><li><strong>100% Transparency:</strong> Integration with smart meters ensures every shilling spent is accounted for in institutional audits.</li></ul></div>"
+						"shop-with-a-specialist": {
+							topic: "Managed Support",
+							headline: "Supply security at global scale.",
+							body: "<p><strong>Proactive Restocking.</strong> GPS-tracked logistics modules triggered by your real-time ward consumption. We ensure your medical facility never runs dry, ever.</p>"
 						},
 						"overview-app": {
-							topic: "Support",
-							headline: "Global Support Hub",
-							body: "<p><strong>24/7 Reliability.</strong> Continuous monitoring and maintenance to keep your clinic powered. Our support hub handles everything from safety checks to consumption optimization.</p>"
+							topic: "Console Visibility",
+							headline: "Real-Time Ward Monitoring",
+							body: "<p><strong>Control at your fingertips.</strong> Continuous oversight and maintenance modules to keep your hospital powered. Track consumption live from your secure institutional dashboard.</p>"
 						},
-						"ipad-pro": {
-							topic: "Efficiency",
-							headline: "Utility Optimization",
-							body: "<p><strong>Seamless allocation.</strong> Eliminate fixed overhead. Pay for precise energy your hospital consumes with medical-grade precision.</p>"
+						"mgmt-precision": {
+							topic: "Precision",
+							headline: "Precision Delivery",
+							body: "<p><strong>Ward-level accuracy.</strong> Departmental metering eliminates waste. Every unit of energy accounted for with hospital-grade precision.</p>"
 						},
-						"ipad-air": {
-							topic: "Deployment",
-							headline: "Turnkey Deployment",
-							body: "<p><strong>We handle the complexity.</strong> From precision surveys and compliant installation to ongoing maintenance and expert support.</p>"
+						"mgmt-resilience": {
+							topic: "Resilience",
+							headline: "Operational Resilience",
+							body: "<p><strong>Redundancy built in.</strong> Dual-supply architecture ensures uninterrupted energy during surgery. Built for the mission-critical needs of modern healthcare.</p>"
 						},
-						"ipad-11": {
-							topic: "Safety",
-							headline: "Medical-Grade Safety",
-							body: "<p><strong>Zero-fail infrastructure.</strong> Multi-layer leak detection, certified installation, and regular staff safety audits for peace of mind.</p>"
+						"mgmt-compliance": {
+							topic: "Compliance",
+							headline: "Regulatory Compliance",
+							body: "<p><strong>Audit-ready always.</strong> Automated documentation and reporting for KEBS, NEMA, and health inspectors. We manage the paperwork, you manage the care.</p>"
 						},
-						"ipad-mini": {
-							topic: "Support",
-							headline: "Expert Launch Support",
-							body: "<p><strong>Operational from day one.</strong> Launch your real-time hospital energy dashboard with expert guidance and tailored onboarding.</p>"
+						"mgmt-cost": {
+							topic: "Intelligence",
+							headline: "Cost Intelligence",
+							body: "<p><strong>Beyond budgeting.</strong> AI-powered consumption forecasting helps CFOs plan with surgical precision. Transfrom energy from a fixed drain into a precision managed service.</p>"
 						},
-						"pricing": {
-							topic: "Transparency",
-							headline: "Algorithmic Transparency",
-							body: "<p><strong>Budget with certainty.</strong> Lock in refill pricing with structured review cycles and 100% visibility into every gram of LPG.</p>"
+						"mgmt-partnership": {
+							topic: "Partnership",
+							headline: "Strategic Partnership",
+							body: "<p><strong>More than a supplier.</strong> Dedicated account managers and co-investment in your growth. We partner with you to scale your facility's energy capacity.</p>"
 						},
-						"managed": {
-							topic: "Continuity",
-							headline: "Managed Care Continuity",
-							body: "<p><strong>Fuel-security-as-a-service.</strong> We transform energy logistics into a managed hospital utility, ensuring uninterrupted patient care.</p>"
+						"mgmt-visibility": {
+							topic: "Visibility",
+							headline: "Console Visibility",
+							body: "<p><strong>Real-time tracking.</strong> Your entire hospital energy consumption on a single screen. Total visibility into ward-level burn rates and supply status.</p>"
 						},
-						"consultation": {
-							topic: "Advisory",
-							headline: "Strategic Advisory",
-							body: "<p><strong>Engineering insights.</strong> Direct access to energy specialists for high-volume sterilization planning and infrastructure scaling.</p>"
+						"mgmt-scale": {
+							topic: "Scale",
+							headline: "Medical Sites Powered",
+							body: "<p><strong>500+ facilities.</strong> Hospitals and health centers across Kenya trust LipaGas for mission-critical energy. Scaling the institutional standard for medical excellence.</p>"
 						},
-						"monitoring": {
-							topic: "Monitoring",
-							headline: "24/7 Safety Monitoring",
-							body: "<p><strong>Continuous Vigilance.</strong> Real-time leak detection and pressure monitoring linked to our command center ensures hospital-wide safety.</p>"
-						}
+						"institutional-impact": {
+							topic: "Medical Transformation",
+							headline: "Empowering excellence through precision energy.",
+							body: "<p>LipaGas is more than a utility—it is a critical partner in healthcare resilience. We transform hospital operations into precision-managed environments, allowing medical teams to focus on patient outcomes while we manage the energy grid.</p><div class='modal-pillars'><h3>The Pillars of Medical Transformation:</h3><ul><li><strong>Clinical Continuity:</strong> Guarantee 99.8% uptime for high-volume sterilization and ward operations.</li><li><strong>Air Quality & Safety:</strong> Eliminate respiratory health risks by removing 99% of ambient smoke from hospital environments.</li><li><strong>Zero Capital Drain:</strong> Our PAYG model eliminates upfront infrastructure costs, freeing up capital for medical equipment.</li><li><strong>Total Accountability:</strong> Smart meter integration ensures every shilling is accounted for in institutional audits.</li></ul></div>"
+						},
+
 					};
 
-					function openModal(stepId) {
-						const data = modalData[stepId];
+					// Global functions attached to window for direct element access (onclick="closeModal()")
+					window.openModal = function(stepId) {
+						console.log("Modal Open Requested for:", stepId);
+						const data = modalData[stepId.trim().toLowerCase()] || modalData[stepId.trim().toLowerCase().replace(/\s+/g, '-')];
 						if (!data) {
-							console.warn("No modal data for ID:", stepId);
+							console.error("Modal Data Mismatch - ID not found:", stepId);
 							return;
 						}
 
-						document.getElementById('modal-topic').textContent = data.topic;
-						document.getElementById('modal-headline').textContent = data.headline;
-						document.getElementById('modal-body').innerHTML = data.body;
-
+						const topicEl = document.getElementById('modal-topic');
+						const headlineEl = document.getElementById('modal-headline');
+						const bodyEl = document.getElementById('modal-body');
 						const modal = document.getElementById('lipagas-info-modal');
-						modal.classList.add('active');
-						document.body.style.overflow = 'hidden';
-					}
 
-					function closeModal() {
+						if (topicEl && headlineEl && bodyEl && modal) {
+							topicEl.textContent = data.topic;
+							headlineEl.textContent = data.headline;
+							bodyEl.innerHTML = data.body;
+							modal.classList.add('active');
+							document.body.style.overflow = 'hidden';
+							console.log("Modal display triggered.");
+						} else {
+							console.error("Missing modal elements index:", {topicEl, headlineEl, bodyEl, modal});
+						}
+					};
+
+					window.closeModal = function() {
 						const modal = document.getElementById('lipagas-info-modal');
-						modal.classList.remove('active');
-						document.body.style.overflow = '';
-					}
+						if (modal) {
+							modal.classList.remove('active');
+							document.body.style.overflow = '';
+						}
+					};
 
-					document.getElementById('lipagas-info-modal').addEventListener('click', function (e) {
-						if (e.target === this) closeModal();
-					});
+					// Capture-phase listener to beat navigation-sync redirects
+					document.addEventListener('click', function (e) {
+						const btn = e.target.closest('button.cards_cardLink__W1UKy');
+						if (btn) {
+							console.log("Modal button click captured.");
+							e.preventDefault();
+							e.stopPropagation();
+							e.stopImmediatePropagation();
+							
+							const item = btn.closest('[data-analytics-gallery-item-id]');
+							if (item) {
+								const id = item.getAttribute('data-analytics-gallery-item-id');
+								window.openModal(id);
+							}
+						}
+
+						if (e.target.id === 'lipagas-info-modal') {
+							window.closeModal();
+						}
+					}, true);
 
 					document.addEventListener('keydown', function (e) {
-						if (e.key === 'Escape') closeModal();
+						if (e.key === 'Escape') window.closeModal();
 					});
 
 					document.addEventListener('DOMContentLoaded', () => {
-						// Robust Modal Event Delegation
-						document.body.addEventListener('click', (e) => {
-							const btn = e.target.closest('button.cards_cardLink__W1UKy');
-							if (btn) {
-								const item = btn.closest('[data-analytics-gallery-item-id]');
-								if (item) {
-									let id = item.getAttribute('data-analytics-gallery-item-id').trim().toLowerCase();
-									// Mapping for IDs containing spaces or special characters
-									const mapping = {
-										"ipad pro": "ipad-pro",
-										"ipad air": "ipad-air",
-										"ipad 11": "ipad-11",
-										"ipad mini": "ipad-mini",
-										"personal setup": "personal-setup",
-										"ipados + apps": "ipados-apps",
-										"lipagas intelligence": "lipagas-intelligence",
-										"lipagas pencil": "lipagas-pencil",
-										"shop with a specialist": "shop-with-specialist"
-									};
-									if (mapping[id]) id = mapping[id];
-									
-									if (modalData[id]) {
-										openModal(id);
-									}
-								}
-							}
+						console.log("LipaGas Modal Engine Active.");
+						
+						// Ensure all plus buttons are explicit triggers
+						document.querySelectorAll('button.cards_cardLink__W1UKy').forEach(btn => {
+							btn.setAttribute('type', 'button');
 						});
 
-						// Universal Gallery Scrolling Logic
 						const setupGallery = (galleryId, sectionSelector) => {
 							const galleryItem = document.querySelector(`[data-analytics-gallery-id="${galleryId}"]`);
 							if (!galleryItem) return;
@@ -4059,29 +3494,18 @@
 						function bindGallery(container, section) {
 							const prevBtn = section.querySelector('button[aria-label*="Previous item"]');
 							const nextBtn = section.querySelector('button[aria-label*="Next item"]');
-
 							if (prevBtn && nextBtn) {
 								const scrollAmount = 400;
-
-								prevBtn.onclick = () => {
-									container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-								};
-
-								nextBtn.onclick = () => {
-									container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-								};
-
+								prevBtn.onclick = () => container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+								nextBtn.onclick = () => container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
 								const updateButtons = () => {
 									const isAtStart = container.scrollLeft <= 0;
 									const isAtEnd = container.scrollLeft + container.offsetWidth >= container.scrollWidth - 5;
-
 									prevBtn.disabled = isAtStart;
 									prevBtn.classList.toggle('IconControl_disabled__28z4j', isAtStart);
-
 									nextBtn.disabled = isAtEnd;
 									nextBtn.classList.toggle('IconControl_disabled__28z4j', isAtEnd);
 								};
-
 								container.addEventListener('scroll', updateButtons);
 								window.addEventListener('resize', updateButtons);
 								updateButtons();
@@ -4089,7 +3513,9 @@
 						}
 
 						setupGallery("why lipagas gallery", 'section[data-analytics-section-engagement="name:why lipagas"]');
+						setupGallery("get to know ipad gallery", 'section[data-analytics-section-engagement="name:get to know ipad"]');
 					});
+
 
 					document.addEventListener("click", function (e) {
 						const link = e.target.closest("a");
