@@ -1,0 +1,16 @@
+{
+  "name": "LipaGas Energy",
+  "short_name": "LipaGas",
+  "description": "LipaGas: The Operating System for Kenya's Energy Economy. Order and track LPG gas with ease.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0071e3",
+  "icons": [
+    {
+      "src": "/pages/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
