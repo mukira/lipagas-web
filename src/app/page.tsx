@@ -2,7 +2,7 @@
 export default function HomePage() {
     return (
         <iframe
-            src="/pages/iphone.html"
+            src="/pages/index.html"
             style={{
                 width: '100vw',
                 height: '100vh',
