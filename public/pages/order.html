@@ -681,39 +681,44 @@
         }
 
         /* Refine scroller height and remove excessive gaps - TARGETED FIX */
-        /* Force Shelf-7 scroller to be much shorter */
+        /* Force Shelf-1 and Shelf-7 scroller to be tall enough for cards */
+        #shelf-1_section .rf-cards-scroller,
+        #shelf-1_section .rf-cards-scroller-crop,
+        #shelf-1_section .rf-cards-scroller-content,
         #shelf-7_section .rf-cards-scroller,
         #shelf-7_section .rf-cards-scroller-crop,
         #shelf-7_section .rf-cards-scroller-content {
-            height: 300px !important;
-            min-height: 300px !important;
-            max-height: 300px !important;
+            height: 280px !important;
+            min-height: 280px !important;
+            max-height: 280px !important;
         }
 
         /* Prevent other shelves from expanding too much if they don't need to */
         .rf-cards-scroller-crop,
         .rf-cards-scroller-content {
-            height: auto !important;
-            min-height: auto !important;
+            height: auto;
+            min-height: auto;
             overflow-y: hidden !important;
             /* Force hide unwanted vertical scroll */
         }
 
         .rf-cards-scroller-itemview {
-            padding: 8px;
+            padding: 12px;
             /* Give scaled navigation cards room to breathe */
+            overflow: visible !important;
         }
 
         .rf-cards-scroller-platter {
-            padding-bottom: 20px !important;
-            margin-bottom: -20px !important;
+            padding-bottom: 25px !important;
+            margin-bottom: -15px !important;
         }
 
+        #shelf-1_section,
         #shelf-7_section,
         #shelf-8_section,
         #shelf-9_section {
-            padding-top: 0 !important;
-            padding-bottom: 0 !important;
+            padding-top: 5px !important;
+            padding-bottom: 5px !important;
             margin-top: 5px !important;
             margin-bottom: 5px !important;
         }
@@ -721,8 +726,8 @@
         .rs-cardsshelf {
             margin-top: 5px !important;
             margin-bottom: 5px !important;
-            padding-top: 0 !important;
-            padding-bottom: 0 !important;
+            padding-top: 5px !important;
+            padding-bottom: 5px !important;
         }
 
         .rs-cards-shelf-header {
@@ -942,42 +947,67 @@
         /* Filter active state */
         .rf-productnav-card {
             cursor: pointer;
-            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            border: 2px solid transparent;
-            border-radius: 12px;
-        }
-
-        body:not(.interacted-filters) .rf-productnav-card[data-filter="6kg"] {
-            border-color: #d2d2d7;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #d2d2d7;
+            border-radius: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 12px;
+            min-height: 155px;
+            width: 145px;
+            text-align: center;
+            background: #ffffff;
+            margin: 0 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            box-sizing: border-box;
+            overflow: visible !important;
+            position: relative;
         }
 
         .rf-productnav-card:hover {
-            background: #f5f5f7;
-            transform: scale(1.02);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transform: translateY(-4px);
+            border-color: #0071e3;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
         }
 
         .rf-productnav-card.is-active {
+            border-color: #25a244;
             background: #f5f5f7;
-            transform: scale(1.02);
-            border-color: #1c6b32;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 0 0 1px #25a244;
         }
 
-        .rf-productnav-card-title {
-            color: #1d1d1f;
-            font-size: 14px;
-            font-weight: 600;
-            margin-top: 8px;
-            transition: color 0.3s ease;
+        .rf-productnav-card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
         }
 
-        .rf-productnav-card:hover .rf-productnav-card-title {
-            color: #1a5b29;
+        .rf-productnav-card-image {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
         }
 
         .rf-productnav-card-image img {
             border: none;
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .rf-productnav-card-title {
+            color: #1d1d1f;
+            font-size: 15px;
+            font-weight: 600;
+            margin-top: 2px;
+            transition: color 0.3s ease;
+            display: block !important;
         }
     </style>
     <link rel="stylesheet" href="style.css">

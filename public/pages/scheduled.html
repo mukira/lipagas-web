@@ -200,204 +200,120 @@
 	<link rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 	<style>
-		.IconCard_iconCard__ptoS0 {
-			text-align: left !important;
-			display: flex !important;
-			flex-direction: column !important;
-			justify-content: flex-start !important;
-			align-items: flex-start !important;
-			padding: 30px !important; /* Slightly tighter padding for lean look */
-			min-height: 480px !important;
-			border-radius: 28px !important;
-			position: relative !important;
-		}
-
-		.IconCard_contentContainer__G34xf {
-			display: flex !important;
-			flex-direction: column !important;
-			align-items: flex-start !important;
-			text-align: left !important;
-			width: 100% !important;
-		}
-
 		.material-symbols-outlined {
 			font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-			font-size: 40px !important; /* Match Schools & Institutions icon size */
-			color: #1d1d1f !important;
-			display: block !important;
-			margin: 0 0 25px 0 !important;
-			text-align: left !important;
-		}
-
-		.FeatureCard_topicLabel__dwo6T {
-			color: #86868b !important; /* Proper gray for labels */
-			font-size: 12px !important;
-			font-weight: 600 !important;
-			margin-bottom: 8px !important;
-			text-transform: uppercase !important;
-			letter-spacing: 0.02em !important;
-			display: block !important;
-		}
-
-		.IconCard_headline__0cXta {
-			font-size: 24px !important; /* Match Institutions headline size */
-			line-height: 1.1 !important;
-			font-weight: 600 !important;
-			color: #1d1d1f !important;
-			margin-bottom: 12px !important;
-		}
-
-		.IconCard_bodyCopy__AxRxx {
-			font-size: 17px !important;
-			line-height: 1.47 !important;
-			color: #424245 !important;
-		}
-
-		.Gallery_itemContainer__Zirbx > li:nth-child(odd) .IconCard_iconCard__ptoS0 { background-color: #fbfbfd !important; }
-		.Gallery_itemContainer__Zirbx > li:nth-child(even) .IconCard_iconCard__ptoS0 { background-color: #f5f5f7 !important; }
-
-		/* Ensure Gallery is Scrollable */
-		.Gallery_scrollContainer__1LaRX {
-			overflow-x: auto !important;
-			scroll-behavior: smooth !important;
-			-webkit-overflow-scrolling: touch !important;
-			display: block !important;
-			width: 100% !important;
-		}
-		.Gallery_scrollContainer__1LaRX::-webkit-scrollbar {
-			display: none !important;
-		}
-
-		.Gallery_itemContainer__Zirbx {
-			display: flex !important;
-			flex-wrap: nowrap !important;
-			gap: 22px !important;
-			padding: 0 48px 40px 48px !important;
-			list-style: none !important;
-			margin: 0 !important;
-			width: max-content !important;
-		}
-
-		.Gallery_galleryItem__cc2Of {
-			flex: 0 0 auto !important;
-			width: 400px !important; 
-			list-style: none !important;
+			font-size: 56px;
+			color: black;
+			display: inline-block;
+			margin-bottom: 20px;
 		}
 
 		/* Modal Styles */
-		.lipagas-modal-overlay {
-			position: fixed !important;
-			top: 0 !important;
-			left: 0 !important;
-			width: 100% !important;
-			height: 100% !important;
-			background-color: rgba(0, 0, 0, 0.4) !important;
-			backdrop-filter: blur(20px) !important;
-			-webkit-backdrop-filter: blur(20px) !important;
-			display: none !important;
-			align-items: center !important;
-			justify-content: center !important;
-			z-index: 9999 !important;
+		.lipagas-info-modal {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.4);
+			backdrop-filter: blur(20px);
+			-webkit-backdrop-filter: blur(20px);
+			z-index: 9999;
+			display: none;
+			justify-content: center;
+			align-items: center;
 			opacity: 0;
-			visibility: hidden;
-			transition: opacity 0.4s ease, visibility 0.4s ease !important;
+			transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 		}
 
-		.lipagas-modal-overlay.active {
-			display: flex !important;
-			opacity: 1 !important;
-			visibility: visible !important;
+		.lipagas-info-modal.active {
+			display: flex;
+			opacity: 1;
 		}
 
-		.lipagas-modal-content {
-			background-color: #fff !important;
-			width: 90% !important;
-			max-width: 800px !important;
-			max-height: 90vh !important;
-			border-radius: 20px !important;
-			position: relative !important;
-			padding: 40px !important;
-			overflow-y: auto !important;
-			box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+		.modal-content {
+			background: rgba(255, 255, 255, 0.85);
+			width: 90%;
+			max-width: 800px;
+			max-height: 85vh;
+			border-radius: 30px;
+			position: relative;
+			padding: 60px;
+			overflow-y: auto;
+			box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+			transform: scale(0.95);
+			transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 		}
 
-		.lipagas-modal-close {
-			position: absolute !important;
-			top: 20px !important;
-			right: 20px !important;
-			background: #f5f5f7 !important;
-			border: none !important;
-			width: 36px !important;
-			height: 36px !important;
-			border-radius: 50% !important;
-			cursor: pointer !important;
-			display: flex !important;
-			align-items: center !important;
-			justify-content: center !important;
-			transition: transform 0.2s ease !important;
-			z-index: 10 !important;
+		.lipagas-info-modal.active .modal-content {
+			transform: scale(1);
 		}
 
-		.lipagas-modal-close:hover {
-			transform: scale(1.1) !important;
+		.modal-close {
+			position: absolute;
+			top: 25px;
+			right: 25px;
+			width: 36px;
+			height: 36px;
+			background: #e8e8ed;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			border: none;
+			color: #1d1d1f;
+			transition: all 0.2s;
+			z-index: 10;
 		}
 
-		.lipagas-modal-close svg {
-			width: 12px !important;
-			height: 12px !important;
-			fill: #1d1d1f !important;
+		.modal-close:hover {
+			background: #d2d2d7;
+			transform: rotate(90deg);
 		}
 
-		.modal-topic {
-			font-size: 14px !important;
-			font-weight: 600 !important;
-			color: #86868b !important;
-			margin-bottom: 8px !important;
-			text-transform: uppercase !important;
-			letter-spacing: 0.02em !important;
+		#modal-topic {
+			text-transform: uppercase;
+			font-size: 12px;
+			font-weight: 600;
+			letter-spacing: 0.1em;
+			margin-bottom: 15px;
+			display: block;
+			color: #86868b;
 		}
 
-		.modal-headline {
-			font-size: 40px !important;
-			line-height: 1.1 !important;
-			font-weight: 600 !important;
-			color: #1d1d1f !important;
-			margin-bottom: 24px !important;
+		#modal-headline {
+			font-size: 40px;
+			line-height: 1.1;
+			font-weight: 600;
+			margin-bottom: 25px;
+			color: #1d1d1f;
 		}
 
-		.modal-body {
-			font-size: 19px !important;
-			line-height: 1.47 !important;
-			color: #424245 !important;
+		#modal-body {
+			font-size: 19px;
+			line-height: 1.5;
+			color: #1d1d1f;
 		}
 
-		.modal-body p {
-			margin-bottom: 1.5em !important;
-		}
+		#modal-body p { margin-bottom: 20px; }
+		#modal-body strong { font-weight: 600; }
 
-		.modal-body strong {
-			color: #1d1d1f !important;
-			font-weight: 600 !important;
+		.modal-pillars {
+			margin-top: 40px;
+			padding-top: 30px;
+			border-top: 1px solid #d2d2d7;
 		}
 
 		.modal-pillars h3 {
-			font-size: 24px !important;
-			margin: 32px 0 16px 0 !important;
-			color: #1d1d1f !important;
+			font-size: 17px;
+			font-weight: 600;
+			margin-bottom: 20px;
 		}
 
 		.modal-pillars ul {
-			list-style: none !important;
-			padding: 0 !important;
-		}
-
-		.modal-pillars li {
-			padding: 12px 0 !important;
-			border-bottom: 1px solid #f5f5f7 !important;
-		}
-
-		.modal-pillars li:last-child {
-			border-bottom: none !important;
+			list-style: none;
+			padding: 0;
 		}
 	</style>
 	<link rel="stylesheet" href="/api-www/global-elements/global-footer/v1/en_US/styles/ac-globalfooter.built.css">
@@ -857,7 +773,7 @@
 			</div>
 			<main role="main">
 				<div class="Ribbon_ribbon__Mop7W Ribbon_bg-neutral__HwvdI Ribbon_row__Ffpl8 Ribbon_animate__D1bcQ"
-					id="Scheduled Delivery" data-analytics-activitymap-region-id="scheduled delivery ribbon">
+					id="Financing Ribbon" data-analytics-activitymap-region-id="mac ribbon">
 					<div class="Ribbon_content-wrapper__LlSR1">
 						<p
 							class="Ribbon_column__elHPU Ribbon_content__tI6qS Ribbon_large-10__CqSIr Ribbon_large-centered__CJXuN">
@@ -870,7 +786,8 @@
 						</p>
 					</div>
 				</div>
-				<section class="MarcomSection_section__Hd6T8" style="padding-top: 50px !important; padding-bottom: 50px !important;">
+				<section class="MarcomSection_section__Hd6T8 MarcomSection_noTopPadding__2jZ40"
+					data-analytics-section-engagement="name:compare">
 					<div class="section-content">
 						<div class="PageHeader_container__K9WZr">
 							<h1 class="PageHeader_title__EDhKs MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
@@ -881,7 +798,8 @@
 						</div>
 					</div>
 				</section>
-				<section class="MarcomSection_section__Hd6T8" style="padding-top: 50px !important; padding-bottom: 50px !important;">
+				<section class="MarcomSection_section__Hd6T8 MarcomSection_noTopPadding__2jZ40"
+					data-analytics-section-engagement="name:switch to financing gallery top">
 					<div class="section-content">
 						<div
 							class="responsive-content_responsiveContent__S1ntz BannerCardSection_responsiveContainer__EoB1m">
@@ -980,12 +898,14 @@
 						</div>
 					</div>
 				</section>
-				<section class="MarcomSection_section__Hd6T8" data-analytics-section-engagement="name:why omcs" style="padding-top: 50px !important; padding-bottom: 50px !important;">
+				<section class="MarcomSection_section__Hd6T8 MarcomSection_backgroundTertiary___LAi8"
+					data-analytics-section-engagement="name:why clean energy"
+					style="padding-top: 150px !important; padding-bottom: 150px !important;">
 					<div class="section-content">
 						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz">
 							<h2 id="icon-card-section-5-header"
 								class="SectionHeader_headline__aqRKz MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
-								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1;"><span>We Move Gas. You Move
+								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1; font-size: 56px !important; font-weight: 600 !important; line-height: 1.07 !important; letter-spacing: -0.005em !important;"><span>We Move Gas. You Move
 									Markets.</span></h2>
 							<div class="SectionHeader_ctaWrapper__HJNTs">
 								<ul class="SectionHeader_ctaList__luQ5v">
@@ -1135,7 +1055,7 @@
 								</div>
 							</div>
 						</div>
-						<div id="«r4»" class="Gallery_gallery__ku_1u" data-analytics-gallery-id="why omcs gallery">
+						<div id="«r4»" class="Gallery_gallery__ku_1u" data-analytics-gallery-id="why clean energy gallery">
 							<div class="Gallery_scrollContainer__1LaRX" data-scrollable="true">
 								<ul aria-labelledby="icon-card-section-5-header" role="list"
 									class="Gallery_itemContainer__Zirbx">
@@ -1148,15 +1068,11 @@
 												<div class="IconCard_contentContainer__G34xf">
 													<span class="material-symbols-outlined">local_shipping</span>
 													<div class="IconCard_copyContainer__JW46n">
-														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 1: Real-time
-																Tracking</span></h4>
 														<h3 class="typography_headline__zZkHA IconCard_headline__0cXta">
 															<span>Live Fleet Map. Real-time.</span>
 														</h3>
 														<p class="typography_bodyCopy__v_XbA IconCard_bodyCopy__AxRxx">
-															<span>Every truck. Every ETA. Not tomorrow. Now. Know
-																exactly
-																when your gas arrives.</span>
+															<span>Every truck. Every ETA. Not tomorrow. Now. Know exactly when your gas arrives.</span>
 														</p>
 													</div>
 												</div><button class="cards_cardLink__W1UKy"
@@ -1187,14 +1103,11 @@
 												<div class="IconCard_contentContainer__G34xf">
 													<span class="material-symbols-outlined">directions_car</span>
 													<div class="IconCard_copyContainer__JW46n">
-														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 2: County
-																Scaling</span></h4>
 														<h3 class="typography_headline__zZkHA IconCard_headline__0cXta">
-															<span>Zero Fleet Overhead.</span>
+															<span>Scale by county, not headcount.</span>
 														</h3>
 														<p class="typography_bodyCopy__v_XbA IconCard_bodyCopy__AxRxx">
-															<span>Reach every county through our optimized network. Pay
-																only for what moves.</span>
+															<span>Launch in any county tomorrow. Our local transport nodes handle the ground work while you manage the growth.</span>
 														</p>
 													</div>
 												</div><button class="cards_cardLink__W1UKy"
@@ -1225,14 +1138,11 @@
 												<div class="IconCard_contentContainer__G34xf">
 													<span class="material-symbols-outlined">verified</span>
 													<div class="IconCard_copyContainer__JW46n">
-														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 3: Safety &
-																Compliance</span></h4>
 														<h3 class="typography_headline__zZkHA IconCard_headline__0cXta">
 															<span>Compliance built into every route.</span>
 														</h3>
 														<p class="typography_bodyCopy__v_XbA IconCard_bodyCopy__AxRxx">
-															<span>Weight checks, safety audits, and digital
-																proof-of-delivery handled automatically.</span>
+															<span>Weight checks, safety audits, and digital proof-of-delivery handled automatically.</span>
 														</p>
 													</div>
 												</div><button class="cards_cardLink__W1UKy"
@@ -1263,14 +1173,11 @@
 												<div class="IconCard_contentContainer__G34xf">
 													<span class="material-symbols-outlined">schedule</span>
 													<div class="IconCard_copyContainer__JW46n">
-														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 4: Distribution
-																Control</span></h4>
 														<h3 class="typography_headline__zZkHA IconCard_headline__0cXta">
 															<span>Custom cadence, total control.</span>
 														</h3>
 														<p class="typography_bodyCopy__v_XbA IconCard_bodyCopy__AxRxx">
-															<span>Weekly, bi-weekly, or on-demand. You set the rules; we
-																move the cylinders.</span>
+															<span>Weekly, bi-weekly, or on-demand. You set the rules; we move the cylinders.</span>
 														</p>
 													</div>
 												</div><button class="cards_cardLink__W1UKy"
@@ -1301,14 +1208,11 @@
 												<div class="IconCard_contentContainer__G34xf">
 													<span class="material-symbols-outlined">inventory_2</span>
 													<div class="IconCard_copyContainer__JW46n">
-														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 5: Predictive
-																Stock</span></h4>
 														<h3 class="typography_headline__zZkHA IconCard_headline__0cXta">
 															<span>Predictive stock, zero stockouts.</span>
 														</h3>
 														<p class="typography_bodyCopy__v_XbA IconCard_bodyCopy__AxRxx">
-															<span>Our smart scheduling ensures your dealers always have
-																what they need before they run dry.</span>
+															<span>Our smart scheduling ensures your dealers always have what they need before they run dry.</span>
 														</p>
 													</div>
 												</div><button class="cards_cardLink__W1UKy"
@@ -1339,14 +1243,11 @@
 												<div class="IconCard_contentContainer__G34xf">
 													<span class="material-symbols-outlined">support_agent</span>
 													<div class="IconCard_copyContainer__JW46n">
-														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 6: Expert
-																Consultation</span></h4>
 														<h3 class="typography_headline__zZkHA IconCard_headline__0cXta">
 															<span>Consult with a logistics expert.</span>
 														</h3>
 														<p class="typography_bodyCopy__v_XbA IconCard_bodyCopy__AxRxx">
-															<span>Let us audit your current routes live over video and
-																identify optimization opportunities.</span>
+															<span>Let us audit your current routes live over video and identify optimization opportunities.</span>
 														</p>
 													</div>
 												</div><button class="cards_cardLink__W1UKy"
@@ -1377,14 +1278,11 @@
 												<div class="IconCard_contentContainer__G34xf">
 													<span class="material-symbols-outlined">hub</span>
 													<div class="IconCard_copyContainer__JW46n">
-														<h4 class="FeatureCard_topicLabel__dwo6T"><span>Step 7: OMC Dashboard
-																Integration</span></h4>
 														<h3 class="typography_headline__zZkHA IconCard_headline__0cXta">
 															<span>A distribution platform built for scale.</span>
 														</h3>
 														<p class="typography_bodyCopy__v_XbA IconCard_bodyCopy__AxRxx">
-															<span>Use the Lipagas OMC dashboard to gain total visibility
-																over your entire supply chain.</span>
+															<span>Use the Lipagas OMC dashboard to gain total visibility over your entire supply chain.</span>
 														</p>
 													</div>
 												</div><button class="cards_cardLink__W1UKy"
@@ -1433,10 +1331,74 @@
 						</div>
 					</div>
 				</section>
-				<section class="MarcomSection_section__Hd6T8" style="padding-top: 50px !important; padding-bottom: 50px !important;">
+				<section class="MarcomSection_section__Hd6T8" data-analytics-section-engagement="name:help me choose"
+					style="padding-top: 150px !important; padding-bottom: 150px !important;">
 					<div class="section-content">
+						<div class="SectionHeader_container__OMsxL responsive-content_responsiveContent__S1ntz">
+							<h2 id="banner-card-section-8-header"
+								class="SectionHeader_headline__aqRKz MarcomSection_enhanced--active__QjigW animationDefaults_buildIn__OdEKA"
+								style="transform: matrix(1, 0, 0, 1, 0, 0); opacity: 1; font-size: 56px !important; font-weight: 600 !important; line-height: 1.07 !important; letter-spacing: -0.005em !important;"><span>Every day without precise
+									logistics costs your OMC more.</span>
+							</h2>
+						</div>
 						<div
 							class="responsive-content_responsiveContent__S1ntz BannerCardSection_responsiveContainer__EoB1m">
+							<div
+								class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
+								<div class="BannerCard_bannerCard__xHrOV BannerCard_cardHorizontal__ehvff BannerCard_copyLockupPinLeading__65si8 BannerCard_oneUp__ZH_J3 BannerCard_inlineLayout__VaIgt BannerCard_blockLink__IlVL7 BaseCard_baseCard__9OdJ1"
+									style="background-color: rgb(245, 245, 247);"><a
+										data-analytics-title="get started - scheduled pitch" aria-hidden="true"
+										class="OptionalBlockLink_blockLink__3DW3e"
+										href="/scheduled/#scheduled-pitch" tabindex="-1"></a>
+									<div class="BannerCard_copyLockup__9uRdS CopyLockup_textAlignCenter__7B4Wl">
+										<div class="CopyLockup_headingContainer__eAcNT">
+											<h3 class="CopyLockup_header__BZWbY"><span>Scale your delivery
+													network.</span></h3>
+										</div>
+										<p class="CopyLockup_copy__t5rPE" style="margin-top: 16px;"><span>Every day
+												without automated scheduling is a missed opportunity for fleet growth. Every
+												mile unoptimized is margin lost. Scale today.</span>
+										</p>
+										<div
+											class="OptionalCTABlock_ctaBlock__k2dm5 OptionalCTABlock_alignCenter__bgIt_ OptionalCTABlock_ctaStacked__Hkj6S">
+											<a class="OptionalCTABlock_button__M_3sL Button_button__1bW9X Button_button-elevated__IfBVW"
+												data-analytics-title="Start your scheduled delivery transition"
+												href="/scheduled/#scheduled-pitch"
+												aria-label="Start your scheduled delivery transition"><span
+													class="StandardsLink_copy__FvCj1"><span>Start Your
+														Transition</span></span></a>
+										</div>
+									</div>
+									<figure data-vp-w-large="" data-vp-h-large="" data-vp-w-medium=""
+										data-vp-h-medium="" data-vp-w-small="" data-vp-h-small="" data-rp-op-large=""
+										data-rp-op-medium="" data-rp-op-small=""
+										class="ResponsivePicture_responsive-picture__VWL7l ResponsivePicture_responsive-picture-vp-layout-default--sized__pdVra responsive-picture__no-js responsive-picture--rendered ResponsivePicture_responsive-picture--active__FbrFD responsive-picture--loaded BannerCard_inlineImage__YYR9d"
+										style="--vp-w-large: 715; --vp-h-large: 480; --vp-w-medium: 509; --vp-h-medium: 355; --vp-w-small: 320; --vp-h-small: 236; --vp-w-default: 715; --vp-h-default: 480; --rp-op-large: center left; --rp-op-medium: center; --rp-op-small: center; --rp-op-default: center left; --rp-of-default: none;">
+										<picture
+											class="ResponsivePicture_responsive-picture__picture__jjeBP ResponsivePicture_responsive-picture__picture__js__PPGS5">
+											<source
+												srcset="/assets-www/en_WW/mac/01_banner_card_2up/large/scheduled-delivery.png, /assets-www/en_WW/mac/01_banner_card_2up/large/scheduled-delivery.png 2x"
+												width="320" height="236" media="(max-width: 734px)">
+											<source
+												srcset="/assets-www/en_WW/mac/01_banner_card_2up/large/scheduled-delivery.png, /assets-www/en_WW/mac/01_banner_card_2up/large/scheduled-delivery.png 2x"
+												width="509" height="355" media="(max-width: 1068px)">
+											<source
+												srcset="/assets-www/en_WW/mac/01_banner_card_2up/large/scheduled-delivery.png, /assets-www/en_WW/mac/01_banner_card_2up/large/scheduled-delivery.png 2x"
+												width="715" height="480"><img
+												src="/assets-www/en_WW/mac/01_banner_card_2up/large/scheduled-delivery.png"
+												alt="The Lipagas scheduled delivery dashboard.">
+										</picture>
+									</figure>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="MarcomSection_section__Hd6T8 MarcomSection_backgroundTertiary___LAi8"
+					style="padding-top: 150px !important; padding-bottom: 150px !important;" data-analytics-section-engagement="name:financing tiles grid">
+					<div class="section-content">
+						<div
+							class="responsive-content_responsiveContent__S1ntz BannerCardSection_responsiveContainer__EoB1m" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
 							<div
 								class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
 								<div class="BannerCard_bannerCard__xHrOV BannerCard_twoUp__3pVcb BannerCard_cardVertical__wV5a2 BannerCard_copyLockupPinTop__UGz_4 BannerCard_inlineLayout__VaIgt BannerCard_backgroundColorAlt__2b0z_ BannerCard_blockLink__IlVL7 BaseCard_baseCard__9OdJ1"
@@ -1529,12 +1491,6 @@
 									</figure>
 								</div>
 							</div>
-						</div>
-					</div>
-
-
-						<div
-							class="responsive-content_responsiveContent__S1ntz BannerCardSection_responsiveContainer__EoB1m">
 							<div
 								class="StaggeredFadeIn_animationWrapper__jM6PI StaggeredFadeIn_enhanced--active__0bTJw StaggeredFadeIn_overrideAnimateStyle__XpuCR animationDefaults_noBuildIn__wAp_w animationDefaults_buildIn__OdEKA">
 								<div class="BannerCard_bannerCard__xHrOV BannerCard_twoUp__3pVcb BannerCard_cardVertical__wV5a2 BannerCard_copyLockupPinTop__UGz_4 BannerCard_inlineLayout__VaIgt BannerCard_backgroundColorAlt__2b0z_ BannerCard_blockLink__IlVL7 BaseCard_baseCard__9OdJ1"
@@ -1629,7 +1585,6 @@
 								</div>
 							</div>
 						</div>
-						</div>
 					</div>
 				</section>
 			</main>
@@ -1637,29 +1592,22 @@
 				aria-labelledby="ac-gf-label" class="js" data-nosnippet="true">
 				<div class="ac-gf-content">
 					<h2 class="ac-gf-label" id="ac-gf-label">Lipagas Footer</h2>
-					<div class="ac-gf-sosumi-pitch" style="font-size: 14px; line-height: 1.6; color: #6e6e73; padding: 80px 0 20px 0; border-top: 1px solid #d2d2d7; margin-top: 80px;">
-						<p style="margin-bottom: 1.5em;"><strong style="color: #1d1d1f; font-size: 16px;">Lipagas: The New Frontier of JIT Logistics and OMC Strategic Partnerships</strong></p>
-						<p style="margin-bottom: 1.2em;">The energy landscape in East Africa is undergoing a fundamental transformation, shifting away from fragmented, manual distribution toward a unified, data-driven "Just-in-Time" (JIT) infrastructure. Lipagas is at the heart of this evolution, offering Oil Marketing Companies (OMCs) a seamless, high-precision logistics layer that eliminates the inefficiencies of traditional bulk hauling and last-mile delivery. Our partnership model is built on the pillars of precision, trust, and technological integration, ensuring that clean energy is available on your terms, subject to system integration and our rigorous precision audit protocols.</p>
-
-						<p style="margin-bottom: 0.8em;"><strong style="color: #1d1d1f;">Transforming the Supply Chain: From Bulk to Precision</strong></p>
-						<p style="margin-bottom: 1.2em;">Traditionally, OMCs have struggled with the "invisible cost" of misplaced cylinders, inefficient route planning, and the lack of real-time visibility into the secondary distribution market. Lipagas solves this by introducing a decentralized, digital-first supply chain. By selecting Lipagas as your strategic logistics partner, you gain access to a network that treats every cylinder as a data point. Our system integration allows OMCs to track the movement of inventory with unprecedented accuracy, from the primary filling plant to the individual consumer's doorstep. This level of granularity is not just about tracking; it’s about predictive demand modeling. We help OMCs anticipate market needs before they manifest as outages, ensuring that supply always meets demand in geographical pockets where it was previously underserved.</p>
-
-						<p style="margin-bottom: 0.8em;"><strong style="color: #1d1d1f;">The Last-Mile Revolution: The Rider Network and Decentralized Distribution</strong></p>
-						<p style="margin-bottom: 1.2em;">Last-mile delivery has historically been the most expensive and complex segment of the LPG value chain. Lipagas has optimized this by tapping into a professionalized, tech-enabled rider network. These are not just delivery personnel; they are the frontline of a modern energy grid. By leveraging this fleet, OMCs can expand their reach into every county and estate without the capital expenditure of building out their own delivery infrastructure. This is "Logistics-as-a-Service" (LaaS) in its purest form. Our decentralized model ensures that the distance between the stock and the customer is minimized, reducing the carbon footprint of delivery while maximizing the speed of service. For OMCs, this means faster inventory turnover and a significant reduction in the cost-per-cylinder delivered.</p>
-
-						<p style="margin-bottom: 0.8em;"><strong style="color: #1d1d1f;">Precision Audit and System Integration: The Trust Framework</strong></p>
-						<p style="margin-bottom: 1.2em;">Partnership with Lipagas is more than just a commercial agreement; it is a commitment to a higher standard of operational excellence. Our "Precision Audit" is a foundational process that audits existing supply chain flows to identify leakages — both physical and financial. When an OMC integrates with the Lipagas platform, they are plugging into a system that enforces compliance with safety standards and regulatory requirements. Every transaction is logged, every cylinder is scanned, and every delivery is verified. This creates a transparent audit trail that is invaluable for financial reporting, tax compliance, and ESG (Environmental, Social, and Governance) at-source reporting. Taxes and shipping on items moved through our platform are handled with the same level of digital precision, ensuring that the financial layer of your distribution is as robust as the physical one.</p>
-
-						<p style="margin-bottom: 0.8em;"><strong style="color: #1d1d1f;">The Financial Advantage: LipaGas Credits and Customer Retention</strong></p>
-						<p style="margin-bottom: 1.2em;">Retention is the cornerstone of growth in the energy sector. Lipagas enhances customer loyalty through innovative payment and financing options, such as Lipagas Card Monthly Installments (LipaGas Credits). This allows consumers to finance their clean energy transition on terms that work for them, subject to our integrated credit scoring and precision audit systems. While financing terms may vary by product, the availability of these options directly impacts the volume moved for our OMC partners. By lowering the barrier to entry for clean cooking gas, we are expanding the total addressable market for all stakeholders. Note that while LipaGas Credits offers a 0% APR payment option for eligible products, certain taxes and shipping costs may be subject to variable rates as defined in our customer agreement. This financial flexibility, coupled with our JIT delivery, ensures that your brand becomes a staple in the modern household.</p>
-
-						<p style="margin-bottom: 0.8em;"><strong style="color: #1d1d1f;">Global Standards, Local Execution</strong></p>
-						<p style="margin-bottom: 1.2em;">Lipagas is designed to meet international standards while navigating the unique logistical challenges of the local market. Whether it’s catering to the Education storefront with specialized discounts or providing large-scale JIT supply to industrial parks, our platform is adaptable. We are constantly updating our infrastructure, including the latest versions of LipaGasOS and PAYG LipaGasOS, to support the evolving needs of the OMC sector. Our subsidiary, Lipagas Payments Services LLC, provides the underlying fintech rails that power these transactional flows, ensuring that your funds are settled with the same speed and reliability as our physical deliveries. Communications from Lipagas and our energy group partners are available in English, with multi-language support accessible via device settings, ensuring clear and transparent coordination across all stakeholders.</p>
-
-						<p style="margin-bottom: 0.8em;"><strong style="color: #1d1d1f;">A Commitment to the Future</strong></p>
-						<p style="margin-bottom: 1.2em;">Testing and operational data from August through October 2024 have shown that OMCs using the Lipagas JIT layer experience a significant uptick in route efficiency and consumer satisfaction. We are currently rolling out "Lipagas Intelligence" in beta, which will further enhance our predictive algorithms, allowing for even tighter inventory management. As we look toward 2026 and beyond, the integration of cellular networking, GPS-tracking, and AI-driven dispatch will make the Lipagas logistics layer an indispensable component of the energy grid. Join us in building a future where clean energy is not just a commodity, but a service that is precision-timed, perfectly audited, and delivered with absolute reliability.</p>
-
-						<p style="font-size: 12px; font-style: italic; margin-top: 2em;">* Lipagas and its trade-in partners reserve the right to refuse, cancel, or limit quantity of any transaction for any reason. More details are available from our trade-in partners for recycling and inventory management. Restrictions and limitations apply across different regions. Stellarium image of the M31 galaxy by Lee, Ang (HG731GZ). Creative Commons Attribution License 3.0.</p>
+					<div class="ac-gf-sosumi ">
+						<ul>
+							<li id="footnote-promoted-1"><small>* <strong>Lipagas: The New Frontier of JIT Logistics and OMC Strategic Partnerships</strong><br>The energy landscape in East Africa is undergoing a fundamental transformation, shifting away from fragmented, manual distribution toward a unified, data-driven "Just-in-Time" (JIT) infrastructure. Lipagas is at the heart of this evolution, offering Oil Marketing Companies (OMCs) a seamless, high-precision logistics layer that eliminates the inefficiencies of traditional bulk hauling and last-mile delivery.</small></li>
+							<li id="footnote-promoted-2"><small>** <strong>Transforming the Supply Chain: From Bulk to Precision</strong><br>Traditionally, OMCs have struggled with the "invisible cost" of misplaced cylinders, inefficient route planning, and the lack of real-time visibility into the secondary distribution market. Lipagas solves this by introducing a decentralized, digital-first supply chain.</small></li>
+						</ul>
+						<ul>
+							<li id="footnote-external-1"><small>◊ <strong>The Last-Mile Revolution: The Rider Network and Decentralized Distribution.</strong> Last-mile delivery has historically been the most expensive and complex segment of the LPG value chain. Lipagas has optimized this by tapping into a professionalized, tech-enabled rider network.</small></li>
+						</ul>
+						<ol>
+							<li id="footnote-numbered-1"><small><span><strong>Precision Audit.</strong> Our partnership model is built on the pillars of precision, trust, and technological integration, ensuring that clean energy is available on your terms, subject to system integration and our rigorous precision audit protocols.</span></small></li>
+							<li id="footnote-numbered-2"><small><span><strong>Financial Flexibility.</strong> Lipagas enhances customer loyalty through innovative payment and financing options, such as Lipagas Card Monthly Installments (LipaGas Credits). Note that while LipaGas Credits offers a 0% APR payment option for eligible products, certain taxes and shipping costs may apply.</span></small></li>
+							<li id="footnote-numbered-3"><small><span><strong>Global Standards.</strong> Lipagas is designed to meet international standards while navigating the unique logistical challenges of the local market. Our platform is adaptable to the Education storefront and high-capacity industrial park requirements.</span></small></li>
+						</ol>
+						<ul>
+							<li id="footnote-non-referenced-1"><small><span>Operation data from August through October 2024 shows significant uptick in route efficiency. Lipagas Intelligence is currently in beta. Stellar image of the M31 galaxy by Lee, Ang (HG731GZ). Creative Commons Attribution License 3.0.</span></small></li>
+						</ul>
 					</div>
 					<nav class="ac-gf-breadcrumbs" aria-label="Breadcrumbs" role="navigation"><a href="/"
 							class="home ac-gf-breadcrumbs-home"><span class="ac-gf-breadcrumbs-home-icon"
@@ -2355,55 +2303,53 @@
 	</script>
 	<script src="/pages/navigation-sync.js"></script>
 	<!-- LipaGas Info Modal -->
-	<div id="lipagas-info-modal" class="lipagas-modal-overlay">
-		<div class="lipagas-modal-content">
-			<button class="lipagas-modal-close" onclick="closeModal()" aria-label="Close modal">
-				<svg viewBox="0 0 18 18">
-					<path d="M10.06 9l5.47-5.47a.75.75 0 0 0-1.06-1.06L9 7.94 3.53 2.47a.75.75 0 0 0-1.06 1.06L7.94 9l-5.47 5.47a.75.75 0 1 0 1.06 1.06L9 10.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L10.06 9z"></path>
+	<div id="lipagas-info-modal" class="lipagas-info-modal">
+		<div class="modal-content">
+			<button class="modal-close" onclick="closeModal()">
+				<svg viewBox="0 0 12 12" width="12" height="12">
+					<path d="M10.5 1.5l-9 9m0-9l9 9" stroke="currentColor" stroke-width="1.2" fill="none"></path>
 				</svg>
 			</button>
-			<div id="modal-content-area">
-				<p class="modal-topic" id="modal-topic"></p>
-				<h2 class="modal-headline" id="modal-headline"></h2>
-				<div class="modal-body" id="modal-body"></div>
-			</div>
+			<div id="modal-topic">Topic</div>
+			<div id="modal-headline">Headline</div>
+			<div id="modal-body" class="modal-body"></div>
 		</div>
 	</div>
 
 	<script>
 		const modalData = {
 			"tracking": {
-				topic: "Step 1: Real-time Tracking",
+				topic: "Real-time Tracking",
 				headline: "Visibility in every kilometer.",
 				body: "<p><strong>Live Fleet Telemetry.</strong> Don't guess where your inventory is. Our IoT-linked delivery network provides real-time GPS tracking and ETA updates for every cylinder. From the depot to the dealer's doorstep, you have total visibility.</p><ul><li><strong>Precision Routing:</strong> Optimized paths reduce delivery times by 30%.</li><li><strong>Digital POD:</strong> Photo and GPS verification for every drop-off.</li><li><strong>Live Map:</strong> Access our mission control fleet map directly from your dashboard.</li></ul>"
 			},
 			"scaling": {
-				topic: "Step 2: County Scaling",
+				topic: "County Scaling",
 				headline: "Reach further, faster.",
 				body: "<p><strong>Instant Last-Mile Network.</strong> Why build a fleet when you can use ours? Lipagas provides immediate access to delivery hubs across all 47 counties. Scale your distribution footprint overnight without the CAPEX burden of buying trucks.</p><ul><li><strong>Asset-Light Growth:</strong> Expand to new regions with zero overhead.</li><li><strong>Variable Costs:</strong> Pay only for the deliveries you make, not for idle trucks.</li><li><strong>Standardized Quality:</strong> Uniform delivery standards nationwide.</li></ul>"
 			},
 			"compliance": {
-				topic: "Step 3: Safety & Compliance",
+				topic: "Safety & Compliance",
 				headline: "Built-in integrity.",
 				body: "<p><strong>Automated Audits.</strong> We take safety seriously. Every cylinder in our network undergoes weight verification and safety checks. Our digital chain of custody ensures that what leaves your depot is exactly what reaches the dealer.</p><ul><li><strong>Smart Scaling:</strong> Weight sensors detect leakage or underfilling instantly.</li><li><strong>Driver Certification:</strong> Only verified, safety-trained riders handle your products.</li><li><strong>Audit Trails:</strong> 100% digital records for every transaction and movement.</li></ul>"
 			},
 			"control": {
-				topic: "Step 4: Distribution Control",
+				topic: "Distribution Control",
 				headline: "Your rules, our movement.",
 				body: "<p><strong>Custom Logistics Logic.</strong> Set your delivery cadences based on market demand. Whether it's daily milk-runs or peak-season surges, our platform adapts to your distribution strategy instantly.</p><ul><li><strong>Flexible Scheduling:</strong> Adjust routes and priorities in real-time.</li><li><strong>Dealer Prioritization:</strong> Assign higher service levels to your top-performing outlets.</li><li><strong>Inventory Balancing:</strong> Move stock between hubs to prevent regional shortages.</li></ul>"
 			},
 			"stockouts": {
-				topic: "Step 5: Predictive Stock",
+				topic: "Predictive Stock",
 				headline: "End the stockout era.",
 				body: "<p><strong>Demand-Driven Replenishment.</strong> Our algorithms analyze historical consumption and dealer trends to predict stockouts before they happen. We trigger automated delivery alerts so your dealers stay wet, 24/7.</p><ul><li><strong>Loss Prevention:</strong> Never lose a sale due to an empty shelf.</li><li><strong>Capital Efficiency:</strong> Keep inventory levels lean while maintaining high availability.</li><li><strong>Trend Analysis:</strong> Identify emerging market opportunities through data.</li></ul>"
 			},
 			"consult": {
-				topic: "Step 6: Expert Consultation",
+				topic: "Expert Consultation",
 				headline: "Optimize your supply chain.",
 				body: "<p><strong>Data-Driven Strategy.</strong> Our logistics experts partner with you to audit your current distribution channel. We identify bottlenecks, reduce leakage, and implement best practices to maximize your OMC's efficiency.</p><ul><li><strong>Route Audits:</strong> Comprehensive analysis of current logistics spend vs. output.</li><li><strong>Infrastructure Support:</strong> Advice on hub placement and depot optimization.</li><li><strong>Integration Support:</strong> Seamlessly link our logistics layer with your existing ERP.</li></ul>"
 			},
 			"platform": {
-				topic: "Step 7: OMC Dashboard Integration",
+				topic: "OMC Dashboard Integration",
 				headline: "Mission control for your gas.",
 				body: "<p><strong>Unified Operational View.</strong> Manage your entire nationwide distribution network from a single screen. Our OMC dashboard provides the precision monitoring and control features you need to dominate the market.</p><ul><li><strong>Live KPIs:</strong> Track volume, revenue, and delivery performance in real-time.</li><li><strong>User Hierarchy:</strong> Manage access levels for your team, agents, and dealers.</li><li><strong>Open API:</strong> Integrate Lipagas data directly into your corporate systems.</li></ul>"
 			}
@@ -2501,7 +2447,7 @@
 				}
 			}
 
-			setupGallery("why omcs gallery", 'section[data-analytics-section-engagement="name:why omcs"]');
+			setupGallery("why clean energy gallery", 'section[data-analytics-section-engagement="name:why clean energy"]');
 		});
 	</script>
     <script src="main.js"></script>
