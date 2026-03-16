@@ -638,3 +638,91 @@ body {
         display: none !important;
     }
 }
+
+/* Modal Styles */
+.ric-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.48);
+}
+
+.ric-modal.modal-open {
+    display: block;
+    overflow-y: auto;
+}
+
+.ric-modal-overlay-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    padding: 40px 20px;
+}
+
+.ric-modal-overlay {
+    background: #fff;
+    border-radius: 18px;
+    width: 100%;
+    max-width: 816px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.ric-modal-content-wrapper {
+    padding: 60px;
+}
+
+.ric-modal-close-button-wrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.ric-modal-close-button {
+    background: rgba(232, 232, 237, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.ric-modal-close-button:hover {
+    background: rgba(210, 210, 215, 1);
+}
+
+.ric-modal-close-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: #1d1d1f;
+}
+
+/* Scrim Blur Effect if requested */
+.ric-modal-scrim-blur {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+@media (max-width: 734px) {
+    .ric-modal-content-wrapper {
+        padding: 40px 20px;
+    }
+    
+    .ric-modal-overlay {
+        border-radius: 0;
+        height: 100%;
+        max-width: none;
+    }
+}

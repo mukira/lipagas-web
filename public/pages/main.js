@@ -102,4 +102,45 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.classList.remove('nav-scrolled');
         }
     });
+
+    // Modal logic
+    document.addEventListener('click', (e) => {
+        // Open modal
+        const openBtn = e.target.closest('[data-modal-open]');
+        if (openBtn) {
+            const modalId = openBtn.getAttribute('data-modal-open');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('modal-open');
+                document.body.classList.add('noscroll');
+            }
+            return;
+        }
+
+        // Close modal
+        const closeBtn = e.target.closest('[data-modal-close]');
+        if (closeBtn) {
+            const modal = e.target.closest('.ric-modal');
+            if (modal) {
+                modal.classList.remove('modal-open');
+                // Check if any other modal is still open before removing noscroll
+                if (!document.querySelector('.ric-modal.modal-open')) {
+                    document.body.classList.remove('noscroll');
+                }
+            }
+        }
+    });
+
+    // Close modal on background click
+    document.addEventListener('mousedown', (e) => {
+        if (e.target.classList.contains('ric-modal') || e.target.hasAttribute('data-modal-container')) {
+             const modal = e.target.closest('.ric-modal');
+             if (modal) {
+                 modal.classList.remove('modal-open');
+                 if (!document.querySelector('.ric-modal.modal-open')) {
+                    document.body.classList.remove('noscroll');
+                }
+             }
+        }
+    });
 });
