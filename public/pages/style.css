@@ -656,12 +656,20 @@ body {
     overflow-y: auto;
 }
 
+.ric-modal.modal-open .ric-modal-overlay {
+    opacity: 1 !important;
+}
+
+.ric-modal.modal-open .ric-modal-overlay-container {
+    opacity: 1 !important;
+}
+
 .ric-modal-overlay-container {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100%;
-    padding: 40px 20px;
+    padding: 80px 40px; /* Increased padding */
 }
 
 .ric-modal-overlay {
@@ -669,9 +677,10 @@ body {
     border-radius: 18px;
     width: 100%;
     max-width: 816px;
+    max-height: calc(100vh - 160px); /* Limit height */
+    overflow-y: auto; /* Enable internal scrolling */
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
 }
 
 .ric-modal-content-wrapper {
@@ -679,7 +688,7 @@ body {
 }
 
 .inner-container-modal-content {
-    padding-bottom: 30px !important;
+    padding-bottom: 60px !important;
 }
 
 .ric-modal-close-button-wrapper {
@@ -729,4 +738,26 @@ body {
         height: 100%;
         max-width: none;
     }
+}
+/* Precision UI Alignment for Marketing Gallery */
+.product-tile-set .product-tile {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.product-tile-positioning {
+    min-height: 140px !important; /* Ensure consistent text block height */
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Ensure pricing and CTAs stay at the bottom of the visible area if needed */
+.product-tile-ctas {
+    margin-top: auto !important;
+}
+
+/* Reduced padding for tightened layout */
+.product-tile-padding-reduced {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
 }
