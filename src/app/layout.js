@@ -14,6 +14,9 @@ export default function RootLayout({ children }) {
         <IframeNavigationSync />
         {children}
         <Analytics />
+        <footer style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', border: 0 }}>
+          <a href="/privacy-policy">Privacy Policy</a>
+        </footer>
       </body>
     </html>
   );
